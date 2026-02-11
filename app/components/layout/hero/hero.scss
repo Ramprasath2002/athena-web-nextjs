@@ -1,0 +1,66 @@
+.marquee-track {
+  display: flex;
+  align-items: center;
+    gap: 64px;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+ 
+
+@keyframes marquee {  
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+ .cta-btn {
+  background: linear-gradient(
+    35deg,
+    var(--brand-accent),
+    var(--brand-primary)
+  );
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+  border-radius: 30px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Shine effect */
+.cta-btn .shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-25deg);
+  cursor: pointer;
+  transition: left 0.7s ease;
+}
+
+.cta-btn:hover .shine {
+  left: 130%;
+    cursor: pointer;
+
+}
+

@@ -1,0 +1,21 @@
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}/*# sourceMappingURL=hero.css.map */
