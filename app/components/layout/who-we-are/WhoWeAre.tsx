@@ -16,7 +16,13 @@ export default function WhoWeAre() {
             </h2>
 
             <p className="who-description">
-              Athena specializes in the implementation of MES (Manufacturing Execution Systems) and integration , seamlessly connecting with all other enterprise systems and Equipments to optimize the entire manufacturing process. From prototyping to delivery, our dedicated  teams work closely with clients to ensure smooth, efficient program execution, enabling greater visibility and control at every stage of implementation.
+              Athena specializes in the implementation of MES (Manufacturing
+              Execution Systems) and integration , seamlessly connecting with
+              all other enterprise systems and Equipments to optimize the entire
+              manufacturing process. From prototyping to delivery, our dedicated
+              teams work closely with clients to ensure smooth, efficient
+              program execution, enabling greater visibility and control at
+              every stage of implementation.
             </p>
 
             <button className="who-button">Explore Us</button>
@@ -24,10 +30,16 @@ export default function WhoWeAre() {
 
           {/* RIGHT IMAGE */}
           <div className="who-image">
-            <img
-              src="\assets\images\who-we-do.jpg"
-              alt="Digital manufacturing and MES integration"
-            />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover rounded-md"
+            >
+              <source src="/assets/videos/MES-vid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
@@ -51,7 +63,12 @@ export default function WhoWeAre() {
               <h4>Siemens Alliance Partner</h4>
 
               <p>
-                As a trusted Siemens Alliance Partner, Athena boasts an excellent team specializing in the implementation and upgrade of Opcenter solutions, driving innovation and operational efficiency across industries including Semiconductor, Electronics, Medical Devices, Discrete Manufacturing, and Clean Energy.
+                As a trusted Siemens Alliance Partner, Athena boasts an
+                excellent team specializing in the implementation and upgrade of
+                Opcenter solutions, driving innovation and operational
+                efficiency across industries including Semiconductor,
+                Electronics, Medical Devices, Discrete Manufacturing, and Clean
+                Energy.
               </p>
 
               <button className="partner-btn">Know More</button>
@@ -68,7 +85,11 @@ export default function WhoWeAre() {
               <h4>Critical Manufacturing Premier Partner</h4>
 
               <p>
-                As a Critical Manufacturing Premier Partner, our certified team of experts specializes in implementing Critical Manufacturing MES, delivering customized solutions that ensure seamless integration and optimize performance throughout your entire manufacturing process.
+                As a Critical Manufacturing Premier Partner, our certified team
+                of experts specializes in implementing Critical Manufacturing
+                MES, delivering customized solutions that ensure seamless
+                integration and optimize performance throughout your entire
+                manufacturing process.
               </p>
 
               <button className="partner-btn">Know More</button>
@@ -85,14 +106,18 @@ export default function WhoWeAre() {
               <h4>Eyelit Implementation Partner</h4>
 
               <p>
-                As an implementation partner of Eyelit Technologies, Athena Technology Solutions brings extensive expertise in deploying both Eyelit MES and Equipment Connect across various industries such as semiconductor, solar, LED/laser diode, and medical devices.
+                As an implementation partner of Eyelit Technologies, Athena
+                Technology Solutions brings extensive expertise in deploying
+                both Eyelit MES and Equipment Connect across various industries
+                such as semiconductor, solar, LED/laser diode, and medical
+                devices.
               </p>
 
               <button className="partner-btn">Know More</button>
             </div>
-             <div className="partner-card">
+            <div className="partner-card">
               <img
-                src="/assets/clients/TWINZO_0.png"
+                src="/assets/clients/TWINZO.png"
                 alt="Eyelit"
                 className="partner-logo"
               />
@@ -100,7 +125,10 @@ export default function WhoWeAre() {
               <h4>Twinzo Authorized Reseller Partner</h4>
 
               <p>
-               Authorized Twinzo reseller and implementation partner providing industrial digital twin and smart factory solutions. We help manufacturers adopt real-time visualization, performance monitoring, and data-driven operations across sectors.
+                Authorized Twinzo reseller and implementation partner providing
+                industrial digital twin and smart factory solutions. We help
+                manufacturers adopt real-time visualization, performance
+                monitoring, and data-driven operations across sectors.
               </p>
 
               <button className="partner-btn">Know More</button>
@@ -113,10 +141,16 @@ export default function WhoWeAre() {
           {/* IMAGE SIDE */}
           <div className="what-media">
             <div className="what-image-wrapper">
-              <img
-                src="/images/what-we-do.jpg"
-                alt="MES analytics and smart manufacturing"
-              />
+                  <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover rounded-md"
+            >
+              <source src="/assets/videos/MESVID2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             </div>
           </div>
 
@@ -129,7 +163,12 @@ export default function WhoWeAre() {
             </h2>
 
             <p className="what-text">
-             Central to our expertise is a robust suite of professional services, focused on the end-to-end implementation of MES (Manufacturing Execution Systems), as well as PLM, ERP, CMMS, Smart Factory Analytics, and customized Managed Services, all engineered to enhance efficiency and drive digital transformation for our clients.
+              Central to our expertise is a robust suite of professional
+              services, focused on the end-to-end implementation of MES
+              (Manufacturing Execution Systems), as well as PLM, ERP, CMMS,
+              Smart Factory Analytics, and customized Managed Services, all
+              engineered to enhance efficiency and drive digital transformation
+              for our clients.
             </p>
 
             <div className="divider" />
