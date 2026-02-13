@@ -6,23 +6,49 @@ export default function AboutPage() {
     {
       year: "2011",
       title: "Established Foundations in Fremont California",
-      image: "/images/journey-2011.jpg",
+      image:
+        "https://athenatec.com/wp-content/uploads/2024/09/businessman-suit-putting-last-piece-pyramid-using-wooden-blocks-500x500.jpg",
     },
     {
       year: "2015",
       title: "Expanding Capabilities",
-      image: "/images/journey-2015.jpg",
+      image:
+        "https://athenatec.com/wp-content/uploads/2024/09/standard-quality-control-collage-concept-500x500.jpg",
     },
     {
       year: "2017",
       title: "Achieved ISO 9001 Certification",
-      image: "/images/journey-2017.jpg",
+      image:
+        "https://athenatec.com/wp-content/uploads/2024/09/iso-9001-concept-quality-control-management-iso-9001-500x500.jpg",
     },
     {
       year: "2020",
       title: "Global Growth and Expanded Expertise",
-      image: "/images/journey-2020.jpg",
+      image:
+        "https://athenatec.com/wp-content/uploads/2024/09/global-business-adventures-expanding-horizons-with-international-connections-diverse-professional-500x500.jpg",
     },
+  ];
+  const clients = [
+    { name: "Siemens", file: "siemens.png" },
+    { name: "Critical Manufacturing", file: "critical.png" },
+    { name: "Penumbra", file: "penumbra.png" },
+    { name: "Nevco", file: "nevco.png" },
+    { name: "Dexcom", file: "dexcom.png" },
+    { name: "Conformis", file: "conformis.png" },
+    { name: "Marki", file: "marki.png" },
+    { name: "Innova", file: "innova.png" },
+    { name: "PSI", file: "psi.png" },
+    { name: "Entegys", file: "entegis.png" },
+    { name: "Lumetum", file: "lumetum.png" },
+    { name: "Emcore", file: "emcore.png" },
+    { name: "Viavi", file: "viavi.png" },
+    { name: "Areva", file: "areva.png" },
+    { name: "Intel", file: "intel.png" },
+    { name: "Philips", file: "philips.png" },
+    { name: "Micron", file: "micron.png" },
+    { name: "Honeywell", file: "honeywell.png" },
+    { name: "TDK", file: "tdk.png" },
+    { name: "Daikin", file: "daikin.png" },
   ];
 
   return (
@@ -30,7 +56,7 @@ export default function AboutPage() {
       {/* HERO */}
       <section className="hero">
         <Image
-          src="/images/about-hero.jpg"
+          src="/assets/images/aboutus.png"
           alt="About Hero"
           fill
           className="hero-img"
@@ -71,7 +97,7 @@ export default function AboutPage() {
 
             <div className="about-image">
               <Image
-                src="/images/about-team.jpg"
+                src="https://athena.homedecorsind.com/wp-content/uploads/2024/10/industry-4.0.png"
                 alt="Team"
                 fill
                 className="img"
@@ -103,7 +129,12 @@ export default function AboutPage() {
       <section className="vision-section">
         <div className="container vision-grid">
           <div className="vision-image">
-            <Image src="/images/vision.jpg" alt="Vision" fill className="img" />
+            <Image
+              src="/assets/images/our-mission.png"
+              alt="Vision"
+              fill
+              className="img"
+            />
           </div>
 
           <div className="vision-content">
@@ -166,30 +197,13 @@ export default function AboutPage() {
           <h2 className="customers-title">Our Customers</h2>
 
           <div className="customers-grid">
-            {[
-              "siemens.png",
-              "critical.png",
-              "penumbra.png",
-              "nevco.png",
-              "dexcom.png",
-              "conformis.png",
-              "marki.png",
-              "innova.png",
-              "psi.png",
-              "entegis.png",
-              "lumetum.png",
-              "emcore.png",
-              "viavi.png",
-              "areva.png",
-              "intel.png",
-              "philips.png",
-              "micron.png",
-              "honeywell.png",
-              "tdk.png",
-              "daikin.png",
-            ].map((logo, i) => (
-              <div key={i} className="customer-logo">
-                <img src={`/images/customers/${logo}`} alt="Customer Logo" />
+            {clients.map((client) => (
+              <div key={client.file} className="customer-logo">
+                <img
+                  src={`/assets/Clients/${client.file}`}
+                  alt={client.name}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -290,7 +304,7 @@ export default function AboutPage() {
           <div className="cta-overlay" />
 
           <Image
-            src="/images/cta-bg.jpg"
+            src="/assets/images/new-req.jpg"
             alt="CTA Background"
             fill
             className="cta-bg"

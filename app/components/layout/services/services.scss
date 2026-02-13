@@ -340,7 +340,7 @@
 
 .why-us {
   padding: 6rem 0;
-  background: #fff;
+  background: #1c4584;
 
   /* LEFT */
   .why-us-content {
@@ -351,7 +351,7 @@
   .why-us-label {
     font-size: 20px;
     letter-spacing: 0.15em;
-    color: #5172b0;
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -359,20 +359,20 @@
     font-size: 3rem;
     line-height: 1.15;
     margin: 1rem 0 1.5rem;
-    color: #000;
+    color: #ffff;
   }
 
   .why-us-content p {
     font-size: 1.05rem;
-    color: #444;
+    color: #ffff;
     margin-bottom: 2rem;
   }
 
   .why-us-btn {
     padding: 0.7rem 1.6rem;
     border-radius: 999px;
-    border: 2px solid #5172b0;
-    color: #5172b0;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     background: transparent;
     font-weight: 600;
     cursor: pointer;
@@ -380,8 +380,10 @@
   }
 
   .why-us-btn:hover {
-    background: #5172b0;
-    color: #fff;
+    background: #ffffff;
+    color: #5172b0;
+    border: 2px solid #5172b0;
+
   }
 
   /* RIGHT CARDS */
@@ -518,7 +520,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #17ace4, #5172b0);
+    // background: linear-gradient(135deg, #17ace4, #5172b0);
+    background: #1c4584;
     color: #ffffff;
     display: flex;
     align-items: center;

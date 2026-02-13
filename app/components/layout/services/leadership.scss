@@ -135,11 +135,12 @@
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 32px;
-  background: linear-gradient(
-    135deg,
-    #1c4584,
-    #5172b0
-  );
+  background: #1c4584;
+  // background: linear-gradient(
+  //   135deg,
+  //   #1c4584,
+  //   #5172b0
+  // );
   border-radius: 28px;
   padding: 32px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);

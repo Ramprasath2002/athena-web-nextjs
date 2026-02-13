@@ -83,11 +83,11 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           <div className="ml-4 flex flex-col gap-2 text-sm">
             <button
               onClick={toggleMES}
-              className="flex w-full items-center justify-between"
+              className="flex w-full items-center justify-between gap-3.5"
             >
               <span>MES Solutions</span>
               <span
-                className={`transition-transform duration-300 ${
+                className={`transition-transform duration-300  text-[20px] ${
                   openMES ? "rotate-90" : "rotate-0"
                 }`}
               >
@@ -197,7 +197,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
                   MES Solutions
                 </Link>
                 <span
-                  className={`transition-transform duration-200 ${
+                  className={`transition-transform duration-200  text-[20px] ${
                     openMES ? "rotate-90" : "rotate-0"
                   }`}
                 >

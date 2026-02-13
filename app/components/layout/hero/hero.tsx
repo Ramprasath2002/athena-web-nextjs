@@ -1,12 +1,13 @@
+"use client";
 import HeroCarousel from "./HeroCarousel";
-// import HeroContent from "./HeroContent";
 import "./hero.scss";
+import { useEffect, useState, useRef } from "react";
 
 export default function HeroSection() {
   return (
     <>
       {/* HERO + STATS WRAPPER */}
-   <section className="relative min-h-screen flex flex-col overflow-hidden pt-[62px]">
+      <section className="relative min-h-screen flex flex-col overflow-hidden pt-[62px]">
         {/* HERO */}
         <div className="relative flex-1">
           <HeroCarousel />
@@ -22,17 +23,19 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-black">
               <StatCard
                 title="Founded"
-                value="2011"
-                
+                value={2011}
                 subtitle="13+ years experience"
               />
+
               <StatCard
                 title="Team Strength"
-                value="150+"
+                value={150}
+                suffix="+"
                 subtitle="Industry experts"
               />
-              <StatCard title="Global HQ" value="USA" subtitle="California" />
-              <StatCard
+
+              <InfoCard title="Global HQ" value="USA" subtitle="California" />
+              <InfoCard
                 title="Delivery Centers"
                 value="India"
                 subtitle="Bangalore, Hyderabad, Chennai & Trichy"
@@ -67,10 +70,7 @@ export default function HeroSection() {
     </>
   );
 }
-
- 
-
-function StatCard({
+function InfoCard({
   title,
   value,
   subtitle,
@@ -81,8 +81,68 @@ function StatCard({
 }) {
   return (
     <div className="rounded-2xl bg-white p-4 md:p-6 text-center shadow-sm">
-      <p className="text-sm text-gray-500 mb-2">{title}</p>
+      <p className="text-[17px] text-gray-500 mb-2">{title}</p>
       <p className="text-3xl font-semibold mb-2">{value}</p>
+      <p className="text-sm text-gray-600 leading-snug">{subtitle}</p>
+    </div>
+  );
+}
+
+type StatCardProps = {
+  title: string;
+  value: number;
+  suffix?: string;
+  subtitle: string;
+};
+
+function StatCard({ title, value, suffix = "", subtitle }: StatCardProps) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          animateCount();
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCount = () => {
+    const duration = 1500;
+    const startTime = performance.now();
+
+    const update = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      setCount(Math.floor(progress * value));
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  return (
+    <div
+      ref={ref}
+      className="rounded-2xl bg-white p-2 md:p-4 text-center shadow-sm"
+    >
+      <p className="text-sm text-gray-500 mb-2">{title}</p>
+      <p className="text-3xl font-semibold mb-2">
+        {count}
+        {suffix}
+      </p>
       <p className="text-sm text-gray-600 leading-snug">{subtitle}</p>
     </div>
   );
