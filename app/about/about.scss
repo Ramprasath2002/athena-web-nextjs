@@ -1,11 +1,11 @@
 .about-page {
-  font-family: sans-serif;
-}
+  font-family: "outfitRegular", sans-serif;
+
 
 /* HERO */
 .hero {
   position: relative;
-  height: 350px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,12 +29,13 @@
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
 }
 
 .hero p {
   margin-top: 10px;
+  font-size: 22px;
 }
 
 /* SECTION */
@@ -68,12 +69,14 @@
 .about-text h3 {
   font-size: 20px;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .about-text p {
   line-height: 1.7;
   color: #555;
   margin-bottom: 16px;
+  font-size: 17px;
 }
 
 .about-image {
@@ -90,7 +93,7 @@
 /* JOURNEY */
 .journey-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 40px;
 }
@@ -116,7 +119,7 @@
 
 .card-img {
   position: relative;
-  height: 150px;
+  height: 200px;
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
@@ -129,14 +132,14 @@
 }
 
 .journey-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
 }
 
 /* VISION SECTION */
 .vision-section {
   background: #f4f6f8;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .vision-grid {
@@ -148,13 +151,13 @@
 
 .vision-image {
   position: relative;
-  height: 280px;
+  height: 350px;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .vision-content h3 {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -162,6 +165,7 @@
 .vision-content p {
   color: #555;
   line-height: 1.7;
+  font-size: 17px;
   margin-bottom: 16px;
 }
 
@@ -178,7 +182,7 @@
 }
 
 .big-heading {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -210,8 +214,8 @@
 }
 
 .card-top {
-  height: 180px;
-  background: #000; /* Replace with real image later */
+  height: 250px;
+  background-image: url("/assets/images/industries.png");  
 }
 
 .card-bottom {
@@ -237,7 +241,7 @@
 
 .customers-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 60px;
 }
@@ -278,7 +282,7 @@
 
 .testimonial-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 50px;
 }
@@ -418,7 +422,7 @@
   font-size: 12px;
   opacity: 0.85;
 }
-
+}
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

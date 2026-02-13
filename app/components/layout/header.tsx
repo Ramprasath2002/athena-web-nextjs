@@ -44,7 +44,7 @@ useEffect(() => {
         </Link>
 
         {/* DESKTOP MENU */}
-      <nav className="hidden [@media(min-width:900px)]:flex items-center gap-10 text-sm text-gray-700">
+      <nav className="hidden [@media(min-width:900px)]:flex items-center gap-10 text-[15px] text-gray-700">
           <Link href="/about">About</Link>
           <Link href="/accelerators">Athena Accelerators</Link>
           <HeaderMenu />

@@ -37,7 +37,7 @@ export default function WhoWeAre() {
               playsInline
               className="w-full h-full object-cover rounded-md"
             >
-              <source src="/assets/videos/MES-vid.mp4" type="video/mp4" />
+              <source src="/assets/videos/MES-VID.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -117,7 +117,7 @@ export default function WhoWeAre() {
             </div>
             <div className="partner-card">
               <img
-                src="/assets/clients/TWINZO.png"
+                src="/assets/Clients/twinzo-img.png"
                 alt="Eyelit"
                 className="partner-logo"
               />
@@ -148,7 +148,7 @@ export default function WhoWeAre() {
               playsInline
               className="w-full h-full object-cover rounded-md"
             >
-              <source src="/assets/videos/MESVID2.mp4" type="video/mp4" />
+              <source src="https://athena.homedecorsind.com/wp-content/uploads/2024/07/aps.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             </div>
