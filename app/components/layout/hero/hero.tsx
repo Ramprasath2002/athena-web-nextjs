@@ -2,7 +2,7 @@
 import HeroCarousel from "./HeroCarousel";
 import "./hero.scss";
 import { useEffect, useState, useRef } from "react";
-
+import { logos } from "@/app/components/ClientLogos";
 export default function HeroSection() {
   return (
     <>
@@ -46,14 +46,13 @@ export default function HeroSection() {
       </section>
 
       {/* LOGO MARQUEE */}
-      <section className="relative  bg-white py-16 overflow-hidden">
+      <section className="relative bg-white py-16 overflow-hidden">
         <div className="mx-auto px-6 mb-8">
           <h3 className="text-center text-lg text-gray-600 font-bold">
             Trusted by Global Manufacturing Leaders
           </h3>
         </div>
 
-        {/* OUTER CLIP */}
         <div className="relative overflow-hidden w-full">
           <div className="marquee-track">
             {[...logos, ...logos].map((logo, i) => (
@@ -148,43 +147,43 @@ function StatCard({ title, value, suffix = "", subtitle }: StatCardProps) {
   );
 }
 
-const logos = [
-  "/assets/Clients/ALRA-LAVAL.png",
-  "/assets/Clients/AMU1-OSRAM.png",
-  "/assets/Clients/Areva.png",
-  "/assets/Clients/Atmel.png",
-  "/assets/Clients/Conformis.png",
-  "/assets/Clients/Critical-Manufacturing.png",
-  "/assets/Clients/Daikin.png",
-  "/assets/Clients/Dexcom.png",
-  "/assets/Clients/Edtech.jpg",
-  "/assets/Clients/ELO.png",
-  "/assets/Clients/Emcore.png",
-  "/assets/Clients/Enovix.png",
-  "/assets/Clients/Entrgris.jpg",
-  "/assets/Clients/Finisar.png",
-  "/assets/Clients/GLO.png",
-  "/assets/Clients/Honeywell.png",
-  "/assets/Clients/HSC.png",
-  "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
-  "/assets/Clients/Intel.png",
-  "/assets/Clients/Lumentum.png",
-  "/assets/Clients/Marki.png",
-  "/assets/Clients/Miasole.png",
-  "/assets/Clients/Micron.png",
-  "https://athenatec.com/wp-content/uploads/2024/12/06.png",
-  "/assets/Clients/Neophotonics.png",
-  "/assets/Clients/Nevro.png",
-  "/assets/Clients/Penumbra.png",
-  "/assets/Clients/Philips.png",
-  "/assets/Clients/PSi-Quantum.png",
-  "https://athenatec.com/wp-content/uploads/2024/12/03.png",
-  "/assets/Clients/SK-Siltron.png",
-  "/assets/Clients/Skywater.png",
-  "/assets/Clients/Swissbit.png",
-  "/assets/Clients/TDK.jpg",
-  "/assets/Clients/Teledyne.png",
-  "/assets/Clients/View-Dynamic-Glass.png",
-  "/assets/Clients/VLAVI.png",
-  "/assets/Clients/Wolfspeed.png",
-];
+// const logos = [
+//   "/assets/Clients/ALRA-LAVAL.png",
+//   "/assets/Clients/AMU1-OSRAM.png",
+//   "/assets/Clients/Areva.png",
+//   "/assets/Clients/Atmel.png",
+//   "/assets/Clients/Conformis.png",
+//   "/assets/Clients/Critical-Manufacturing.png",
+//   "/assets/Clients/Daikin.png",
+//   "/assets/Clients/Dexcom.png",
+//   "/assets/Clients/Edtech.jpg",
+//   "/assets/Clients/ELO.png",
+//   "/assets/Clients/Emcore.png",
+//   "/assets/Clients/Enovix.png",
+//   "/assets/Clients/Entrgris.jpg",
+//   "/assets/Clients/Finisar.png",
+//   "/assets/Clients/GLO.png",
+//   "/assets/Clients/Honeywell.png",
+//   "/assets/Clients/HSC.png",
+//   "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+//   "/assets/Clients/Intel.png",
+//   "/assets/Clients/Lumentum.png",
+//   "/assets/Clients/Marki.png",
+//   "/assets/Clients/Miasole.png",
+//   "/assets/Clients/Micron.png",
+//   "https://athenatec.com/wp-content/uploads/2024/12/06.png",
+//   "/assets/Clients/Neophotonics.png",
+//   "/assets/Clients/Nevro.png",
+//   "/assets/Clients/Penumbra.png",
+//   "/assets/Clients/Philips.png",
+//   "/assets/Clients/PSi-Quantum.png",
+//   "https://athenatec.com/wp-content/uploads/2024/12/03.png",
+//   "/assets/Clients/SK-Siltron.png",
+//   "/assets/Clients/Skywater.png",
+//   "/assets/Clients/Swissbit.png",
+//   "/assets/Clients/TDK.jpg",
+//   "/assets/Clients/Teledyne.png",
+//   "/assets/Clients/View-Dynamic-Glass.png",
+//   "/assets/Clients/VLAVI.png",
+//   "/assets/Clients/Wolfspeed.png",
+// ];

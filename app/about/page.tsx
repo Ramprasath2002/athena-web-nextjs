@@ -1,6 +1,8 @@
 import Image from "next/image";
 import "./about.scss";
-
+import { desc } from "framer-motion/client";
+// import { logos } from "@/app/components/ClientLogos";
+import { logos } from "../components/ClientLogos";
 export default function AboutPage() {
   const journey = [
     {
@@ -28,27 +30,101 @@ export default function AboutPage() {
         "https://athenatec.com/wp-content/uploads/2024/09/global-business-adventures-expanding-horizons-with-international-connections-diverse-professional-500x500.jpg",
     },
   ];
-  const clients = [
-    { name: "Siemens", file: "siemens.png" },
-    { name: "Critical Manufacturing", file: "critical.png" },
-    { name: "Penumbra", file: "penumbra.png" },
-    { name: "Nevco", file: "nevco.png" },
-    { name: "Dexcom", file: "dexcom.png" },
-    { name: "Conformis", file: "conformis.png" },
-    { name: "Marki", file: "marki.png" },
-    { name: "Innova", file: "innova.png" },
-    { name: "PSI", file: "psi.png" },
-    { name: "Entegys", file: "entegis.png" },
-    { name: "Lumetum", file: "lumetum.png" },
-    { name: "Emcore", file: "emcore.png" },
-    { name: "Viavi", file: "viavi.png" },
-    { name: "Areva", file: "areva.png" },
-    { name: "Intel", file: "intel.png" },
-    { name: "Philips", file: "philips.png" },
-    { name: "Micron", file: "micron.png" },
-    { name: "Honeywell", file: "honeywell.png" },
-    { name: "TDK", file: "tdk.png" },
-    { name: "Daikin", file: "daikin.png" },
+
+  const services = [
+    {
+      title: "Semiconductor",
+      image:
+        "https://athena.homedecorsind.com/wp-content/uploads/2024/07/Chip-Hand-Cropped-950x1024.png",
+      desc: "Athena offers comprehensive PLM, MES, CMMS, and analytics services for the semiconductor industry, partnering with clients to deliver top solutions.",
+    },
+    {
+      title: "Electronics",
+      image:
+        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/neon-motherboard-background-scaled-e1724922449899.jpg",
+      desc: "Athena's MES Solutions for the Electronics Industry streamline high-volume production, ensuring product quality and high yield through efficient PCB, PCBA, Mechanical Assembly, box-build, and testing processes.",
+    },
+    {
+      title: "MED Devices",
+      image:
+        "https://athena.homedecorsind.com/wp-content/uploads/2024/10/close-up-medical-orthodontist-equipment-modern-bright-office-scaled-e1724922792409.jpg",
+      desc: "Athena's proven expertise in medical device manufacturing and rapid implementations helps customers innovate, cut costs, and achieve high-quality products",
+    },
+    {
+      title: "LED / Battery Manufacturing",
+      image:
+        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/futuristic-time-machine-1024x683.jpg",
+      desc: "Athena excels in addressing complex manufacturing challenges with rapid implementation, delivering a robust, integrated, and scalable data-centric enterprise.",
+    },
+    {
+      title: "Solar",
+      image:
+        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/beautiful-alternative-energy-plant-with-solar-panels-1024x683.jpg",
+      desc: "Solar manufacturing's complexities, such as Applied Materials and SPC, demand advanced analytics and continuous experimentation. Athena's expertise and passion position us to effectively tackle these challenges.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      company: "InnovaFlex Foundry",
+      name: "Jon Baker",
+      role: "IT Manager – InnovaFlex Foundry",
+      text: "Athena provides expertise in MES and beyond. They have proven extremely easy to work with, offering project management, development, integration and support ensuring projects are completed successfully.",
+    },
+    {
+      company: "Nevro",
+      name: "Alonso Moya",
+      role: "Site Director – Nevro",
+      text: "Having a commercial partner is vital for seamless implementation. Athena was proactive in providing strategic solutions and supporting business needs.",
+    },
+    {
+      company: "Dexcom",
+      name: "Wei Wu",
+      role: "Senior Manager – IT",
+      text: "Athena demonstrated exceptional expertise and professionalism throughout our Camstar launch.",
+    },
+    {
+      company: "MiaSole",
+      name: "Siva Papaiya",
+      role: "Senior Director – MiaSole",
+      text: "Athena’s team has unrivalled proficiency in manufacturing and commitment towards successful execution.",
+    },
+    {
+      company: "Neophotonics",
+      name: "Aim Khan",
+      role: "CIO / VP",
+      text: "Athena consistently exceeds business targets and overcomes challenges with excellence.",
+    },
+    {
+      company: "Marki Microwave",
+      name: "Operations Team",
+      role: "Manufacturing Operations",
+      text: "Selecting Athena as our implementation partner was the right decision. Professional and reliable team.",
+    },
+    {
+      company: "Conformis",
+      name: "Leadership Team",
+      role: "Manufacturing Systems",
+      text: "Athena delivered all projects efficiently with proper documentation and validation.",
+    },
+    {
+      company: "Viavi",
+      name: "Engineering Head",
+      role: "Manufacturing",
+      text: "Athena delivered streamlined processes and seamless integration across our systems.",
+    },
+    {
+      company: "GLO-USA",
+      name: "Plant Director",
+      role: "Operations",
+      text: "Great partnership with Athena. Their dedication and innovative approach improved our shop floor management.",
+    },
+    {
+      company: "Emcore",
+      name: "Jamie Lohrungruang",
+      role: "VP of Information Technology",
+      text: "Athena completely transformed our MES implementation and exceeded expectations.",
+    },
   ];
 
   return (
@@ -173,18 +249,39 @@ export default function AboutPage() {
           </p>
 
           <div className="services-grid">
-            {[
-              "Industries Semiconductor",
-              "Electronics",
-              "MED Devices",
-              "LED / Battery Manufacturing (Clean energy)",
-              "Solar",
-            ].map((item, i) => (
+            {services.map((item, i) => (
               <div key={i} className="service-card">
-                <div className="card-top" />
-                <div className="card-bottom">
-                  <h4>{item}</h4>
-                  <span>See More &gt;</span>
+                <div
+                  className="card-top"
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                  }}
+                >
+                  <div className="overlay" />
+
+                  <div className="card-content">
+                    <h3 className="card-title">{item.title}</h3>
+                    <p className="card-desc">{item.desc}</p>
+                    <div className="see-more">
+                      <span>See More</span>
+
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5 12H19M19 12L13 6M19 12L13 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -197,13 +294,9 @@ export default function AboutPage() {
           <h2 className="customers-title">Our Customers</h2>
 
           <div className="customers-grid">
-            {clients.map((client) => (
-              <div key={client.file} className="customer-logo">
-                <img
-                  src={`/assets/Clients/${client.file}`}
-                  alt={client.name}
-                  loading="lazy"
-                />
+            {logos.map((logo, index) => (
+              <div key={index} className="customer-logo">
+                <img src={logo} alt="Client Logo" loading="lazy" />
               </div>
             ))}
           </div>
@@ -211,76 +304,27 @@ export default function AboutPage() {
       </section>
 
       {/* TESTIMONIAL SECTION */}
-      <section className="testimonial-section">
+      <section className="about-testimonial-section">
         <div className="container">
           <h2 className="testimonial-title">Testimonial</h2>
-
           <div className="testimonial-grid">
-            {[
-              {
-                company: "InnovaFlex Foundry",
-                name: "Jon Baker",
-                role: "IT Manager – InnovaFlex Foundry",
-                text: "Athena provides expertise in MES and beyond. They have proven extremely easy to work with, offering project management, development, integration and support ensuring projects are completed successfully.",
-              },
-              {
-                company: "Nevro",
-                name: "Alonso Moya",
-                role: "Site Director – Nevro",
-                text: "Having a commercial partner is vital for seamless implementation. Athena was proactive in providing strategic solutions and supporting business needs.",
-              },
-              {
-                company: "Dexcom",
-                name: "Wei Wu",
-                role: "Senior Manager – IT",
-                text: "Athena demonstrated exceptional expertise and professionalism throughout our Camstar launch.",
-              },
-              {
-                company: "MiaSole",
-                name: "Siva Papaiya",
-                role: "Senior Director – MiaSole",
-                text: "Athena’s team has unrivalled proficiency in manufacturing and commitment towards successful execution.",
-              },
-              {
-                company: "Neophotonics",
-                name: "Aim Khan",
-                role: "CIO / VP",
-                text: "Athena consistently exceeds business targets and overcomes challenges with excellence.",
-              },
-              {
-                company: "Marki Microwave",
-                name: "Operations Team",
-                role: "Manufacturing Operations",
-                text: "Selecting Athena as our implementation partner was the right decision. Professional and reliable team.",
-              },
-              {
-                company: "Conformis",
-                name: "Leadership Team",
-                role: "Manufacturing Systems",
-                text: "Athena delivered all projects efficiently with proper documentation and validation.",
-              },
-              {
-                company: "Viavi",
-                name: "Engineering Head",
-                role: "Manufacturing",
-                text: "Athena delivered streamlined processes and seamless integration across our systems.",
-              },
-              {
-                company: "GLO-USA",
-                name: "Plant Director",
-                role: "Operations",
-                text: "Great partnership with Athena. Their dedication and innovative approach improved our shop floor management.",
-              },
-              {
-                company: "Emcore",
-                name: "Jamie Lohrungruang",
-                role: "VP of Information Technology",
-                text: "Athena completely transformed our MES implementation and exceeded expectations.",
-              },
-            ].map((item, i) => (
+          {testimonials.map((item, i) => {
+            const companyLogo = logos.find((logo) =>
+              logo.toLowerCase().includes(item.company.toLowerCase()),
+            );
+
+            return (
               <div key={i} className="testimonial-card">
                 <div className="card-header">
                   <h4>{item.company}</h4>
+
+                  {companyLogo && (
+                    <img
+                      src={companyLogo}
+                      alt={item.company}
+                      className="testimonial-logo"
+                    />
+                  )}
                 </div>
 
                 <div className="card-body">
@@ -294,7 +338,8 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            ))}
+            );
+          })}
           </div>
         </div>
       </section>
