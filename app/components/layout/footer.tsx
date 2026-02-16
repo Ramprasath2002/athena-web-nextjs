@@ -87,7 +87,7 @@ export default function Footer() {
                 Work inquiries
               </h4>
               <a
-                href="mailto:info@athena.homedecorsind.com"
+                href="info@athenatec.com"
                 className="mt-2 inline-block font-medium hover:underline"
                 target="_blank"
               >
