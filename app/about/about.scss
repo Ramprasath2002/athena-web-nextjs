@@ -300,7 +300,7 @@
   .customers-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 40px 30px;
+    gap: 30px 20px;
     align-items: center;
   }
 
@@ -324,84 +324,90 @@
   }
 
   /* TESTIMONIAL SECTION */
-  .About-testimonial-section {
+  .about-testimonial-section {
     padding: 80px 0;
     background: #f4f6f8;
+
+    .testimonial-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s ease;
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.04),
+        0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 60px 20px 60px;
+    }
+    .card-header h4 {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .testimonial-logo {
+      height: 80px;
+      object-fit: contain;
+    }
+    .card-body {
+      padding: 40px 60px;
+      text-align: left;
+    }
+
+    .card-body p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #222;
+
+      white-space: pre-line;
+    }
+
+ .card-footer {
+  background: #1e3a8a;
+  color: white;
+  padding: 24px 60px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.card-footer strong {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.card-footer span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
   }
 
-  .testimonial-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 50px;
-  }
-
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
- 
-  .testimonial-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s ease;
-    box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.04),
-    0 10px 25px rgba(0, 0, 0, 0.06);
-
-  }
-
-  .testimonial-card:hover {
-    transform: translateY(-6px);
-  }
-
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px 0 40px;
-  }
-  .card-header h4 {
-    font-size: 22px;
-    font-weight: 600;
-  }
-
-  .testimonial-logo {
-    height: 50px;
-    object-fit: contain;
-  }
-  .card-body {
-    padding: 30px 60px;
-    text-align: center;
-  }
-
-  .card-body p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #111;
-  }
-
-  .card-footer {
-    background: #1e3a8a;
-    color: white;
-    padding: 16px 20px;
-  }
-
-  .card-footer strong {
-    display: block;
-    font-size: 14px;
-  }
-
-  .card-footer span {
-    font-size: 12px;
-    opacity: 0.85;
-  }
   /* CTA SECTION */
   .cta-section {
     padding: 80px 0;
@@ -486,51 +492,197 @@
   }
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* =========================
+   LARGE TABLET (≤1200px)
+========================= */
+@media (max-width: 1200px) {
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .services-grid {
+  .about-page .container {
+    width: 92%;
+  }
+
+  .about-page .hero {
+    height: 480px;
+  }
+
+  .about-page .hero h1 {
+    font-size: 36px;
+  }
+
+  .about-page .about-grid,
+  .about-page .vision-grid {
+    gap: 40px;
+  }
+
+  .about-page .journey-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about-page .customers-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
+
+/* =========================
+   TABLET (≤1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .about-page .hero {
+    height: 420px;
+  }
+
+  .about-page .hero h1 {
+    font-size: 32px;
+  }
+
+  .about-page .hero p {
+    font-size: 18px;
+  }
+
+  .about-page .about-grid,
+  .about-page .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-page .customers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-page .card-top {
+    height: 260px;
+  }
+
+  .about-page .about-testimonial-section .card-header,
+  .about-page .about-testimonial-section .card-body,
+  .about-page .about-testimonial-section .card-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+
+/* =========================
+   MOBILE (≤768px)
+========================= */
 @media (max-width: 768px) {
-  .vision-grid {
+
+  .about-page .hero {
+    height: 350px;
+    padding: 0 20px;
+  }
+
+  .about-page .hero h1 {
+    font-size: 26px;
+  }
+
+  .about-page .hero p {
+    font-size: 16px;
+  }
+
+  .about-page .section-title,
+  .about-page .journey-title,
+  .about-page .testimonial-title,
+  .about-page .customers-title {
+    font-size: 24px;
+  }
+
+  .about-page .services-grid {
     grid-template-columns: 1fr;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .about-page .customers-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .big-heading {
+  .about-page .card-top {
+    height: 220px;
+  }
+
+  .about-page .about-image,
+  .about-page .vision-image {
+    height: 260px;
+  }
+
+  .about-page .about-testimonial-section .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .about-page .about-testimonial-section .testimonial-logo {
+    height: 40px;
+  }
+
+  .about-page .about-testimonial-section .card-body {
+    padding: 30px 25px;
+  }
+
+  .about-page .about-testimonial-section .card-footer {
+    padding: 20px 25px;
+    min-height: auto;
+  }
+
+  .about-page .cta-wrapper {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .about-page .cta-content h2 {
     font-size: 22px;
   }
-}
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .journey-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .about-page .cta-content p {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
-  .about-grid {
+
+/* =========================
+   SMALL MOBILE (≤480px)
+========================= */
+@media (max-width: 480px) {
+
+  .about-page .hero {
+    height: 300px;
+  }
+
+  .about-page .hero h1 {
+    font-size: 22px;
+  }
+
+  .about-page .hero p {
+    font-size: 14px;
+  }
+
+  .about-page .container {
+    width: 99%;
+  }
+
+  .about-page .journey-grid {
     grid-template-columns: 1fr;
   }
 
-  .journey-grid {
-    grid-template-columns: 1fr;
+
+  .about-page .about-testimonial-section .card-body p {
+    font-size: 16px;
+    line-height: 1.7;
   }
 
-  .hero h1 {
-    font-size: 28px;
+  .about-page .card-title {
+    font-size: 18px;
+  }
+
+  .about-page .vision-content h3 {
+    font-size: 22px;
+  }
+
+  .about-page .big-heading {
+    font-size: 22px;
   }
 }

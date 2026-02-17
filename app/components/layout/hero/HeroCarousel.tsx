@@ -29,8 +29,7 @@ const slides = [
     title: "Expertise in MES, PLM, ERP & More",
     desc: "Specialized in MES, PLM, ERP, CMMS, and smart factory analytics.",
     cta: "MES, PLM & More",
-    image:
-      "/assets/images/mlsandpls.jpg",
+    image: "/assets/images/mlsandpls.jpg",
   },
 
   {
@@ -66,7 +65,7 @@ const slides = [
     title: "ECO Accelerators",
     desc: "Speed up engineering change workflows with intelligent automation. ECO Accelerators handle tracking, approvals, execution, and traceability while ensuring compliance.",
     cta: "Accelerators",
-    image: "/assets/images/eco-accelerators.jpg",
+    image: "/assets/images/eco-accelerators.png",
   },
 
   // {
@@ -92,6 +91,10 @@ export default function HeroCarousel() {
     }, 300); // must match transition duration
   };
 
+//   const changeSlide = (newIndex: number) => {
+//   setIndex(newIndex);
+// };
+
   const prev = () => {
     const newIndex = index === 0 ? total - 1 : index - 1;
     changeSlide(newIndex);
@@ -111,27 +114,32 @@ export default function HeroCarousel() {
     return () => clearInterval(timer);
   }, [index]);
 
-
-
-
-
-
   return (
-    <section className="relative w-full h-[450px] overflow-hidden">
+    <section className="relative w-full min-h-[60vh] md:min-h-[65vh] lg:min-h-[60vh] flex items-center overflow-hidden">
       {/* Background Image */}
-     <Image
-  src={slides[index].image}
-  alt="Hero background"
-  fill
-  priority
-  className={`object-cover transition-opacity duration-300 `}
-/>
-
+      <div className="absolute inset-0">
+        {slides.map((slide, i) => (
+          <Image
+            key={i}
+            src={slide.image}
+            alt="Hero background"
+            fill
+            priority={i === 0}
+            className={`object-cover transition-opacity duration-700 ease-in-out ${
+              i === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          />
+        ))}
+      </div>
 
       {/* Overlay */}
-<div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/60 z-20 pointer-events-none" />
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center px-6 md:px-28">
+      <div
+        className={`relative z-10 px-6 md:px-28 text-white z-30 transition-opacity duration-500 ${
+          fade ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="max-w-[700px] text-white">
           <h1 className="text-3xl md:text-4xl font-semibold mb-6">
             {slides[index].title}
@@ -141,24 +149,24 @@ export default function HeroCarousel() {
             {slides[index].desc}
           </p>
 
-            <button className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl">
-                <span className="relative z-10">{slides[index].cta}</span>
-                <span className="shine" />
-              </button>
+          <button className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl">
+            <span className="relative z-10">{slides[index].cta}</span>
+            <span className="shine" />
+          </button>
         </div>
       </div>
 
       {/* Arrows */}
       <button
-       onClick={prev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition"
+        onClick={prev}
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition"
       >
         <ChevronLeft />
       </button>
 
       <button
-       onClick={next}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition"
+        onClick={next}
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full  bg-white/20 hover:bg-white/30 text-white transition"
       >
         <ChevronRight />
       </button>
@@ -168,7 +176,7 @@ export default function HeroCarousel() {
         {slides.map((_, i) => (
           <button
             key={i}
-      onClick={() => changeSlide(i)}
+            onClick={() => changeSlide(i)}
             className={`w-3 h-3 rounded-full ${
               i === index ? "bg-white" : "bg-white/40"
             }`}

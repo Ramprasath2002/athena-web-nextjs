@@ -637,7 +637,7 @@
   }
 
   .embla__slide {
-    flex: 0 0 380px;
+    flex: 0 0 400px;
     pointer-events: auto;
     padding: 1rem;
     user-select: none; 
@@ -649,6 +649,7 @@
     }
   }
 
+  
   /* ================================
    CARD
 ================================ */
@@ -725,6 +726,31 @@
     .embla__slide {
       flex: 0 0 33.333%;
     }
+  }
+}
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.testimonial-card {
+  flex: 0 0 380px; /* fixed width for smooth loop */
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

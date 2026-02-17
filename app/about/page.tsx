@@ -63,67 +63,83 @@ export default function AboutPage() {
       desc: "Solar manufacturing's complexities, such as Applied Materials and SPC, demand advanced analytics and continuous experimentation. Athena's expertise and passion position us to effectively tackle these challenges.",
     },
   ];
-
   const testimonials = [
     {
       company: "InnovaFlex Foundry",
       name: "Jon Baker",
       role: "IT Manager – InnovaFlex Foundry",
-      text: "Athena provides expertise in MES and beyond. They have proven extremely easy to work with, offering project management, development, integration and support ensuring projects are completed successfully.",
-    },
-    {
-      company: "Nevro",
-      name: "Alonso Moya",
-      role: "Site Director – Nevro",
-      text: "Having a commercial partner is vital for seamless implementation. Athena was proactive in providing strategic solutions and supporting business needs.",
+      image: "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+      text: `Athena provides expertise in MES and beyond.  They have proven extremely easy to work with, offering project management, SW development, integration, support and expertise ensuring projects are completed successfully.  I strongly recommend Athena for MES implementations or Opcenter upgrades.`,
     },
     {
       company: "Dexcom",
       name: "Wei Wu",
-      role: "Senior Manager – IT",
-      text: "Athena demonstrated exceptional expertise and professionalism throughout our Camstar launch.",
-    },
-    {
-      company: "MiaSole",
-      name: "Siva Papaiya",
-      role: "Senior Director – MiaSole",
-      text: "Athena’s team has unrivalled proficiency in manufacturing and commitment towards successful execution.",
-    },
-    {
-      company: "Neophotonics",
-      name: "Aim Khan",
-      role: "CIO / VP",
-      text: "Athena consistently exceeds business targets and overcomes challenges with excellence.",
-    },
-    {
-      company: "Marki Microwave",
-      name: "Operations Team",
-      role: "Manufacturing Operations",
-      text: "Selecting Athena as our implementation partner was the right decision. Professional and reliable team.",
-    },
-    {
-      company: "Conformis",
-      name: "Leadership Team",
-      role: "Manufacturing Systems",
-      text: "Athena delivered all projects efficiently with proper documentation and validation.",
+      role: "Senior Manager, IT",
+      image: "/assets/Clients/Dexcom.png",
+      text: `“I strongly recommend Athena based on their exceptional performance and successful completion of our recent Camstar v8.9 launch. Their dedication, expertise, and professionalism have greatly contributed to the success of our project and have exceeded our expectations.
+Throughout the project, Athena demonstrated an in-depth understanding of our unique requirements and objectives. They showcased their comprehensive knowledge of manufacturing processes, industry best practices, and Camstar latest version 8.9 solutions. Their ability to translate our complex needs into an efficient and tailored manufacturing execution system was truly remarkable. We have experienced improved productivity, streamlined workflows, enhanced quality control, and real-time visibility into our manufacturing processes. Their commitment to transparency and open communication fostered a strong working relationship, allowing us to have full confidence in their abilities.
+Moreover, the post-implementation hypercare support provided by Athena has been exceptional. They have been responsive to our ongoing needs, promptly addressing any questions or concerns that arise. Their dedication to customer satisfaction and their commitment to ensuring the software’s continued optimal performance are highly commendable`,
     },
     {
       company: "Viavi",
-      name: "Engineering Head",
-      role: "Manufacturing",
-      text: "Athena delivered streamlined processes and seamless integration across our systems.",
+      name: "",
+      role: "",
+      image: "/assets/Clients/VLAVI.png",
+      text: `Through Athena’s exhaustive efforts and deep domain expertise, we were able to implement a ‘Viavi Aligned Solution’ of Siemens Opcenter 8.x that met our complex MES System requirements. This was done via streamlined manufacturing processes, user friendly UI/ UX, seamless integration with our factory equipment / metrology and a single source for factory insights. Athena utilized Industry 4.0 foundations and architected a cookie-cutter approach that is ready for all our global factories.`,
+    },
+    {
+      company: "MiaSolé Hi-Tech",
+      name: "Siva Papaiya",
+      role: "Senior Director, MiaSolé Hi-Tech",
+      image: "/assets/Clients/Miasole.png",
+      text: `Athena team has unrivalled proficiency in manufacturing and their commitment towards successful execution has been a very positive experience.`,
     },
     {
       company: "GLO-USA",
-      name: "Plant Director",
-      role: "Operations",
-      text: "Great partnership with Athena. Their dedication and innovative approach improved our shop floor management.",
+      name: "",
+      role: "",
+      image: "/assets/Clients/GLO-USA.png",
+      text: `Great partnership with Athena! We appreciate Athena’s consistent dedication, attention to detail and innovative approach in delivering a Shop Floor Management solution that is enabling better visibility of our manufacturing resulting in improvements in both product quality and cost.`,
+    },
+    {
+      company: "Nevro",
+      name: "Alonso Moya",
+      role: "Site Director, Nevro",
+      image: "/assets/Clients/Nevro.png",
+      text: `Having a commercial partner is vital for an exemplary, seamless implementation, and throughout the development and setup of MES in Nevro Costa Rica, Athena has been a critical piece. With high support for our needs, Athena was always proactive in looking for critical and strategic solutions to the Business’s needs and taking care of the integrity and structure of the systems. It was a satisfactory experience to our liking due to all the knowledge transmitted during this journey of implementing MES in our plant.
+An excellent partner for us.`,
     },
     {
       company: "Emcore",
       name: "Jamie Lohrungruang",
       role: "VP of Information Technology",
-      text: "Athena completely transformed our MES implementation and exceeded expectations.",
+      image: "/assets/Clients/Emcore.png",
+
+      text: `We were very fortunate to have found Athena as they helped us turnaround our Opcenter Semi 8.9 MES project after our initial attempt working with a different Solution Integrator was unsuccessful. Their expertise of the OpCenter product along with their experience in semiconductor allowed them to help us completely change the design of the solution to better leverage best practices and meet our business needs. We cannot be happier working with Athena, and can see that they went above and beyond what was documented to make sure we are happy with the solution. They really came through for us. You will not be disappointed working with them.`,
+    },
+    {
+      company: "Marki Microwave",
+      name: "",
+      role: "",
+      image: "/assets/Clients/Marki.png",
+      text: `We reviewed several MES suppliers and selected Siemens Opscenter MES / APS as the best fit for Marki Microwave. Selecting the platform is part of the journey but a successful implementation requires an experienced system integrator.
+We choose Athena Technologies as our implementation partner as they had several successful implementations in the electronics / medical devices customers. The company resourced our project with an experienced project manager and technical team who were flexible and collaborated well with our small internal team to ensure we get the solution that fits the needs of our manufacturing operations. We used a phase and sprint approach to complete our implementation in a 9-month time frame.
+We will continue to work together with Athena to carry out continuous process improvement and harmonization to deliver greater efficiency and quality to meet our customers’ demands today and well into the more digital future.`,
+    },
+    {
+      company: "Conformis",
+      name: "",
+      role: "",
+      image: "/assets/Clients/Conformis.png",
+      text: `A few years ago, Conformis was looking for a boutique Camstar consulting SI. Athena was selected and has continuously delivered on all projects, There was no red tape. as with larger organizations, and while still receiving all the proper documentation and validation.
+“I am happy to consider Athena a Conformis partner”.`,
+    },
+    {
+      company: "Neophotonics",
+      name: "Aim Khan",
+      role: "CIO / VP Neophotonics",
+      image: "/assets/Clients/Neophotonics.png",
+      text: `Athena consistently exceeds our business targets, overcomes challenges and goes the extra mile.~ Great Company, Excellent Team and Partner.`,
     },
   ];
 
@@ -308,38 +324,41 @@ export default function AboutPage() {
         <div className="container">
           <h2 className="testimonial-title">Testimonial</h2>
           <div className="testimonial-grid">
-          {testimonials.map((item, i) => {
-            const companyLogo = logos.find((logo) =>
-              logo.toLowerCase().includes(item.company.toLowerCase()),
-            );
+            {testimonials.map((item, i) => {
+              const companyLogo = logos.find((logo) =>
+                logo
+                  .toLowerCase()
+                  .replace(/[_-]/g, " ")
+                  .includes(item.company.toLowerCase()),
+              );
 
-            return (
-              <div key={i} className="testimonial-card">
-                <div className="card-header">
-                  <h4>{item.company}</h4>
+              return (
+                <div key={i} className="testimonial-card">
+                  <div className="card-header">
+                    <div className="company-info">
+                      <h4>{item.company}</h4>
+                    </div>
 
-                  {companyLogo && (
-                    <img
-                      src={companyLogo}
-                      alt={item.company}
-                      className="testimonial-logo"
-                    />
-                  )}
-                </div>
+                    {item.image && (
+                      <img
+                        src={item.image}
+                        alt={item.company}
+                        className="testimonial-logo"
+                      />
+                    )}
+                  </div>
 
-                <div className="card-body">
-                  <p>{item.text}</p>
-                </div>
+                  <div className="card-body">
+                    <p>{item.text}</p>
+                  </div>
 
-                <div className="card-footer">
-                  <div>
-                    <strong>{item.name}</strong>
-                    <span>{item.role}</span>
+                  <div className="card-footer">
+                    <strong>{item.name || ""}</strong>
+                    {item.role && <span>{item.role}</span>}
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           </div>
         </div>
       </section>

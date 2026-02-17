@@ -1,6 +1,7 @@
 "use client";
 import "./whoWeAre.scss";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function WhoWeAre() {
   return (
@@ -30,16 +31,13 @@ export default function WhoWeAre() {
 
           {/* RIGHT IMAGE */}
           <div className="who-image">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
+            <Image
+              src="/assets/images/Prototyping-to-Delivery.jpg"
+              alt="Prototyping to Delivery"
+              width={600}
+              height={400}
               className="w-full h-full object-cover rounded-md"
-            >
-              <source src="/assets/videos/MES-VID.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
         </div>
       </section>
@@ -141,16 +139,19 @@ export default function WhoWeAre() {
           {/* IMAGE SIDE */}
           <div className="what-media">
             <div className="what-image-wrapper">
-                  <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover rounded-md"
-            >
-              <source src="https://athena.homedecorsind.com/wp-content/uploads/2024/07/aps.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover rounded-md"
+              >
+                <source
+                  src="https://athena.homedecorsind.com/wp-content/uploads/2024/07/aps.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
