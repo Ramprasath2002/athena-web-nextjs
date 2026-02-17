@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <>
       {/* HERO + STATS WRAPPER */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden pt-[62px]">
+   <section className="relative flex flex-col overflow-hidden pt-[62px]">
         {/* HERO */}
         <div className="relative flex-1">
           <HeroCarousel />
