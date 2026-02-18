@@ -13,7 +13,7 @@ export const logos = [
   "/assets/Clients/Enovix.png",
   "/assets/Clients/Entrgris.jpg",
   "/assets/Clients/Finisar.png",
-  "/assets/Clients/glo-usa.png",
+  "/assets/Clients/GLO-USA.png",
   "/assets/Clients/Honeywell.png",
   "/assets/Clients/HSC.png",
   "/assets/Clients/InnovaFlex_Foundry.jpg",
