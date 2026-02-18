@@ -16,23 +16,19 @@
     object-fit: cover;
   }
 
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: #1b1b1b99;
-  }
+ 
 
   .hero-content {
     position: relative;
     z-index: 2;
   }
 
-  .hero h1 {
-    font-size: 42px;
+    h1 {
+    font-size: 48px;
     font-weight: 700;
   }
 
-  .hero p {
+    p {
     margin-top: 10px;
     font-size: 22px;
   }
@@ -408,90 +404,8 @@
 
   }
 
-  /* CTA SECTION */
-  .cta-section {
-    padding: 80px 0;
-    background: #f4f6f8;
+ 
   }
-
-  .cta-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: auto;
-    height: 300px;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
-
-  .cta-bg {
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  /* Overlay gradient */
-  .cta-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 40, 80, 0.85),
-      rgba(0, 90, 160, 0.6),
-      rgba(150, 60, 20, 0.6)
-    );
-    z-index: 1;
-  }
-
-  .cta-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    padding: 20px;
-  }
-
-  .cta-content h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-
-  .cta-content p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.95;
-  }
-
-  /* Button */
-  .cta-button {
-    background: #1d9bf0;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 30px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-
-  .cta-button:hover {
-    background: #0b7bdc;
-    transform: translateY(-3px);
-  }
-
-  /* Small note */
-  .cta-note {
-    display: block;
-    margin-top: 15px;
-    font-size: 12px;
-    opacity: 0.85;
-  }
-}
-
 /* =========================
    LARGE TABLET (≤1200px)
 ========================= */
@@ -628,18 +542,7 @@
     min-height: auto;
   }
 
-  .about-page .cta-wrapper {
-    height: auto;
-    padding: 60px 20px;
-  }
-
-  .about-page .cta-content h2 {
-    font-size: 22px;
-  }
-
-  .about-page .cta-content p {
-    font-size: 14px;
-  }
+ 
 }
 
 

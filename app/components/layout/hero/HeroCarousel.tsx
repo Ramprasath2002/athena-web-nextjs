@@ -5,17 +5,17 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  {
-    title: "Gain End-to-End Visibility in Medical Device Manufacturing",
-    desc: "Watch the on-demand webinar to learn how manufacturers achieve visibility, compliance, and operational excellence.",
-    cta: "Download Now",
-    image: "/assets/images/MDM.png",
-  },
+  // {
+  //   title: "Gain End-to-End Visibility in Medical Device Manufacturing",
+  //   desc: "Watch the on-demand webinar to learn how manufacturers achieve visibility, compliance, and operational excellence.",
+  //   cta: "Download Now",
+  //   image: "/assets/images/MDM.png",
+  // },
   {
     title: "Digitizing the Manufacturing Enterprise Since 2011",
     desc: "Leveraging deep expertise to enhance partnerships and drive long-term manufacturing success.",
     cta: "Connect Us",
-    image: "/assets/images/DME.jpg",
+    image: "/assets/images/DME.png",
   },
 
   {
@@ -29,7 +29,7 @@ const slides = [
     title: "Expertise in MES, PLM, ERP & More",
     desc: "Specialized in MES, PLM, ERP, CMMS, and smart factory analytics.",
     cta: "MES, PLM & More",
-    image: "/assets/images/mlsandpls.jpg",
+    image: "/assets/images/mlsandpls.PNG",
   },
 
   {
@@ -88,12 +88,8 @@ export default function HeroCarousel() {
     setTimeout(() => {
       setIndex(newIndex);
       setFade(true); // fade in
-    }, 300); // must match transition duration
+    }, 300);
   };
-
-//   const changeSlide = (newIndex: number) => {
-//   setIndex(newIndex);
-// };
 
   const prev = () => {
     const newIndex = index === 0 ? total - 1 : index - 1;
@@ -132,20 +128,27 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-20 pointer-events-none" />
       {/* Content */}
       <div
-        className={`relative z-10 px-6 md:px-28 text-white z-30 transition-opacity duration-500 ${
+        className={`relative z-30 px-6 md:px-28 transition-opacity duration-500 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="max-w-[700px] text-white">
+        <div
+          className="max-w-[700px] 
+                  bg-white/10 
+                  // backdrop-blur-xl 
+                  border border-white/20 
+                  shadow-2xl 
+                  p-8 
+                  rounded-2xl 
+                  text-white"
+        >
           <h1 className="text-3xl md:text-4xl font-semibold mb-6">
             {slides[index].title}
           </h1>
 
-          <p className="text-base md:text-lg text-white/80 mb-8">
+          <p className="text-base md:text-lg text-white/90 mb-8">
             {slides[index].desc}
           </p>
 

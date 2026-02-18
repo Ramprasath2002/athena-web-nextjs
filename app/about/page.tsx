@@ -1,8 +1,10 @@
 import Image from "next/image";
 import "./about.scss";
-import { desc } from "framer-motion/client";
-// import { logos } from "@/app/components/ClientLogos";
+import { desc, i } from "framer-motion/client";
 import { logos } from "../components/ClientLogos";
+import ScrollReveal from "@/app/components/ScrollReveal";
+import CTASection from "@/app/components/CTASection";
+
 export default function AboutPage() {
   const journey = [
     {
@@ -82,7 +84,7 @@ Moreover, the post-implementation hypercare support provided by Athena has been 
     },
     {
       company: "Viavi",
-      name: "",
+      name: "Viavi",
       role: "",
       image: "/assets/Clients/VLAVI.png",
       text: `Through Athena’s exhaustive efforts and deep domain expertise, we were able to implement a ‘Viavi Aligned Solution’ of Siemens Opcenter 8.x that met our complex MES System requirements. This was done via streamlined manufacturing processes, user friendly UI/ UX, seamless integration with our factory equipment / metrology and a single source for factory insights. Athena utilized Industry 4.0 foundations and architected a cookie-cutter approach that is ready for all our global factories.`,
@@ -96,7 +98,7 @@ Moreover, the post-implementation hypercare support provided by Athena has been 
     },
     {
       company: "GLO-USA",
-      name: "",
+      name: "GLO-USA",
       role: "",
       image: "/assets/Clients/GLO-USA.png",
       text: `Great partnership with Athena! We appreciate Athena’s consistent dedication, attention to detail and innovative approach in delivering a Shop Floor Management solution that is enabling better visibility of our manufacturing resulting in improvements in both product quality and cost.`,
@@ -119,7 +121,7 @@ An excellent partner for us.`,
     },
     {
       company: "Marki Microwave",
-      name: "",
+      name: "Marki Microwave",
       role: "",
       image: "/assets/Clients/Marki.png",
       text: `We reviewed several MES suppliers and selected Siemens Opscenter MES / APS as the best fit for Marki Microwave. Selecting the platform is part of the journey but a successful implementation requires an experienced system integrator.
@@ -128,7 +130,7 @@ We will continue to work together with Athena to carry out continuous process im
     },
     {
       company: "Conformis",
-      name: "",
+      name: "Conformis",
       role: "",
       image: "/assets/Clients/Conformis.png",
       text: `A few years ago, Conformis was looking for a boutique Camstar consulting SI. Athena was selected and has continuously delivered on all projects, There was no red tape. as with larger organizations, and while still receiving all the proper documentation and validation.
@@ -146,23 +148,24 @@ We will continue to work together with Athena to carry out continuous process im
   return (
     <div className="about-page">
       {/* HERO */}
-      <section className="hero">
-        <Image
-          src="/assets/images/aboutus.png"
-          alt="About Hero"
-          fill
-          className="hero-img"
-        />
-        <div className="overlay" />
-        <div className="hero-content">
-          <h1>About Us</h1>
-          <p>
-            Delivering innovative solutions that drive measurable business
-            growth.
-          </p>
-        </div>
-      </section>
-
+      <ScrollReveal>
+        <section className="hero">
+          <Image
+            src="/assets/images/aboutus.png"
+            alt="About Hero"
+            fill
+            className="hero-img"
+          />
+          <div className="hero-content">
+            <h1>About Us</h1>
+            <p>
+              Delivering innovative solutions that drive measurable business
+              growth.
+            </p>
+            <button className="soc-hero__btn">Contact Us</button>
+          </div>
+        </section>
+      </ScrollReveal>
       {/* ACHIEVEMENTS & ABOUT */}
       <section className="achievements">
         <div className="container">
@@ -249,7 +252,6 @@ We will continue to work together with Athena to carry out continuous process im
           </div>
         </div>
       </section>
-
       {/* WHAT WE DO */}
       <section className="services-section">
         <div className="container">
@@ -322,18 +324,14 @@ We will continue to work together with Athena to carry out continuous process im
       {/* TESTIMONIAL SECTION */}
       <section className="about-testimonial-section">
         <div className="container">
-          <h2 className="testimonial-title">Testimonial</h2>
-          <div className="testimonial-grid">
-            {testimonials.map((item, i) => {
-              const companyLogo = logos.find((logo) =>
-                logo
-                  .toLowerCase()
-                  .replace(/[_-]/g, " ")
-                  .includes(item.company.toLowerCase()),
-              );
+          <ScrollReveal>
+            <h2 className="testimonial-title">Testimonial</h2>
+          </ScrollReveal>
 
-              return (
-                <div key={i} className="testimonial-card">
+          <div className="testimonial-grid">
+            {testimonials.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="testimonial-card">
                   <div className="card-header">
                     <div className="company-info">
                       <h4>{item.company}</h4>
@@ -357,41 +355,24 @@ We will continue to work together with Athena to carry out continuous process im
                     {item.role && <span>{item.role}</span>}
                   </div>
                 </div>
-              );
-            })}
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
-      {/* FINAL CTA */}
-      <section className="cta-section">
-        <div className="cta-wrapper">
-          <div className="cta-overlay" />
 
-          <Image
-            src="/assets/images/new-req.jpg"
-            alt="CTA Background"
-            fill
-            className="cta-bg"
-          />
-
-          <div className="cta-content">
-            <h2>
-              A New <br /> Requirement?
-            </h2>
-
-            <p>
-              Connect us for expert solutions in MES, PLM, ERP, and more. Reach
-              out today. Our dedicated team is here to assist you!
-            </p>
-
-            <button className="cta-button">Contact Us</button>
-
-            <span className="cta-note">
-              We typically respond within 24 hours.
-            </span>
-          </div>
-        </div>
-      </section>
+ <CTASection
+        title={
+          <>
+            A New <br /> Requirement?
+          </>
+        }
+        description="Connect us for expert solutions in MES, PLM, ERP, and more. Reach out today."
+        buttonText="Contact Us"
+        buttonLink="/contact"
+        note="We typically respond within 24 hours."
+        backgroundImage="/assets/images/new-req.jpg"
+      />
     </div>
   );
 }
