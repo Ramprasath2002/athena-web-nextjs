@@ -29,7 +29,7 @@ const slides = [
     title: "Expertise in MES, PLM, ERP & More",
     desc: "Specialized in MES, PLM, ERP, CMMS, and smart factory analytics.",
     cta: "MES, PLM & More",
-    image: "/assets/images/mlsandpls.PNG",
+    image: "/assets/images/mlsandpls.png",
   },
 
   {
