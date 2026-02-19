@@ -194,27 +194,27 @@ const caseStudies = [
 const galleryItems = [
   {
     title: "Realize Live Americas 2025",
-    image: "/assets/gallery/americas-2025.jpg",
+    image: "https://athenatec.com/wp-content/uploads/2025/06/Media-9-768x576.jpeg",
     slug: "/gallery/realize-live-americas-2025",
   },
   {
     title: "Americas Partner Conference 2025",
-    image: "/assets/gallery/partner-2025.jpg",
+    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-2-768x576.jpg",
     slug: "/gallery/americas-partner-conference-2025",
   },
   {
     title: "Realize Live Americas 2024",
-    image: "/assets/gallery/americas-2024.jpg",
+    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-26-768x576.jpg",
     slug: "/gallery/realize-live-americas-2024",
   },
   {
     title: "Realize Live Europe 2024",
-    image: "/assets/gallery/europe-2024.jpg",
+    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-17-768x1024.jpg",
     slug: "/gallery/realize-live-europe-2024",
   },
   {
     title: "Realize Live Americas 2023",
-    image: "/assets/gallery/americas-2023.jpg",
+    image: "https://athenatec.com/wp-content/uploads/2024/12/shared-image-8-1-768x576.jpg",
     slug: "/gallery/realize-live-americas-2023",
   },
 ];
