@@ -1,10 +1,10 @@
 import Image from "next/image";
 import "./about.scss";
-import { desc, i } from "framer-motion/client";
 import { logos } from "../components/ClientLogos";
 import ScrollReveal from "@/app/components/ScrollReveal";
 import CTASection from "@/app/components/CTASection";
-
+import HeroSection from "@/app/components/HeroSection";
+ 
 export default function AboutPage() {
   const journey = [
     {
@@ -70,7 +70,7 @@ export default function AboutPage() {
       company: "InnovaFlex Foundry",
       name: "Jon Baker",
       role: "IT Manager – InnovaFlex Foundry",
-      image: "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+      image: "/assets/Clients/InnovaFlex_Foundry.jpg",
       text: `Athena provides expertise in MES and beyond.  They have proven extremely easy to work with, offering project management, SW development, integration, support and expertise ensuring projects are completed successfully.  I strongly recommend Athena for MES implementations or Opcenter upgrades.`,
     },
     {
@@ -148,24 +148,14 @@ We will continue to work together with Athena to carry out continuous process im
   return (
     <div className="about-page">
       {/* HERO */}
-      <ScrollReveal>
-        <section className="hero">
-          <Image
-            src="/assets/images/aboutus.png"
-            alt="About Hero"
-            fill
-            className="hero-img"
-          />
-          <div className="hero-content">
-            <h1>About Us</h1>
-            <p>
-              Delivering innovative solutions that drive measurable business
-              growth.
-            </p>
-            <button className="soc-hero__btn">Contact Us</button>
-          </div>
-        </section>
-      </ScrollReveal>
+      <HeroSection
+        title="About Us"
+        description="Delivering innovative solutions that drive measurable business growth."
+        image="/assets/images/aboutus.png"
+        align="center"
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
       {/* ACHIEVEMENTS & ABOUT */}
       <section className="achievements">
         <div className="container">
@@ -361,7 +351,7 @@ We will continue to work together with Athena to carry out continuous process im
         </div>
       </section>
 
- <CTASection
+      <CTASection
         title={
           <>
             A New <br /> Requirement?

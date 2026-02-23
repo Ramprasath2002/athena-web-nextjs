@@ -60,7 +60,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           <div className="ml-4 flex flex-col gap-2 text-sm">
             <Link onClick={onNavigate} href="/partners/siemens-opcenter">Siemens Opcenter</Link>
             <Link onClick={onNavigate} href="/partners/critical-manufacturing">Critical Manufacturing</Link>
-            <Link onClick={onNavigate} href="/partners/eyrlit">Eyelit</Link>
+            <Link onClick={onNavigate} href="/partners/eyelit">Eyelit</Link>
           </div>
         )}
 
@@ -163,7 +163,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           <div className="absolute left-0 top-full w-56 rounded-xl bg-white shadow-lg p-4">
             <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/siemens-opcenter">Siemens Opcenter</Link>
             <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/critical-manufacturing">Critical Manufacturing</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/eyrlit">Eyelit</Link>
+            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/eyelit">Eyelit</Link>
           </div>
         )}
       </div>

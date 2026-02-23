@@ -1,10 +1,13 @@
 import Image from "next/image";
 import "./siemens.scss";
 import ScrollReveal from "@/app/components/ScrollReveal";
-// import { Link } from "lucide-react";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import CTASection from "@/app/components/CTASection";
+import HeroSection from "@/app/components/HeroSection";
+import CaseStudiesSection from "@/app/components/CaseStudiesSection";
+import GallerySection from "@/app/components/GallerySection";
+
 const services = [
   {
     title: "Siemens Opcenter Execution – Semiconductor",
@@ -46,7 +49,7 @@ const testimonials = [
     company: "InnovaFlex Foundry",
     name: "Jon Baker",
     role: "IT Manager – InnovaFlex Foundry",
-    image: "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+    image: "/assets/Clients/InnovaFlex_Foundry.jpg",
     text: `Athena provides expertise in MES and beyond.  They have proven extremely easy to work with, offering project management, SW development, integration, support and expertise ensuring projects are completed successfully.  I strongly recommend Athena for MES implementations or Opcenter upgrades.`,
   },
   {
@@ -123,11 +126,11 @@ const logos = [
   "/assets/Clients/Emcore.png",
   "/assets/Clients/Enovix.png",
   "/assets/Clients/Finisar.png",
-  "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+  "/assets/Clients/InnovaFlex_Foundry.jpg",
   "/assets/Clients/Lumentum.png",
   "/assets/Clients/Marki.png",
   "/assets/Clients/Miasole.png",
-  "https://athenatec.com/wp-content/uploads/2024/12/06.png",
+  "/assets/Clients/mission-solar.png",
   "/assets/Clients/Neophotonics.png",
   "/assets/Clients/Nevro.png",
   "/assets/Clients/Penumbra.png",
@@ -144,6 +147,7 @@ const caseStudies = [
       "Our Medical device customer had an external system to get approval for Surgical Plans from the surgeon which had to be integrated to Opcenter in several Operations.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/12/freepik-export-202412191322302WRy-1920x1280.jpeg",
+    link: "/downloads/case1.pdf",
   },
   {
     id: 2,
@@ -153,6 +157,7 @@ const caseStudies = [
       "Customer has Multiple Factories where they manufacture different devices. Required to Display Modeling and WIP Data based on the Employee Role and Factory.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/12/factory-worker-uniform-presenting-new-products-manager-1920x1280.jpg",
+    link: "/downloads/case2.pdf",
   },
   {
     id: 3,
@@ -162,6 +167,7 @@ const caseStudies = [
       "Customer had a requirement to implement Shipper case association to the Container during Packaging Process​.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/12/freepik-export-20241219133957E1bW-1920x1280.jpeg",
+    link: "/downloads/case3.pdf",
   },
   {
     id: 4,
@@ -171,6 +177,7 @@ const caseStudies = [
       "Production Client which is a main UI for Operator in Electronics Suite was Optimized to cover maximum WIP transactions​.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/12/close-up-computer-keyboard-1920x1280.jpg",
+    link: "/downloads/case4.pdf",
   },
   {
     id: 5,
@@ -180,6 +187,7 @@ const caseStudies = [
       "WIP Main page which is Key UI for all the WIP transactions in Semi Suite was optimized to reduce clicks and scrolls and enhanced color codes for better user experience and quick navigations​.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-17-at-10.11.32-e1734616151384.jpeg",
+    link: "/downloads/case5.pdf",
   },
   {
     id: 6,
@@ -189,58 +197,51 @@ const caseStudies = [
       "Data Correction: Customer had a requirement to correct the collected data and also record Audit Trail for the same.",
     image:
       "https://athenatec.com/wp-content/uploads/2024/12/businessman-compliance-rules-law-regulation-policy-virtual-screen-documents-with-checkbox-lists-1920x1277.jpg",
+    link: "/downloads/case6.pdf",
   },
 ];
 const galleryItems = [
   {
     title: "Realize Live Americas 2025",
-    image: "https://athenatec.com/wp-content/uploads/2025/06/Media-9-768x576.jpeg",
+    image:
+      "https://athenatec.com/wp-content/uploads/2025/06/Media-9-768x576.jpeg",
     slug: "/gallery/realize-live-americas-2025",
   },
   {
     title: "Americas Partner Conference 2025",
-    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-2-768x576.jpg",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/11/Media-2-768x576.jpg",
     slug: "/gallery/americas-partner-conference-2025",
   },
   {
     title: "Realize Live Americas 2024",
-    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-26-768x576.jpg",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/11/Media-26-768x576.jpg",
     slug: "/gallery/realize-live-americas-2024",
   },
   {
     title: "Realize Live Europe 2024",
-    image: "https://athenatec.com/wp-content/uploads/2024/11/Media-17-768x1024.jpg",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/11/Media-17-768x1024.jpg",
     slug: "/gallery/realize-live-europe-2024",
   },
   {
     title: "Realize Live Americas 2023",
-    image: "https://athenatec.com/wp-content/uploads/2024/12/shared-image-8-1-768x576.jpg",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/12/shared-image-8-1-768x576.jpg",
     slug: "/gallery/realize-live-americas-2023",
   },
 ];
 export default function SiemensOpcenter() {
   return (
     <main>
-      {/* HERO SECTION */}
-      <section className="soc-hero">
-        <Image
-          src="/assets/images/siemens.webp"
-          alt="Siemens Opcenter Hero"
-          fill
-          priority
-          className="soc-hero__img"
-        />
-
-        <div className="soc-hero__content">
-          <h1>Siemens Opcenter MES</h1>
-          <p>
-            Experienced in implementing and upgrading Opcenter MES across
-            versions, from Camstar 3.2 to Opcenter 2410.
-          </p>
-
-          <button className="soc-hero__btn">Contact Us</button>
-        </div>
-      </section>
+      <HeroSection
+        title="Siemens Opcenter MES"
+        description="Experienced in implementing and upgrading Opcenter MES across versions."
+        image="/assets/images/siemens.webp"
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
 
       {/* DESCRIPTION SECTION */}
       <section className="soc-description">
@@ -566,67 +567,16 @@ export default function SiemensOpcenter() {
           </div>
         </div>
       </section>
-      <section className="case-studies-section">
-        <div className="container">
-          <h2 className="section-title">Case Studies</h2>
 
-          <div className="case-grid">
-            {caseStudies.map((item) => (
-              <div key={item.id} className="case-card">
-                <div className="case-image">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={500}
-                    height={350}
-                  />
-                </div>
-
-                <div className="case-content">
-                  <h3>{item.title}</h3>
-                  <span className="case-tag">{item.tag}</span>
-                  <p>{item.description}</p>
-                  <Link href="#" className="case-link">
-                    Download Now
-                    <ArrowUpRight className="arrow" size={20} />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="gallery-section">
-        <div className="container">
-          <h2 className="section-title">Gallery</h2>
-
-          <div className="gallery-grid">
-            {galleryItems.map((item, index) => (
-              <Link href={item.slug} key={index} className="gallery-card">
-                <div className="image-wrapper">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                  />
-                </div>
-
-                <div className="overlay">
-                  <h3>{item.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CaseStudiesSection title="Case Studies" data={caseStudies} bg="light" />
+      <GallerySection title="Event Gallery" data={galleryItems} bg="light" />
       <CTASection
         title={
           <>
             A New <br /> Requirement?
           </>
         }
-        description="Connect us for expert solutions in MES, PLM, ERP, and more. Reach out today."
+        description="At Athena, our team guides your Industry 4.0 journey with deep expertise in digital transformation and manufacturing solutions. "
         buttonText="Contact Us"
         buttonLink="/contact"
         note="We typically respond within 24 hours."

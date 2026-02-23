@@ -22,7 +22,7 @@ export const logos = [
   "/assets/Clients/Marki.png",
   "/assets/Clients/Miasole.png",
   "/assets/Clients/Micron.png",
-  "https://athenatec.com/wp-content/uploads/2024/12/06.png",
+  "/assets/Clients/mission-solar.png",
   "/assets/Clients/Neophotonics.png",
   "/assets/Clients/Nevro.png",
   "/assets/Clients/Penumbra.png",

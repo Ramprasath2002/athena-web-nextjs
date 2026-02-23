@@ -100,7 +100,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
   const testimonials = [
     {
       name: "Jon Baker",
-      image: "https://athenatec.com/wp-content/uploads/2024/10/innova.jpg",
+      image: "/assets/Clients/InnovaFlex_Foundry.jpg",
       role: "IT Manager – InnovaFlex Foundry",
       text: "Athena provides expertise in MES and beyond.  They have proven extremely easy to work with, offering project management, SW development, integration, support and expertise ensuring projects are completed successfully.  I strongly recommend Athena for MES implementations or Opcenter upgrades.",
     },
@@ -126,7 +126,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       name: "Viavi",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/10/06-2-e1727231323480-1.png",
+        "https://athena.homedecorsind.com/wp-content/2024/10/06-2-e1727231323480-1.png",
       text: "Through Athena’s exhaustive efforts and deep domain expertise, we were able to implement a ‘Viavi Aligned Solution’ of Siemens Opcenter 8.x that met our complex MES System requirements. This was done via streamlined manufacturing processes, user friendly UI/ UX, seamless integration with our factory equipment / metrology and a single source for factory insights. Athena utilized Industry 4.0 foundations and architected a cookie-cutter approach that is ready for all our global factories.",
     },
     {
@@ -385,28 +385,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
           </div>
         </div>
       </section>
-      {/* <section className="testimonial-section">
-        <h2 className="testimonial-title">Meet Our Happy Customers</h2>
-
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__container">
-           {testimonials.map((item, i) => (
-              <div
-                key={i}
-                className="embla__slide"
-                onClick={() => router.push("/about")}
-              >
-                <div className="testimonial-card">
-                  <img src={item.image} alt={item.name} className="avatar" />
-                  <h3>{item.name}</h3>
-                  <div className="role">{item.role}</div>
-                  <p className="testimonial-text">{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+      
         <section className="testimonial-section">
       <h2 className="testimonial-title">Meet Our Happy Customers</h2>
 

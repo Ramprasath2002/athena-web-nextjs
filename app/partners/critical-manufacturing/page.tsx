@@ -1,7 +1,367 @@
+import HeroSection from "@/app/components/HeroSection";
+import Image from "next/image";
+import "./critical.scss";
+import CaseStudiesSection from "@/app/components/CaseStudiesSection";
+import GallerySection from "@/app/components/GallerySection";
+import CTASection from "@/app/components/CTASection";
+
+const caseStudies = [
+  {
+    id: 1,
+    title:
+      "Equipment Integration with CM MES for a global leader in Semiconductors.",
+    tag: "Case Study #1",
+    description:
+      "This project aims to provide solution to implement equipment & processes integration globally through robust backend systems. This phase is part of the CM MES implementation that is spread across various manufacturing locations.",
+    image: "https://athenatec.com/wp-content/uploads/2025/01/2506-1707.jpg",
+    link: "/downloads/case-study-1.pdf",
+  },
+  {
+    id: 2,
+    title:
+      "Integration Between SAP and CM MES across five manufacturing factories worldwide.",
+    tag: "Case Study #2",
+    description:
+      "Athena was involved in implementing enterprise integration with real-time synchronization of data between SAP and CM MES across five global manufacturing factories.",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/12/sap-system-software-automation-concept-virtual-screen-data-center-scaled.jpg",
+    link: "/downloads/case-study-2.pdf",
+  },
+  {
+    id: 3,
+    title:
+      "CM MES product implementation & customization for a state-of-the-art Solar Panel Manufacturer in North America.",
+    tag: "Case Study #3",
+    description:
+      "Currently, the client has implemented a home-grown MES solution for their main factory. Athena’s scope is to conduct full CM MES implementation and customization to enhance operational efficiency.",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/12/professional-mechanical-engineer-team-working-personal-computer-metal-lathe-industrial-manufacturing-factory-engineer-operating-lathe-machinery-product-quality-inspection-scaled.jpg",
+    link: "/downloads/case-study-3.pdf",
+  },
+  {
+    id: 4,
+    title:
+      "CM MES product implementation & customization for a Semiconductor manufacturer.",
+    tag: "Case Study #4",
+    description:
+      "The client offers a unique product and technology portfolio for sensing, illumination and visualization, from prime-quality light emitters and optical components to micro-modules and light sensors.",
+    image:
+      "https://athenatec.com/wp-content/uploads/2024/12/smart-microchip-background-motherboard-closeup-technology-remix-scaled-e1735648934586.jpg",
+    link: "/downloads/case-study-4.pdf",
+  },
+  {
+    id: 5,
+    title:
+      "CM MES product upgrade & customization for state-of-the-art Sensor Fab Manufacturing in North America.",
+    tag: "Case Study #5",
+    description:
+      "Currently, the client has implemented a CM MES solution for one of its large factories. Athena’s role includes upgrading and customizing the solution to support advanced manufacturing processes.",
+    image: "https://athenatec.com/wp-content/uploads/2024/12/image-1.png",
+    link: "/downloads/case-study-5.pdf",
+  },
+];
+const galleryItems = [
+  {
+    title:
+      "MES Industry Summit 2025 MES & Industry 4.0 International Summit 2025",
+    image: "https://athenatec.com/wp-content/uploads/2025/06/shared-image.jpg",
+    slug: "/gallery/realize-live-americas-2025",
+  },
+  {
+    title: "Hannover Messe 2025",
+    image: "https://athenatec.com/wp-content/uploads/2025/04/content.webp",
+    slug: "/gallery/americas-partner-conference-2025",
+  },
+  {
+    title: "Industry 4.0 International Summit 2023",
+    image: "https://athenatec.com/wp-content/uploads/2024/12/Media-18.jpg",
+    slug: "/gallery/realize-live-americas-2024",
+  },
+];
 export default function CriticalManufacturingPage() {
   return (
-    <div>
-      <h1>Critical Manufacturing</h1>
-    </div>
+    <>
+      <HeroSection
+        title="Critical Manufacturing"
+        description="Athena specializes in the implementation, upgrade, and customization of CM MES, along with seamless integrations with external systems such as PLM, ERP, LIMS and Camline."
+        image="/assets/images/critical-manufacturing.jpg"
+        align="center"
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
+
+      <section className="partner-section">
+        <div className="container">
+          <h2 className="section-title">Premier Implementation Partner</h2>
+
+          <div className="partner-badge">
+            <Image
+              src="/assets/images/CMC2.png"
+              alt="Critical Manufacturing Premier Partner"
+              width={500}
+              height={300}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="awards-section">
+        <div className="container">
+          <h2 className="section-title">Awards</h2>
+
+          <div className="awards-grid">
+            <div className="award-card">
+              <Image
+                src="/assets/images/image-3.webp"
+                alt="Marketing Award 2025"
+                width={500}
+                height={350}
+              />
+              <p>Partner of Marketing award from CM for the year 2025</p>
+            </div>
+
+            <div className="award-card">
+              <Image
+                src="https://athenatec.com/wp-content/uploads/2024/11/Cm-02.png"
+                alt="Knowledge Award 2023"
+                width={500}
+                height={350}
+              />
+              <p>Partner of Knowledge award from CM for the year 2023</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CMF OVERVIEW */}
+      <section className="cmf-section">
+        <div className="container cmf-grid">
+          <div className="cmf-content">
+            <h2>CMF Overview</h2>
+            <p>
+              Critical Manufacturing is dedicated to empowering manufacturers of
+              complex, high tech discrete products with a manufacturing
+              execution and intelligence system to achieve their goals, with
+              special focus on the semiconductor, electronics, repetitive
+              flow/batch and medical device industries. Critical Manufacturing’s
+              operations are geographically diverse across EMEA, North America
+              and Asia/Pacific (APAC). The Critical Manufacturing MES has strong
+              data management, analytics and extended MES capability, supported
+              by a sophisticated platform that manages both IoT and
+              transactional MES data in the same data model. Inherently designed
+              to accommodate the Industrial Internet of Things (IIoT), mobile
+              devices, automation and sensors, etc. With revolutionary
+              technologies such as an IoT data platform, factory automation,
+              augmented reality, and a factory digital twin, focus on leveraging
+              the data. Critical Manufacturing is continuing to add global
+              system integrators (SIs) to further expand its market presence.
+              Its product roadmap, leveraging its unique data management
+              capabilities, continues its expansion into extended MES, with
+              features including new product introduction (NPI), material
+              logistics and factory automation. It is focusing on simplifying
+              deployments and upgrades in multiple environments, including
+              Microsoft Azure. Critical Manufacturing MES is truly an Industry
+              4.0 hub that provides manufacturers in demanding discrete
+              industries a platform for digital transformation success.
+            </p>
+          </div>
+
+          <div className="cmf-image">
+            <Image
+              src="https://athena.homedecorsind.com/wp-content/uploads/2025/01/figure1.png"
+              alt="CMF Overview Chart"
+              width={600}
+              height={450}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="templatization-section">
+        <div className="container">
+          {/* TITLE 1 */}
+          <h2 className="section-title">Athena Templatization Solution</h2>
+
+          {/* TOP DIAGRAM */}
+          <div className="templatization-diagram">
+            <Image
+              src="https://athenatec.com/wp-content/uploads/2025/01/16-02-1.png"
+              alt="Templatization Solution"
+              width={600}
+              height={600}
+            />
+          </div>
+
+          {/* TITLE 2 */}
+          <h2 className="section-title benefits-title">
+            Templatization: Benefits
+          </h2>
+
+          {/* BENEFITS IMAGE */}
+          <div className="benefits-diagram">
+            <Image
+              src="https://athenatec.com/wp-content/uploads/2024/12/16-1.png"
+              alt="Templatization Benefits"
+              width={700}
+              height={700}
+            />
+          </div>
+
+          {/* TITLE 3 */}
+          <h2 className="section-title modules-title">
+            CM: MES Modules - One FAB solution
+          </h2>
+
+          <p className="modules-subtitle">
+            Critical Manufacturing MES is the most comprehensive, modular MES
+            solution for complex, global manufacturers on the path to digital
+            transformation
+          </p>
+          <div className="modules-diagram">
+            <Image
+              src="https://athenatec.com/wp-content/uploads/2024/12/CMS-Module1.jpg"
+              alt="Templatization Benefits"
+              width={1000}
+              height={900}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="partner-profile-section">
+        <div className="container">
+          {/* TITLE */}
+          <h2 className="section-title">Partner Profile</h2>
+
+          {/* PROFILE GRID */}
+          <div className="profile-grid">
+            <div className="profile-card">
+              <div className="card-header">
+                <Image
+                  src="/assets/icons/manufacturer.svg"
+                  alt="Industries Icon"
+                  width={60}
+                  height={60}
+                  className="card-icon"
+                />
+                <h3>Industries</h3>
+              </div>
+              <ul>
+                <li>Semiconductor</li>
+                <li>Electronics</li>
+                <li>Medical Device</li>
+                <li>Industrial Equipment Manufacturing</li>
+              </ul>
+            </div>
+
+            <div className="profile-card">
+              <div className="card-header">
+                <Image
+                  src="/assets/icons/cloud-computing.svg"
+                  alt="Solution Platform Icon"
+                  width={60}
+                  height={60}
+                  className="card-icon"
+                />
+                <h3>Solution Platform</h3>
+              </div>
+              <ul>
+                <li>WIP Workflow Management</li>
+                <li>Asset and Durables</li>
+                <li>Dispatching</li>
+                <li>Product Costing</li>
+                <li>ERP / PLM Integration</li>
+                <li>Equipment Integration</li>
+              </ul>
+            </div>
+
+            <div className="profile-card">
+              <div className="card-header">
+                <Image
+                  src="/assets/icons/practice.png"
+                  alt="Athena Practice Icon"
+                  width={60}
+                  height={60}
+                  className="card-icon"
+                />
+                <h3>Athena Practice</h3>
+              </div>
+              <ul>
+                <li>Certified Resources</li>
+                <li>Solution Architect</li>
+                <li>Project / Program Managers</li>
+                <li>Business Analysts</li>
+                <li>Application Developer</li>
+                <li>Integrated Engineers</li>
+                <li>Reporting Analyst</li>
+              </ul>
+            </div>
+
+            <div className="profile-card">
+              <div className="card-header">
+                <Image
+                  src="/assets/icons/job.svg"
+                  alt="Customer Locations Icon"
+                  width={60}
+                  height={60}
+                  className="card-icon"
+                />
+                <h3>Customer Locations</h3>
+              </div>
+              <ul>
+                <li>Americas</li>
+                <li>APAC</li>
+                <li>EMEA</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CAPABILITY SECTION */}
+          <div className="capability-section">
+            <div className="capability-content">
+              <h2>Our CM MES Capability</h2>
+              <p>
+                Athena is premier services partner supporting various client
+                projects working closely with CM services group. We have
+                established dedicated Athena – Critical Manufacturing Center of
+                Excellence (CoE) is based at Chennai, India. Athena has a
+                structured internal training program on MES, CM training &
+                certification program for partners has enabled us to have a deep
+                experience with CM MES. This program has helped us to execute
+                projects independently based on best practices. Our team has
+                various certified functional roles like Modeler, Business System
+                Analyst, Front-End Developer, Back-End Developer and Automation
+                Developer that are required to implement Critical Manufacturing
+                MES. Athena has CM Product Experiences in v7.2, 8.x, 9.0 & 10.x,
+                Implementation, upgrade, customization, and Post Go live
+                Support.
+              </p>
+            </div>
+
+            <div className="capability-image">
+              <Image
+                src="https://athenatec.com/wp-content/uploads/2024/12/man-hard-hat-is-holding-tablet-front-blue-white-background-scaled.jpg"
+                alt="CM MES Capability"
+                width={600}
+                height={500}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <CaseStudiesSection title="Case Studies" data={caseStudies} bg="light" />
+      <GallerySection title="Event Gallery" data={galleryItems} bg="light" />
+      <CTASection
+        title={
+          <>
+            Let’s talk
+            <br />
+            Got an enquiry?
+          </>
+        }
+        description="At Athena, our team guides your Industry 4.0 journey with deep expertise in digital transformation and manufacturing solutions. "
+        buttonText="Contact Us"
+        buttonLink="/contact"
+        note="We typically respond within 24 hours."
+        backgroundImage="/assets/images/new-req.jpg"
+      />
+    </>
   );
 }

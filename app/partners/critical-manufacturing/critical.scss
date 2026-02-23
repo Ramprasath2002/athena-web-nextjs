@@ -1,0 +1,309 @@
+.section-title {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1c4584;
+}
+
+/* ================= PARTNER SECTION ================= */
+
+.partner-section {
+  padding: clamp(60px, 8vw, 100px) 20px;
+  text-align: center;
+
+  .partner-badge img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+}
+
+/* ================= AWARDS ================= */
+
+.awards-section {
+  padding: clamp(60px, 8vw, 50px) 20px;
+  background: #f5f6f8;
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .award-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    p {
+      padding: 20px;
+      font-size: 17px;
+      color: #1c4584;
+      font-weight: 500;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .awards-section .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= CMF SECTION ================= */
+
+.cmf-section {
+  padding: clamp(60px, 8vw, 50px) 20px;
+
+  .cmf-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cmf-content h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 20px;
+    color: #1c4584;
+  }
+
+  .cmf-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #444;
+  }
+
+  .cmf-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Desktop Split Layout */
+@media (min-width: 992px) {
+  .cmf-section .cmf-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+/* ================= TEMPlATIZATION SECTION ================= */
+
+.templatization-section {
+  padding: clamp(70px, 8vw, 70px) 20px;
+  background: #f8f9fb;
+  text-align: center;
+}
+
+/* Shared Title */
+.section-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: #1c4584;
+  margin-bottom: 40px;
+}
+
+.benefits-title,
+.modules-title {
+  margin-top: 80px;
+}
+
+/* ================= DIAGRAM IMAGES ================= */
+
+.templatization-diagram,
+.benefits-diagram {
+  margin: 0 auto 60px auto;
+  max-width: 900px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ================= MODULE DESCRIPTION ================= */
+
+.modules-subtitle {
+  max-width: 850px;
+  margin: 0 auto 50px auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.modules-diagram {
+  margin: 0 auto 60px auto;
+
+  img {
+    width: 100%;
+
+    height: auto;
+  }
+}
+/* ================= MODULE GRID ================= */
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .modules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .modules-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Module Card */
+
+.module-card {
+  background: #e6edf5;
+  padding: 20px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c4584;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: #1c4584;
+    color: #fff;
+    transform: translateY(-4px);
+  }
+}
+
+/* ================= PARTNER PROFILE ================= */
+
+.partner-profile-section {
+  padding: clamp(70px, 8vw, 60px) 20px;
+  background: #ffffff;
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .profile-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Profile Card */
+  .profile-card {
+    background: #f5f7fb;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    border-bottom: 4px solid #1c4584;
+    transition: 0.3s ease;
+
+     h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1c4584;
+    margin: 0;
+  }
+
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 17px;
+      color: #444;
+    }
+
+    li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #1c4584;
+      font-size: 18px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .card-icon {
+    flex-shrink: 0;
+  }
+
+
+  /* ================= CAPABILITY SECTION ================= */
+
+  .capability-section {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* Desktop split */
+  @media (min-width: 992px) {
+    .capability-section {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  .capability-content h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 20px;
+    color: #1c4584;
+  }
+
+  .capability-content p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .capability-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}

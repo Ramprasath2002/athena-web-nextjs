@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Outfit } from "next/font/google";
 import Header from "@/app/components/layout/header";
 import Footer from "@/app/components/layout/footer";
 import "./globals.css";
+ import AIChatbot from "@/app/components/chatbot/chatbot";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${outfit.variable}`}>
         <Header />
         {children}
+                 <AIChatbot />
         <Footer />
       </body>
     </html>

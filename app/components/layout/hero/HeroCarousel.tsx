@@ -152,7 +152,7 @@ export default function HeroCarousel() {
             {slides[index].desc}
           </p>
 
-          <button className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl">
+          <button className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl cursor-pointer">
             <span className="relative z-10">{slides[index].cta}</span>
             <span className="shine" />
           </button>
@@ -162,14 +162,14 @@ export default function HeroCarousel() {
       {/* Arrows */}
       <button
         onClick={prev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full cursor-pointer bg-white/20 hover:bg-white/30 text-white transition"
       >
         <ChevronLeft />
       </button>
 
       <button
         onClick={next}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full  bg-white/20 hover:bg-white/30 text-white transition"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full cursor-pointer bg-white/20 hover:bg-white/30 text-white transition"
       >
         <ChevronRight />
       </button>
