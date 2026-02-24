@@ -43,7 +43,7 @@ const slides = [
     title: "Critical Manufacturing Premier Implementation Partner",
     desc: "Athena specializes in the implementation, upgrade, and customization of CM MES, along with seamless integrations with PLM, ERP, LIMS, and Camline.",
     cta: "CM",
-    image: "/assets/images/CMC.png",
+    image: "/assets/images/CMC.webp",
   },
 
   {
@@ -51,21 +51,21 @@ const slides = [
       "Athena Announces Strategic Authorised Reseller Partnership with twinzo",
     desc: "Strengthening smart manufacturing visibility and operational intelligence through Twinzo’s digital twin platform.",
     cta: "twinzo",
-    image: "/assets/images/twinzobanners.png",
+    image: "/assets/images/twinzobanners.webp",
   },
 
   {
     title: "Eyelit Implementation Partner",
     desc: "As an official Eyelit Technologies partner, Athena delivers expertise in deploying Eyelit MES and Equipment Connect across semiconductor, solar, LED/laser diode, and medical device industries.",
     cta: "Eyelit",
-    image: "/assets/images/eyelitsbanner.png",
+    image: "/assets/images/eyelitsbanner.webp",
   },
 
   {
     title: "ECO Accelerators",
     desc: "Speed up engineering change workflows with intelligent automation. ECO Accelerators handle tracking, approvals, execution, and traceability while ensuring compliance.",
     cta: "Accelerators",
-    image: "/assets/images/eco-accelerators.png",
+    image: "/assets/images/eco-accelerators.webp",
   },
 
   // {

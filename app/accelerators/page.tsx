@@ -6,7 +6,7 @@ export default function ecoaccelerator() {
     <HeroSection
       title="Athena Accelerators"
       description="Speed up your Engineering Change workflows with intelligent automation. Our ECO Accelerators handle every step—tracking, redlining, approvals, and execution—while ensuring traceability and compliance. Built to support MES environments and scale with your needs."
-      image="/assets/images/eco-accelerators.png"
+      image="/assets/images/eco-accelerators.webp"
       align="center"
       buttonText="Contact Us"
       buttonLink="/contact"

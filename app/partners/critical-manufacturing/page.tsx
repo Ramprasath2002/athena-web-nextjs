@@ -78,13 +78,27 @@ const galleryItems = [
     slug: "/gallery/realize-live-americas-2024",
   },
 ];
+type ListItemProps = {
+  icon: string;
+  text: string;
+};
+
+const ListItem = ({ icon, text }: ListItemProps) => {
+  return (
+    <li className="icon-item">
+      <Image src={icon} alt={text} width={22} height={22} />
+      <span>{text}</span>
+    </li>
+  );
+};
+
 export default function CriticalManufacturingPage() {
   return (
     <>
       <HeroSection
         title="Critical Manufacturing"
         description="Athena specializes in the implementation, upgrade, and customization of CM MES, along with seamless integrations with external systems such as PLM, ERP, LIMS and Camline."
-        image="/assets/images/critical-manufacturing.jpg"
+        image="/assets/images/CMC.webp"
         align="center"
         buttonText="Contact Us"
         buttonLink="/contact"
@@ -132,7 +146,6 @@ export default function CriticalManufacturingPage() {
         </div>
       </section>
 
-      {/* CMF OVERVIEW */}
       <section className="cmf-section">
         <div className="container cmf-grid">
           <div className="cmf-content">
@@ -167,7 +180,7 @@ export default function CriticalManufacturingPage() {
 
           <div className="cmf-image">
             <Image
-              src="https://athena.homedecorsind.com/wp-content/uploads/2025/01/figure1.png"
+              src="https://athenatec.com/wp-content/uploads/2025/01/figure1.png"
               alt="CMF Overview Chart"
               width={600}
               height={450}
@@ -227,111 +240,165 @@ export default function CriticalManufacturingPage() {
       </section>
       <section className="partner-profile-section">
         <div className="container">
-          {/* TITLE */}
           <h2 className="section-title">Partner Profile</h2>
 
-          {/* PROFILE GRID */}
           <div className="profile-grid">
+            {/* Industries */}
             <div className="profile-card">
               <div className="card-header">
                 <Image
                   src="/assets/icons/manufacturer.svg"
-                  alt="Industries Icon"
+                  alt="Industries"
                   width={60}
                   height={60}
-                  className="card-icon"
                 />
                 <h3>Industries</h3>
               </div>
-              <ul>
-                <li>Semiconductor</li>
-                <li>Electronics</li>
-                <li>Medical Device</li>
-                <li>Industrial Equipment Manufacturing</li>
+
+              <ul className="icon-list">
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/semiconductor.svg"
+                  text="Semiconductor"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Electronics.svg"
+                  text="Electronics"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/medical-device.svg"
+                  text="Medical Device"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/IEM.svg"
+                  text="Industrial Equipment Manufacturing"
+                />
               </ul>
             </div>
 
+            {/* Solution Platform */}
             <div className="profile-card">
               <div className="card-header">
                 <Image
                   src="/assets/icons/cloud-computing.svg"
-                  alt="Solution Platform Icon"
+                  alt="Solution Platform"
                   width={60}
                   height={60}
-                  className="card-icon"
                 />
                 <h3>Solution Platform</h3>
               </div>
-              <ul>
-                <li>WIP Workflow Management</li>
-                <li>Asset and Durables</li>
-                <li>Dispatching</li>
-                <li>Product Costing</li>
-                <li>ERP / PLM Integration</li>
-                <li>Equipment Integration</li>
+
+              <ul className="icon-list">
+                <ListItem icon="/assets/icons/Partner-Profile/onefab.svg" text="OneFab" />
+                <ListItem icon="/assets/icons/Partner-Profile/CIOT.svg" text="Connect IoT" />
+                <ListItem icon="/assets/icons/Partner-Profile/fab-live.svg" text="Fab Live" />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/AR.svg"
+                  text="Augmented Reality"
+                />
+                <ListItem icon="/assets/icons/Partner-Profile/SPC.svg" text="SPC" />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Maintenance-Management.svg"
+                  text="Maintenance Management"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Labor-Management.svg"
+                  text="Labor Management"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Product-Experience.svg"
+                  text="Product Experience: v7.2, 8.x, 9.0 & 10.x"
+                />
               </ul>
             </div>
 
+            {/* Athena Practice */}
             <div className="profile-card">
               <div className="card-header">
                 <Image
                   src="/assets/icons/practice.png"
-                  alt="Athena Practice Icon"
+                  alt="Athena Practice"
                   width={60}
                   height={60}
-                  className="card-icon"
                 />
                 <h3>Athena Practice</h3>
               </div>
-              <ul>
-                <li>Certified Resources</li>
-                <li>Solution Architect</li>
-                <li>Project / Program Managers</li>
-                <li>Business Analysts</li>
-                <li>Application Developer</li>
-                <li>Integrated Engineers</li>
-                <li>Reporting Analyst</li>
+
+              <ul className="icon-list">
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Certified-Resources.svg"
+                  text="Certified Resources"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Solution-Architect.svg"
+                  text="Solution Architect"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/PPM.svg"
+                  text="Project / Program Managers"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Business-Analysts.svg"
+                  text="Business Analysts"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Application-Developer.svg"
+                  text="Application Developer"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Integrated-Engineers.svg"
+                  text="Integrated Engineers"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/Reporting-Analyst.svg"
+                  text="Reporting Analyst"
+                />
               </ul>
             </div>
 
+            {/* Customer Locations */}
             <div className="profile-card">
               <div className="card-header">
                 <Image
                   src="/assets/icons/job.svg"
-                  alt="Customer Locations Icon"
+                  alt="Customer Locations"
                   width={60}
                   height={60}
-                  className="card-icon"
                 />
                 <h3>Customer Locations</h3>
               </div>
-              <ul>
-                <li>Americas</li>
-                <li>APAC</li>
-                <li>EMEA</li>
+
+              <ul className="icon-list">
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/americas.svg"
+                  text="Americas"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/apac.svg"
+                  text="APAC"
+                />
+                <ListItem
+                  icon="/assets/icons/Partner-Profile/emea.svg"
+                  text="EMEA"
+                />
               </ul>
             </div>
           </div>
 
-          {/* CAPABILITY SECTION */}
+          {/* Capability Section */}
           <div className="capability-section">
             <div className="capability-content">
               <h2>Our CM MES Capability</h2>
               <p>
-                Athena is premier services partner supporting various client
+                Athena is a premier services partner supporting various client
                 projects working closely with CM services group. We have
-                established dedicated Athena – Critical Manufacturing Center of
-                Excellence (CoE) is based at Chennai, India. Athena has a
-                structured internal training program on MES, CM training &
-                certification program for partners has enabled us to have a deep
-                experience with CM MES. This program has helped us to execute
-                projects independently based on best practices. Our team has
-                various certified functional roles like Modeler, Business System
-                Analyst, Front-End Developer, Back-End Developer and Automation
-                Developer that are required to implement Critical Manufacturing
-                MES. Athena has CM Product Experiences in v7.2, 8.x, 9.0 & 10.x,
-                Implementation, upgrade, customization, and Post Go live
-                Support.
+                established a dedicated Athena – Critical Manufacturing Center
+                of Excellence (CoE) based in Chennai, India.
+                <br />
+                <br />
+                Athena has a structured internal training program on MES, CM
+                certification programs, and strong execution experience across
+                v7.2, 8.x, 9.0 & 10.x implementations, upgrades, customization,
+                and post go-live support.
               </p>
             </div>
 

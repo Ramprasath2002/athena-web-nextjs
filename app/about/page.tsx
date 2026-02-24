@@ -37,31 +37,31 @@ export default function AboutPage() {
     {
       title: "Semiconductor",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/07/Chip-Hand-Cropped-950x1024.png",
+        "https://athenatec.com/wp-content/uploads/2024/07/Chip-Hand-Cropped.png",
       desc: "Athena offers comprehensive PLM, MES, CMMS, and analytics services for the semiconductor industry, partnering with clients to deliver top solutions.",
     },
     {
       title: "Electronics",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/neon-motherboard-background-scaled-e1724922449899.jpg",
+        "https://athenatec.com/wp-content/uploads/2024/08/neon-motherboard-background-scaled-e1724922449899.jpg",
       desc: "Athena's MES Solutions for the Electronics Industry streamline high-volume production, ensuring product quality and high yield through efficient PCB, PCBA, Mechanical Assembly, box-build, and testing processes.",
     },
     {
       title: "MED Devices",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/10/close-up-medical-orthodontist-equipment-modern-bright-office-scaled-e1724922792409.jpg",
+        "https://athenatec.com/wp-content/uploads/2024/10/close-up-medical-orthodontist-equipment-modern-bright-office-scaled-e1724922792409.jpg",
       desc: "Athena's proven expertise in medical device manufacturing and rapid implementations helps customers innovate, cut costs, and achieve high-quality products",
     },
     {
       title: "LED / Battery Manufacturing",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/futuristic-time-machine-1024x683.jpg",
+        "https://athenatec.com/wp-content/uploads/2024/08/futuristic-time-machine-scaled-e1724923036586.jpg",
       desc: "Athena excels in addressing complex manufacturing challenges with rapid implementation, delivering a robust, integrated, and scalable data-centric enterprise.",
     },
     {
       title: "Solar",
       image:
-        "https://athena.homedecorsind.com/wp-content/uploads/2024/08/beautiful-alternative-energy-plant-with-solar-panels-1024x683.jpg",
+        "https://athenatec.com/wp-content/uploads/2024/08/beautiful-alternative-energy-plant-with-solar-panels-scaled-e1724923416271.jpg",
       desc: "Solar manufacturing's complexities, such as Applied Materials and SPC, demand advanced analytics and continuous experimentation. Athena's expertise and passion position us to effectively tackle these challenges.",
     },
   ];
@@ -182,7 +182,7 @@ We will continue to work together with Athena to carry out continuous process im
 
             <div className="about-image">
               <Image
-                src="https://athena.homedecorsind.com/wp-content/uploads/2024/10/industry-4.0.png"
+                src="https://athenatec.com/wp-content/uploads/2024/10/industry-4.0.png"
                 alt="Team"
                 fill
                 className="img"

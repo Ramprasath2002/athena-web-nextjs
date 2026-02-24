@@ -199,7 +199,7 @@
 /* ================= PARTNER PROFILE ================= */
 
 .partner-profile-section {
-  padding: clamp(70px, 8vw, 60px) 20px;
+  padding: clamp(60px, 8vw, 100px) 20px;
   background: #ffffff;
 
   .profile-grid {
@@ -209,14 +209,12 @@
     margin-top: 40px;
   }
 
-  /* Tablet */
   @media (min-width: 768px) {
     .profile-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  /* Profile Card */
   .profile-card {
     background: #f5f7fb;
     padding: 30px;
@@ -225,33 +223,31 @@
     border-bottom: 4px solid #1c4584;
     transition: 0.3s ease;
 
-     h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1c4584;
-    margin: 0;
-  }
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1c4584;
+      margin: 0;
+    }
 
-
+    /* REMOVE checkmark system completely */
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
-    li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: 10px;
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
       font-size: 17px;
       color: #444;
-    }
 
-    li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #1c4584;
-      font-size: 18px;
+      img {
+        flex-shrink: 0;
+      }
     }
 
     &:hover {
@@ -259,6 +255,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
   }
+
   .card-header {
     display: flex;
     align-items: center;
@@ -270,7 +267,6 @@
     flex-shrink: 0;
   }
 
-
   /* ================= CAPABILITY SECTION ================= */
 
   .capability-section {
@@ -281,7 +277,6 @@
     align-items: center;
   }
 
-  /* Desktop split */
   @media (min-width: 992px) {
     .capability-section {
       grid-template-columns: 1.2fr 1fr;
