@@ -208,11 +208,7 @@
     margin-bottom: 60px;
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
+
 
   &__card {
     background: #e9edf3;
@@ -248,7 +244,7 @@
     overflow: hidden;
 
     p {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 1.8;
       color: #333;
     }
@@ -388,7 +384,7 @@
 .siemens-analytics {
   //   background: linear-gradient(to bottom, #eef3f8, #ffffff);
   padding: 0;
-  text-align: center;
+  // text-align: center;
 
   .container {
     max-width: 1320px;
@@ -409,8 +405,7 @@
 
 
   .analytics-content {
-    max-width: 900px;
-    margin: 0 auto;
+ 
 
     .analytics-title {
       font-size: 52px;
@@ -808,11 +803,7 @@
 }
 
  
-@media (max-width: 992px) {
-  .soc-factory__grid {
-    grid-template-columns: 1fr;
-  }
-}
+ 
 
 @media (max-width: 768px) {
   .soc-team__title,
@@ -846,10 +837,6 @@
 @media (max-width: 768px) {
   .soc-services__grid {
     grid-template-columns: 1fr;
-  }
-
-  .soc-services__title {
-    font-size: 28px;
   }
 }
 

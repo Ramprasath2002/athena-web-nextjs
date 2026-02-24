@@ -16,7 +16,7 @@
   .section-eyebrow {
     display: inline-block;
     color: #1c4584;
-    font-size: 0.95rem;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -38,7 +38,7 @@
     line-height: 1.7;
     color: #444;
     margin-bottom: 1rem;
-    max-width: 520px;
+    max-width: 580px;
   }
 
   /* BUTTON */
@@ -54,8 +54,8 @@
     transition: all 0.25s ease;
 
     &:hover {
-    background: #5172b0;
-    color: #fff;
+      background: #5172b0;
+      color: #fff;
     }
   }
 
@@ -134,11 +134,10 @@
   }
 }
 
-
 /* PARTNERS SECTION */
 .partners {
   background: #f4fbff;
-  padding: 5rem 0;
+  padding: 2rem 0;
 
   .partners-title {
     text-align: center;
@@ -225,10 +224,9 @@
   padding: 3rem 0;
 
   .what-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 1.5rem;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -243,8 +241,9 @@
 
   .what-image-wrapper {
     width: 100%;
-    max-width: 550px;
-    aspect-ratio: 16 / 10; /* 🔑 THIS FIXES IMAGE */
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 16 / 10;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);

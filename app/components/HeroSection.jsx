@@ -14,14 +14,14 @@ export default function HeroSection({
   const router = useRouter();
 
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden text-white">
+    <section className="relative w-full min-h-[70vh] flex items-center justify-start overflow-hidden text-white">
       <Image src={image} alt={title} fill priority className="object-cover" />
 
       <div
         className={`relative z-20 max-w-5xl px-6 flex flex-col ${
           align === "left"
             ? "items-start text-left"
-            : "items-center text-center"
+            : "items-start text-start"
         }`}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6">{title}</h1>

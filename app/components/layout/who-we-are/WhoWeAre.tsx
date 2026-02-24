@@ -147,7 +147,7 @@ export default function WhoWeAre() {
                 className="w-full h-full object-cover rounded-md"
               >
                 <source
-                  src="https://athena.homedecorsind.com/wp-content/uploads/2024/07/aps.mp4"
+                  src="https://athenatec.com/wp-content/uploads/2024/07/aps.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -157,7 +157,7 @@ export default function WhoWeAre() {
 
           {/* CONTENT SIDE */}
           <div className="what-content">
-            <span className="section-eyebrow">What We Do</span>
+            <span className="section-eyebrow">WHAT WE DO</span>
 
             <h2 className="what-title">
               Comprehensive Professional <br /> and Managed Services

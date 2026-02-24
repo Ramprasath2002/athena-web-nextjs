@@ -126,7 +126,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       name: "Viavi",
       image:
-        "https://athena.homedecorsind.com/wp-content/2024/10/06-2-e1727231323480-1.png",
+        "/assets/Clients/VLAVI.png",
       text: "Through Athena’s exhaustive efforts and deep domain expertise, we were able to implement a ‘Viavi Aligned Solution’ of Siemens Opcenter 8.x that met our complex MES System requirements. This was done via streamlined manufacturing processes, user friendly UI/ UX, seamless integration with our factory equipment / metrology and a single source for factory insights. Athena utilized Industry 4.0 foundations and architected a cookie-cutter approach that is ready for all our global factories.",
     },
     {

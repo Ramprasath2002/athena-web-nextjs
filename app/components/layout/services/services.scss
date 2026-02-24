@@ -123,6 +123,7 @@
     font-weight: 600;
     color: #1c4584;
     margin-bottom: 3.5rem;
+    align-items: start !important;
   }
 
   /* ================= LAYOUT ================= */
@@ -138,8 +139,8 @@
 
   .managed-tabs-wrapper {
     overflow: visible;
-    display: grid;
-    grid-template-columns: 320px 1fr;
+    position: sticky;
+    top: 120px;
     gap: 4rem;
     align-items: center;
   }
@@ -150,26 +151,31 @@
     gap: 1.6rem;
   }
 
-  .managed-tab {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-align: left;
-    font-size: 20px;
-    font-weight: 500;
-    color: #6b7280;
-    transition: color 0.25s ease;
-  }
+.managed-tab {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b7280;
+  border-left: 3px solid transparent;
+  transition: all 0.25s ease;
+}
 
-  .managed-tab:hover {
-    color: #3b2db5;
-  }
+.managed-tab:hover {
+  color: #1c4584;
+  background: #f4f6ff;
+}
 
-  .managed-tab.active {
-    color: #3b2db5;
-    font-weight: 600;
-  }
+.managed-tab.active {
+  color: #1c4584;
+  font-weight: 600;
+  border-left: 3px solid #1c4584;
+  background: #f4f6ff;
+}
 
   /* ================= CONTENT ================= */
 
@@ -181,16 +187,17 @@
     grid-template-columns: 300px 1fr;
     gap: 2rem;
     align-items: center;
-    animation: fadeSlide 0.4s ease;
-    transition:
-      opacity 0.4s ease,
-      transform 0.4s ease;
+    min-height: 420px;
+    // animation: fadeSlide 0.4s ease;
+    // transition:
+    //   opacity 0.4s ease,
+    //   transform 0.4s ease;
   }
 
-  .managed-content.fade-out {
-    opacity: 0;
-    transform: translateY(12px);
-  }
+  // .managed-content.fade-out {
+  //   opacity: 0;
+  //   transform: translateY(12px);
+  // }
 
   .managed-image {
     display: flex;
@@ -383,7 +390,6 @@
     background: #ffffff;
     color: #5172b0;
     border: 2px solid #5172b0;
-
   }
 
   /* RIGHT CARDS */
@@ -456,7 +462,7 @@
 
 .why-us-faq {
   background: linear-gradient(180deg, #f7faff, #ffffff);
-  padding: 3rem 0 ;
+  padding: 3rem 0;
 
   .faq-title {
     text-align: center;
@@ -511,7 +517,7 @@
 
   .faq-text {
     font-size: 1.05rem;
- 
+
     color: #000000;
   }
 
@@ -603,7 +609,6 @@
     background: linear-gradient(to left, #fff, transparent);
   }
 
-
   .testimonial-carousel {
     max-width: 1300px;
     margin: auto;
@@ -640,7 +645,7 @@
     flex: 0 0 400px;
     pointer-events: auto;
     padding: 1rem;
-    user-select: none; 
+    user-select: none;
     touch-action: pan-y;
   }
   @media (max-width: 768px) {
@@ -649,7 +654,6 @@
     }
   }
 
-  
   /* ================================
    CARD
 ================================ */

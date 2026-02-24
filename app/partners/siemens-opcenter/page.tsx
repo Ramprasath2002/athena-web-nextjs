@@ -1,8 +1,6 @@
 import Image from "next/image";
 import "./siemens.scss";
 import ScrollReveal from "@/app/components/ScrollReveal";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import CTASection from "@/app/components/CTASection";
 import HeroSection from "@/app/components/HeroSection";
 import CaseStudiesSection from "@/app/components/CaseStudiesSection";
@@ -11,35 +9,34 @@ import GallerySection from "@/app/components/GallerySection";
 const services = [
   {
     title: "Siemens Opcenter Execution – Semiconductor",
-    desc: `Opcenter Execution Semiconductor replaces legacy manufacturing
-systems that haven’t kept pace with semiconductor demands.`,
+    desc: `Opcenter Execution Semiconductor (formerly known as “Camstar Semiconductor Suite”) replaces legacy manufacturing systems that haven’t kept pace with the demanding needs of semiconductor manufacturing. `,
     video:
       "https://athenatec.com/wp-content/uploads/2024/07/Semi-conductor-1.mp4",
   },
   {
     title: "Siemens Opcenter Execution – Electronics",
-    desc: `A comprehensive manufacturing solution for the electronics industry.`,
+    desc: `Opcenter Execution Electronics (formerly known as “Camstar Electronics Suite”) is a comprehensive manufacturing solution for the electronics industry. `,
     video: "https://athenatec.com/wp-content/uploads/2024/07/electronics.mp4",
   },
   {
     title: "Siemens Opcenter Execution – Medical Devices",
-    desc: `A unified and holistic application to drive digital initiatives and Industry 4.0 benefits.`,
+    desc: `Siemens Opcenter MES for Medical Devices (formerly known as Camstar) is a unified and holistic application to drive digital initiatives faster and further to gain the benefits from Industry 4.0.`,
     video:
       "https://athenatec.com/wp-content/uploads/2024/07/Siemens-Medical.mp4",
   },
   {
     title: "Siemens Opcenter Execution – Discrete",
-    desc: `Global MES platform for production and quality management.`,
+    desc: `Siemens Opcenter Core (formerly known as Camstar Enterprise Platform) is the global MES platform for Production and Quality Management.`,
     video: "https://athenatec.com/wp-content/uploads/2024/07/Discrete-1-1.mp4",
   },
   {
     title: "Siemens APS – Advance Planning & Scheduling",
-    desc: `Optimizes jobs on the shop floor considering variability and resource constraints.`,
+    desc: `In Manufacturing, product variability, available production resources and customer order changes directly affect the time sensitive work effort of optimizing Jobs on the Shop Floor.`,
     video: "https://athenatec.com/wp-content/uploads/2024/07/aps.mp4",
   },
   {
     title: "Siemens Mendix",
-    desc: `Low-code and analytics platform to design KPIs and dashboards.`,
+    desc: `Low Code and Analytics features of Mendix helps to design KPIs and Dashboards for better visibility of the Data.`,
     video:
       "https://athenatec.com/wp-content/uploads/2024/11/6747645_Animation_Diagrams_1280x720.mp4",
   },
@@ -156,7 +153,7 @@ const caseStudies = [
     description:
       "Customer has Multiple Factories where they manufacture different devices. Required to Display Modeling and WIP Data based on the Employee Role and Factory.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/factory-worker-uniform-presenting-new-products-manager-1920x1280.jpg",
+      "/assets/images/FS.png",
     link: "/downloads/case2.pdf",
   },
   {
@@ -238,7 +235,7 @@ export default function SiemensOpcenter() {
       <HeroSection
         title="Siemens Opcenter MES"
         description="Experienced in implementing and upgrading Opcenter MES across versions."
-        image="/assets/images/siemens.webp"
+        image="/assets/images/siemens.png"
         buttonText="Contact Us"
         buttonLink="/contact"
       />
@@ -266,8 +263,6 @@ export default function SiemensOpcenter() {
 
       <section className="soc-services">
         <div className="soc-services__container">
-          <h2 className="soc-services__title">The Best Service</h2>
-
           <div className="soc-services__grid">
             {services.map((service, index) => (
               <div className="soc-card" key={index}>
@@ -311,17 +306,6 @@ export default function SiemensOpcenter() {
               APS, and Mendix.
             </p>
             {/*  */}
-
-            <ul className="soc-expertise__list">
-              <li>Delivering Camstar / Opcenter solutions since 2011</li>
-              <li>
-                Experience across multiple regulated and high-tech industries
-              </li>
-              <li>
-                Deep version coverage: 3.x → 8.x, 2304 → 2504 (Opcenter, MIO,
-                APS){" "}
-              </li>
-            </ul>
           </div>
 
           <div className="soc-expertise__timeline">
@@ -359,38 +343,47 @@ export default function SiemensOpcenter() {
             <div className="soc-factory__card">
               <div className="soc-factory__stars">★★★★★</div>
               <p>
-                The Factory MES System has become the heart of the Industry 4.0
-                / Smart Factory trend. Unlike ERP / SFC systems, MES Systems
-                effectively Control and Track the flow of Product in the factory
-                with full traceability. MES Systems also intelligently
-                communicate with Factory Equipment, Automation Cells and a
-                variety of Quality and other Factory Applications, resulting in
-                a more Automated Production Process. At Athena, Siemens Opcenter
-                MES is the Centerpiece of our MOM Consulting Practice. With
-                Siemens, a well established leader in MOM / Manufacturing
-                Operations Management, we are likewise proud to be a Siemens
-                Strategic Alliance Partner.
+                The <strong> Factory MES System</strong> has become the heart of
+                the Industry 4.0 / Smart Factory trend. Unlike ERP / SFC
+                systems, MES Systems effectively Control and Track the flow of
+                Product in the factory with full traceability. MES Systems also
+                intelligently communicate with Factory Equipment, Automation
+                Cells and a variety of Quality and other Factory Applications,
+                resulting in a more Automated Production Process. At Athena,
+                Siemens Opcenter MES is the Centerpiece of our MOM Consulting
+                Practice. With Siemens, a well established leader in MOM /
+                Manufacturing Operations Management, we are likewise proud to be
+                a Siemens Strategic Alliance Partner.
               </p>
-            </div>
-
-            <div className="soc-factory__card">
-              <div className="soc-factory__stars">★★★★★</div>
-              <p>
-                Factory Systems Integration creates intelligent connections
-                between Factory Systems and Factory Assets. The key is to first
-                align around the Production Life Cycle and then to digitally
-                connect all the Digitally capable Assets within for each
-                Operational step. In the Smart Factory, PLM, ERP, MES and CMMS
-                are integrated along their respective process life Cycles.
+              <p className="mt-6">
+                <strong>Factory Systems Integration</strong> creates intelligent
+                connections between Factory Systems and Factory Assets. The key
+                is to first align around the Production Life Cycle and then to
+                digitally connect all the Digitally capable Assets within for
+                each Operational step. In the Smart Factory, PLM, ERP, MES and
+                CMMS are integrated along their respective process life Cycles.
                 Likewise, to gain the value of a Smart Factory, the MES System
                 is also integrated with; Factory Equipment, Quality Systems,
                 Automation Controls and other Digitally capable Factory Systems
                 to achieve orders of magnitude in Production benefits. These
                 include; Higher Yield, Increased Production output, reduced
-                human dependencies and Product cost. In Summary, The Smart
-                Factory is essentially a ‘Connected Factory’.
+                human dependencies and Product cost.{" "}
+                <strong>
+                  In Summary, The Smart Factory is essentially a ‘Connected
+                  Factory’.
+                </strong>
               </p>
+             
             </div>
+             <div className="mt-8 flex justify-center">
+                <Image
+                  src="https://athenatec.com/wp-content/uploads/2024/11/02-8.png"
+                  alt="Factory System Integration Diagram"
+                  width={1000}
+                  height={600}
+                  className="rounded-lg  "
+                />
+              </div>
           </div>
         </div>
       </section>
@@ -492,7 +485,7 @@ export default function SiemensOpcenter() {
           </div>
 
           {/* Title */}
-          <h2 className="analytics-main-title">Smart Factory Analytics</h2>
+          <h2 className="analytics-title">Smart Factory Analytics</h2>
 
           {/* Top Infographic */}
           <div className="analytics-block">
