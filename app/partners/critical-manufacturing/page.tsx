@@ -86,7 +86,7 @@ type ListItemProps = {
 const ListItem = ({ icon, text }: ListItemProps) => {
   return (
     <li className="icon-item">
-      <Image src={icon} alt={text} width={22} height={22} />
+      <Image src={icon} alt={text} width={33} height={33} />
       <span>{text}</span>
     </li>
   );
@@ -257,7 +257,7 @@ export default function CriticalManufacturingPage() {
 
               <ul className="icon-list">
                 <ListItem
-                  icon="/assets/icons/Partner-Profile/semiconductor.svg"
+                  icon="/assets/icons/Partner-Profile/Semiconductor.svg"
                   text="Semiconductor"
                 />
                 <ListItem
@@ -265,7 +265,7 @@ export default function CriticalManufacturingPage() {
                   text="Electronics"
                 />
                 <ListItem
-                  icon="/assets/icons/Partner-Profile/medical-device.svg"
+                  icon="/assets/icons/Partner-Profile/Medical-Device.svg"
                   text="Medical Device"
                 />
                 <ListItem
@@ -288,9 +288,9 @@ export default function CriticalManufacturingPage() {
               </div>
 
               <ul className="icon-list">
-                <ListItem icon="/assets/icons/Partner-Profile/onefab.svg" text="OneFab" />
+                <ListItem icon="/assets/icons/Partner-Profile/OneFab.svg" text="OneFab" />
                 <ListItem icon="/assets/icons/Partner-Profile/CIOT.svg" text="Connect IoT" />
-                <ListItem icon="/assets/icons/Partner-Profile/fab-live.svg" text="Fab Live" />
+                <ListItem icon="/assets/icons/Partner-Profile/Fab-live.svg" text="Fab Live" />
                 <ListItem
                   icon="/assets/icons/Partner-Profile/AR.svg"
                   text="Augmented Reality"
@@ -369,15 +369,15 @@ export default function CriticalManufacturingPage() {
 
               <ul className="icon-list">
                 <ListItem
-                  icon="/assets/icons/Partner-Profile/americas.svg"
+                  icon="/assets/icons/Partner-Profile/Americas.svg"
                   text="Americas"
                 />
                 <ListItem
-                  icon="/assets/icons/Partner-Profile/apac.svg"
+                  icon="/assets/icons/Partner-Profile/APAC.svg"
                   text="APAC"
                 />
                 <ListItem
-                  icon="/assets/icons/Partner-Profile/emea.svg"
+                  icon="/assets/icons/Partner-Profile/EMEA.svg"
                   text="EMEA"
                 />
               </ul>
