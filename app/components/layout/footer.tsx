@@ -69,7 +69,7 @@ export default function Footer() {
               United States
             </h4>
             <p className=" font-medium pb-0 mb-1 text-[16px]">Headquarters:</p>
-            <a
+            <Link
               href="https://maps.app.goo.gl/HF6t3r3L8aRoPsYy7"
               target="_blank"
               className="leading-relaxed text-[#c7d4f1] hover:underline"
@@ -77,7 +77,7 @@ export default function Footer() {
               859 Corporate Way <br />
               Fremont, California <br />
               94539
-            </a>
+            </Link>
           </div>
 
           {/* CONTACT */}
@@ -86,24 +86,24 @@ export default function Footer() {
               <h4 className="text-base font-semibold text-white">
                 Work inquiries
               </h4>
-              <a
+              <Link
                 href="info@athenatec.com"
                 className="mt-2 inline-block font-medium hover:underline"
                 target="_blank"
               >
-                info@athena.homedecorsind.com
-              </a>
+               info@athenatec.com
+              </Link>
             </div>
 
             <div>
               <h4 className="text-base font-semibold text-white">Contact</h4>
-              <a
+              <Link
                 href="tel:510-687-0900"
                 className="mt-2 inline-block font-medium hover:underline"
                 target="_blank"
               >
                 510-687-0900
-              </a>
+              </Link>
             </div>
           </div>
 

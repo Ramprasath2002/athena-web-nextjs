@@ -58,9 +58,21 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
         {open === "partners" && (
           <div className="ml-4 flex flex-col gap-2 text-sm">
-            <Link onClick={onNavigate} href="/partners/siemens-opcenter">Siemens Opcenter</Link>
-            <Link onClick={onNavigate} href="/partners/critical-manufacturing">Critical Manufacturing</Link>
-            <Link onClick={onNavigate} href="/partners/eyelit">Eyelit</Link>
+            <Link onClick={onNavigate} href="/partners/siemens-opcenter">
+              Siemens Opcenter
+            </Link>
+            <Link onClick={onNavigate} href="/partners/critical-manufacturing">
+              Critical Manufacturing
+            </Link>
+            <Link onClick={onNavigate} href="/partners/eyelit">
+              Eyelit
+            </Link>
+            {/* <Link
+              onClick={onNavigate}
+              href="/partners/twinzo"
+            >
+              Twinzo
+            </Link> */}
           </div>
         )}
 
@@ -97,18 +109,30 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
             {openMES && (
               <div className="ml-4 flex flex-col gap-2">
-                <Link onClick={onNavigate} href="/solutions/mes/siemens-opcenter-mes">
+                <Link
+                  onClick={onNavigate}
+                  href="/solutions/mes/siemens-opcenter-mes"
+                >
                   Siemens Opcenter MES
                 </Link>
-                <Link onClick={onNavigate} href="/solutions/mes/critical-manufacturing">
+                <Link
+                  onClick={onNavigate}
+                  href="/solutions/mes/critical-manufacturing"
+                >
                   Critical Manufacturing
                 </Link>
               </div>
             )}
 
-            <Link onClick={onNavigate} href="/solutions/plm-solution">PLM Solutions</Link>
-            <Link onClick={onNavigate} href="/solutions/enterprise-erp">Enterprise ERP</Link>
-            <Link onClick={onNavigate} href="/solutions/cyber-security">Cyber Security</Link>
+            <Link onClick={onNavigate} href="/solutions/plm-solutions">
+              PLM Solutions
+            </Link>
+            <Link onClick={onNavigate} href="/solutions/enterprise-erp">
+              Enterprise ERP
+            </Link>
+            <Link onClick={onNavigate} href="/solutions/cyber-security">
+              Cyber Security
+            </Link>
           </div>
         )}
 
@@ -129,10 +153,18 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
         {open === "resources" && (
           <div className="ml-4 flex flex-col gap-2 text-sm">
-            <Link onClick={onNavigate} href="#">Blog</Link>
-            <Link onClick={onNavigate} href="#">Case Studies</Link>
-            <Link onClick={onNavigate} href="#">News Room</Link>
-            <Link onClick={onNavigate} href="#">Webinar</Link>
+            <Link onClick={onNavigate} href="#">
+              Blog
+            </Link>
+            <Link onClick={onNavigate} href="#">
+              Case Studies
+            </Link>
+            <Link onClick={onNavigate} href="#">
+              News Room
+            </Link>
+            <Link onClick={onNavigate} href="#">
+              Webinar
+            </Link>
           </div>
         )}
       </div>
@@ -161,9 +193,24 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
         {open === "partners" && (
           <div className="absolute left-0 top-full w-56 rounded-xl bg-white shadow-lg p-4">
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/siemens-opcenter">Siemens Opcenter</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/critical-manufacturing">Critical Manufacturing</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/partners/eyelit">Eyelit</Link>
+            <Link
+              className="block py-2 hover:text-[rgb(52,170,220)]"
+              href="/partners/siemens-opcenter"
+            >
+              Siemens Opcenter
+            </Link>
+            <Link
+              className="block py-2 hover:text-[rgb(52,170,220)]"
+              href="/partners/critical-manufacturing"
+            >
+              Critical Manufacturing
+            </Link>
+            <Link
+              className="block py-2 hover:text-[rgb(52,170,220)]"
+              href="/partners/eyelit"
+            >
+              Eyelit
+            </Link>
           </div>
         )}
       </div>
@@ -192,12 +239,15 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
               onMouseLeave={() => setOpenMES(false)}
               className="relative"
             >
-              <div className="flex justify-between p-2 hover:bg-gray-100 cursor-pointer">
-                <Link href="/solutions/mes" className="hover:text-[rgb(52,170,220)]">
+              <div className="flex justify-between p-2 pb-0 hover:bg-gray-100 cursor-pointer">
+                <Link
+                  href="/solutions/mes"
+                  className="hover:text-[rgb(52,170,220)]"
+                >
                   MES Solutions
                 </Link>
                 <span
-                  className={`transition-transform duration-200  text-[20px] ${
+                  className={`transition-transform duration-200 text-[20px] ${
                     openMES ? "rotate-90" : "rotate-0"
                   }`}
                 >
@@ -207,10 +257,16 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
               {openMES && (
                 <div className="absolute left-full top-0 w-60 rounded-xl bg-white shadow-lg">
-                  <Link className="block px-4 py-3 hover:text-[rgb(52,170,220)] hover:bg-gray-100" href="/solutions/mes/siemens-opcenter-mes">
+                  <Link
+                    className="block px-4 py-3 hover:text-[rgb(52,170,220)] hover:bg-gray-100"
+                    href="/solutions/mes/siemens-opcenter-mes"
+                  >
                     Siemens Opcenter MES
                   </Link>
-                  <Link className="block px-4 py-3 hover:text-[rgb(52,170,220)] hover:bg-gray-100" href="/solutions/mes/critical-manufacturing">
+                  <Link
+                    className="block px-4 py-3 hover:text-[rgb(52,170,220)] hover:bg-gray-100"
+                    href="/solutions/mes/critical-manufacturing"
+                  >
                     Critical Manufacturing
                   </Link>
                 </div>
@@ -218,9 +274,24 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
             </div>
 
             <div className="flex flex-col gap-2 p-2 text-sm">
-              <Link href="/solutions/plm-solution" className="hover:text-[rgb(52,170,220)]">PLM Solutions</Link>
-              <Link href="/solutions/enterprise-erp" className="hover:text-[rgb(52,170,220)]">Enterprise ERP</Link>
-              <Link href="/solutions/cyber-security" className="hover:text-[rgb(52,170,220)]">Cyber Security</Link>
+              <Link
+                href="/solutions/plm-solutions"
+                className="hover:text-[rgb(52,170,220)]"
+              >
+                PLM Solutions
+              </Link>
+              <Link
+                href="/solutions/enterprise-erp"
+                className="hover:text-[rgb(52,170,220)]"
+              >
+                Enterprise ERP
+              </Link>
+              <Link
+                href="/solutions/cyber-security"
+                className="hover:text-[rgb(52,170,220)]"
+              >
+                Cyber Security
+              </Link>
             </div>
           </div>
         )}
@@ -245,10 +316,18 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
 
         {open === "resources" && (
           <div className="absolute left-0 top-full w-56 rounded-xl bg-white shadow-xl p-4">
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="#">Blog</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="#">Case Studies</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="#">News Room</Link>
-            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="#">Webinar</Link>
+            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/blog/">
+              Blog
+            </Link>
+            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/case-studies">
+              Case Studies
+            </Link>
+            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/news-room">
+              News Room
+            </Link>
+            <Link className="block py-2 hover:text-[rgb(52,170,220)]" href="/webinars">
+              Webinars
+            </Link>
           </div>
         )}
       </div>

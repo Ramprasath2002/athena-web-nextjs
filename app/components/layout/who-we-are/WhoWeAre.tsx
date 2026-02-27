@@ -2,7 +2,7 @@
 import "./whoWeAre.scss";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function WhoWeAre() {
   return (
     <>
@@ -25,8 +25,9 @@ export default function WhoWeAre() {
               program execution, enabling greater visibility and control at
               every stage of implementation.
             </p>
-
-            <button className="who-button">Explore Us</button>
+            <Link href="/about" className="who-button">
+              Explore Us
+            </Link>
           </div>
 
           {/* RIGHT IMAGE */}
@@ -53,7 +54,7 @@ export default function WhoWeAre() {
             {/* Siemens */}
             <div className="partner-card">
               <img
-                src="https://athenatec.com/wp-content/uploads/2025/12/images-3.png"
+                src="/assets/images/images-3.webp"
                 alt="Siemens"
                 className="partner-logo"
               />
@@ -68,14 +69,15 @@ export default function WhoWeAre() {
                 Electronics, Medical Devices, Discrete Manufacturing, and Clean
                 Energy.
               </p>
-
-              <button className="partner-btn">Know More</button>
+              <Link href="/partners/siemens-opcenter" className="partner-btn">
+                Know More
+              </Link>
             </div>
 
             {/* Critical Manufacturing */}
             <div className="partner-card">
               <img
-                src="https://athenatec.com/wp-content/uploads/2025/12/critical_manufacturing_logo-e1727901256634-1.jpg"
+                src="/assets/images/critical_manufacturing_logo-e1727901256634-1.webp"
                 alt="Critical Manufacturing"
                 className="partner-logo"
               />
@@ -90,13 +92,17 @@ export default function WhoWeAre() {
                 manufacturing process.
               </p>
 
-              <button className="partner-btn">Know More</button>
+          
+
+               <Link href="/partners/critical-manufacturing" className="partner-btn">
+                Know More
+              </Link>
             </div>
 
             {/* Eyelit */}
             <div className="partner-card">
               <img
-                src="https://athenatec.com/wp-content/uploads/2025/12/00.png"
+                src="/assets/images/00.webp"
                 alt="Eyelit"
                 className="partner-logo"
               />
@@ -111,7 +117,9 @@ export default function WhoWeAre() {
                 devices.
               </p>
 
-              <button className="partner-btn">Know More</button>
+              <Link href="/partners/eyelit" className="partner-btn">
+                Know More
+              </Link>
             </div>
             <div className="partner-card">
               <img
@@ -129,7 +137,9 @@ export default function WhoWeAre() {
                 monitoring, and data-driven operations across sectors.
               </p>
 
-              <button className="partner-btn">Know More</button>
+             <Link href="/partners/twinzo" className="partner-btn">
+                Know More
+              </Link>
             </div>
           </div>
         </div>

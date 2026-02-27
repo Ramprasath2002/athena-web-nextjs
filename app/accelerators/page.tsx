@@ -7,7 +7,7 @@ const accelerators = [
   {
     title: "ECO Redliner",
     image:
-      "https://athenatec.com/wp-content/uploads/2025/06/improvement-success-planning-ideas-research-scaled-e1750766063422.jpg",
+      "/assets/images/improvement-success-planning-ideas-research-scaled-e1750766063422.webp",
     description: {
       what: "Compares product structures, routings, and key master data across revisions and visually highlights changes.",
       why: "Eliminates manual redlining by providing a digital, visual record of differences—backed by downloadable reports for review and approvals.",
@@ -18,7 +18,7 @@ const accelerators = [
   {
     title: "Master Data Migrator",
     image:
-      "https://athenatec.com/wp-content/uploads/2025/06/businessman-using-laptop-while-showing-icon-cloud-files-technology-innovation-virtual-screen-concept-data-management-system-scaled-1.jpg",
+      "/assets/images/businessman-using-laptop-while-showing-icon-cloud-files-technology-innovation-virtual-screen-concept-data-management-system-scaled-1.webp",
     description: {
       what: "Automatically transfers and syncs updated master data across MES systems after change approvals.",
       why: "Reduces effort, ensures data consistency across platforms, and includes a detailed export of migrated fields for traceability.",
@@ -27,7 +27,7 @@ const accelerators = [
   {
     title: "Automation Scripting Tool",
     image:
-      "https://athenatec.com/wp-content/uploads/2025/06/futuristic-robot-artificial-intelligence-concept-scaled-1.jpg",
+      "/assets/images/futuristic-robot-artificial-intelligence-concept-scaled-1.webp",
     description: {
       what: "Executes automated test scripts for validating rule configurations, field behaviours, and system readiness during ECO implementation.",
       why: "Accelerates deployment while maintaining control. Every run generates a downloadable report for quality and audit teams.",

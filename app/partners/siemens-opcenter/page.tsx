@@ -5,6 +5,47 @@ import CTASection from "@/app/components/CTASection";
 import HeroSection from "@/app/components/HeroSection";
 import CaseStudiesSection from "@/app/components/CaseStudiesSection";
 import GallerySection from "@/app/components/GallerySection";
+import PracticeSection from "@/app/components/PracticeSection";
+
+const practiceData = [
+  {
+    title: "Process / Modules",
+    icon: "/assets/icons/process.png",
+    items: [
+      "WIP Workflow Management",
+      "Asset and Durables",
+      "Dispatching",
+      "Product Costing",
+      "ERP / PLM Integration",
+      "Equipment Integration",
+    ],
+  },
+  {
+    title: "Implementation",
+    icon: "/assets/icons/Implementation.png",
+    active: true,
+    items: [
+      "Project Management",
+      "Requirements / Design",
+      "Process Reengineering",
+      "Systems Integration Test",
+      "Custom Development",
+      "Automated Testing",
+      "User Training",
+    ],
+  },
+  {
+    title: "Application Support",
+    icon: "/assets/icons/Application-Support.png",
+    items: [
+      "Support all MES Modules",
+      "Ticket based Tracking",
+      "Troubleshooting",
+      "Enhancements / Reporting",
+    ],
+  },
+];
+
 
 const services = [
   {
@@ -143,7 +184,7 @@ const caseStudies = [
     description:
       "Our Medical device customer had an external system to get approval for Surgical Plans from the surgeon which had to be integrated to Opcenter in several Operations.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/freepik-export-202412191322302WRy-1920x1280.jpeg",
+      "/assets/images/freepik-export-202412191322302WRy-1920x1280.webp",
     link: "/downloads/case1.pdf",
   },
   {
@@ -163,7 +204,7 @@ const caseStudies = [
     description:
       "Customer had a requirement to implement Shipper case association to the Container during Packaging Process​.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/freepik-export-20241219133957E1bW-1920x1280.jpeg",
+      "/assets/images/freepik-export-20241219133957E1bW-1920x1280.webp",
     link: "/downloads/case3.pdf",
   },
   {
@@ -173,7 +214,7 @@ const caseStudies = [
     description:
       "Production Client which is a main UI for Operator in Electronics Suite was Optimized to cover maximum WIP transactions​.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/close-up-computer-keyboard-1920x1280.jpg",
+      "/assets/images/close-up-computer-keyboard-1920x1280.webp",
     link: "/downloads/case4.pdf",
   },
   {
@@ -183,7 +224,7 @@ const caseStudies = [
     description:
       "WIP Main page which is Key UI for all the WIP transactions in Semi Suite was optimized to reduce clicks and scrolls and enhanced color codes for better user experience and quick navigations​.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-17-at-10.11.32-e1734616151384.jpeg",
+      "/assets/images/WhatsApp-Image-2024-07-17-at-10.11.32-e1734616151384.webp",
     link: "/downloads/case5.pdf",
   },
   {
@@ -193,7 +234,7 @@ const caseStudies = [
     description:
       "Data Correction: Customer had a requirement to correct the collected data and also record Audit Trail for the same.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/businessman-compliance-rules-law-regulation-policy-virtual-screen-documents-with-checkbox-lists-1920x1277.jpg",
+      "/assets/images/businessman-compliance-rules-law-regulation-policy-virtual-screen-documents-with-checkbox-lists-1920x1277.webp",
     link: "/downloads/case6.pdf",
   },
 ];
@@ -201,31 +242,31 @@ const galleryItems = [
   {
     title: "Realize Live Americas 2025",
     image:
-      "https://athenatec.com/wp-content/uploads/2025/06/Media-9-768x576.jpeg",
+      "/assets/images/Media-9-768x576.webp",
     slug: "/gallery/realize-live-americas-2025",
   },
   {
     title: "Americas Partner Conference 2025",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/11/Media-2-768x576.jpg",
+      "/assets/images/Media-2-768x576.webp",
     slug: "/gallery/americas-partner-conference-2025",
   },
   {
     title: "Realize Live Americas 2024",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/11/Media-26-768x576.jpg",
+      "/assets/images/Media-26-768x576.webp",
     slug: "/gallery/realize-live-americas-2024",
   },
   {
     title: "Realize Live Europe 2024",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/11/Media-17-768x1024.jpg",
+      "/assets/images/Media-17-768x1024.webp",
     slug: "/gallery/realize-live-europe-2024",
   },
   {
     title: "Realize Live Americas 2023",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/shared-image-8-1-768x576.jpg",
+      "/assets/images/shared-image-8-1-768x576.webp",
     slug: "/gallery/realize-live-americas-2023",
   },
 ];
@@ -325,7 +366,7 @@ export default function SiemensOpcenter() {
 
           <div className="soc-team__image">
             <img
-              src="https://athenatec.com/wp-content/uploads/2024/08/siemens-img.jpg"
+              src="/assets/images/siemens-img.webp"
               alt="Athena Opcenter Team"
             />
           </div>
@@ -377,7 +418,7 @@ export default function SiemensOpcenter() {
             </div>
              <div className="mt-8 flex justify-center">
                 <Image
-                  src="https://athenatec.com/wp-content/uploads/2024/11/02-8.png"
+                  src="/assets/images/02-8.webp"
                   alt="Factory System Integration Diagram"
                   width={1000}
                   height={600}
@@ -387,72 +428,17 @@ export default function SiemensOpcenter() {
           </div>
         </div>
       </section>
-      {/* ENTERPRISE PRACTICE SECTION */}
-      <section className="soc-practice">
-        <div className="soc-practice__wrapper">
-          <h2 className="soc-practice__title">
-            Enterprise Systems Practice MES and Factory Systems
-          </h2>
-
-          <div className="soc-practice__grid">
-            {/* Card 1 */}
-            <div className="soc-practice__card">
-              <div className="soc-practice__icon">
-                <img src="/assets/icons/process.png" alt="" />
-              </div>
-              <h3>Process / Modules</h3>
-              <ul>
-                <li>WIP Workflow Management</li>
-                <li>Asset and Durables</li>
-                <li>Dispatching</li>
-                <li>Product Costing</li>
-                <li>ERP / PLM Integration</li>
-                <li>Equipment Integration</li>
-              </ul>
-            </div>
-
-            {/* Card 2 (Highlighted like screenshot) */}
-            <div className="soc-practice__card">
-              <div className="soc-practice__icon">
-                <img
-                  src="/assets/icons/Implementation.png"
-                  alt="Application-Support"
-                />
-              </div>
-              <h3>Implementation</h3>
-              <ul>
-                <li>Project Management</li>
-                <li>Requirements / Design</li>
-                <li>Process Reengineering</li>
-                <li>Systems Integration Test</li>
-                <li>Custom Development</li>
-                <li>Automated Testing</li>
-                <li>User Training</li>
-              </ul>
-            </div>
-
-            {/* Card 3 */}
-            <div className="soc-practice__card">
-              <div className="soc-practice__icon">
-                <img src="/assets/icons/Application-Support.png" alt="" />
-              </div>
-              <h3>Application Support</h3>
-              <ul>
-                <li>Support all MES Modules</li>
-                <li>Ticket based Tracking</li>
-                <li>Troubleshooting</li>
-                <li>Enhancements / Reporting</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PracticeSection
+        title="Enterprise Systems Practice MES and Factory Systems"
+        cards={practiceData}
+        
+      />
       <section className="siemens-analytics">
         <div className="container">
           {/* Top Process Flow Image */}
           <div className="analytics-diagram">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2024/11/07-4.png"
+              src="/assets/images/07-4.webp"
               alt="Manufacturing Process Flow"
               width={1200}
               height={600}
@@ -490,7 +476,7 @@ export default function SiemensOpcenter() {
           {/* Top Infographic */}
           <div className="analytics-block">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2024/11/10-1.png"
+              src="/assets/images/10-1.webp"
               alt="Smart Factory Analytics"
               width={1400}
               height={700}
@@ -500,7 +486,7 @@ export default function SiemensOpcenter() {
           {/* DMAIC Section */}
           <div className="analytics-block dmaic-section">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2024/11/04-6.jpg"
+              src="/assets/images/04-6.webp"
               alt="DMAIC Process"
               width={1200}
               height={500}
@@ -566,7 +552,7 @@ export default function SiemensOpcenter() {
       <CTASection
         title={
           <>
-            A New <br /> Requirement?
+           Let’s talk <br />Got an enquiry?
           </>
         }
         description="At Athena, our team guides your Industry 4.0 journey with deep expertise in digital transformation and manufacturing solutions. "

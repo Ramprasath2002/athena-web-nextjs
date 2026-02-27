@@ -42,7 +42,7 @@ export default function HeroSection({
     hover:bg-[#1f54a5]
     hover:-translate-y-1
     hover:shadow-xl
-    active:translate-y-0"
+    active:translate-y-0 cursor-pointer"
           >
             {buttonText}
           </button>

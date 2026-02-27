@@ -48,7 +48,7 @@ useEffect(() => {
           <Link href="/about">About</Link>
           <Link href="/accelerators">Athena Accelerators</Link>
           <HeaderMenu />
-          <Link href="/career">Career</Link>
+          <Link href="/careers">Career</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
