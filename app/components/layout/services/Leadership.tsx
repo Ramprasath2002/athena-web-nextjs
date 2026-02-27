@@ -14,33 +14,33 @@ export default function Leadership() {
     {
       name: "Senthil Ranganathan",
       role: "Founder & CEO",
-      image: "https://athenatec.com/wp-content/uploads/2025/12/image.jpg",
+      image: "/assets/images/image.webp",
       bio: "Visionary leader with over two decades of experience driving digital manufacturing and MES transformations globally.",
     },
     {
       name: "Peter Nakaso",
       role: "VP of Sales",
       image:
-        "https://athenatec.com/wp-content/uploads/2025/12/Peter-Picture.jpg",
+        "/assets/images/Peter-Picture.webp",
       bio: "Sales strategist focused on enterprise manufacturing solutions, partnerships, and global revenue growth.",
     },
     {
       name: "Jason Adams",
       role: "Global Vice President, Industry",
-      image: "https://athenatec.com/wp-content/uploads/2026/01/image.jpg",
+      image: "/assets/images/image.webp",
       bio: "Industry expert helping manufacturers adopt smart factory and Industry 4.0 practices at scale.",
     },
     {
       name: "Sachi Javli",
       role: "Managing Director & Global Delivery",
       image:
-        "https://athenatec.com/wp-content/uploads/2025/12/409933-e1754047370496.jpg",
+        "/assets/images/409933-e1754047370496.webp",
       bio: "Leads global delivery and execution with a strong focus on operational excellence and customer success.",
     },
     {
       name: "Chaitra Raviprakash",
       role: "Director of Manufacturing Systems (Opcenter COE) & Site Head",
-      image: "https://athenatec.com/wp-content/uploads/2025/11/Media.jpg",
+      image: "/assets/images/Media.webp",
       bio: "Experienced leader driving MES implementations and smart manufacturing initiatives.",
     },
   ];
@@ -50,13 +50,13 @@ export default function Leadership() {
       name: "Maryanne Steidinger",
       role: "Advisor",
       image:
-        "https://athenatec.com/wp-content/uploads/2025/05/IMG_4310-2021_12_09-22_37_18-UTC-e1748495136653.jpg",
+        "/assets/images/IMG_4310-2021_12_09-22_37_18-UTC-e1748495136653.webp",
       bio: "Maryanne Steidinger is a member of Athena’s Advisory Board. She concentrates on partner strategy, encompassing go to market, strategic alliances, marketing and positioning. Maryanne has a strong background in operational software (MES) and industrial controls, spending over 35 years in marketing and partner management with companies including Siemens, Rockwell and Schneider Electric.",
     },
     {
       name: "ED Mathias",
       role: "Advisor",
-      image: "https://athenatec.com/wp-content/uploads/2025/05/ed-mathias.webp",
+      image: "/assets/images/ed-mathias.webp",
       bio: "Ed Mathias is an Advisor at Athena Technology Solutions, bringing decades of leadership experience in manufacturing operations and systems integration. Since joining Athena in 2017, Ed has played a key role in guiding strategic initiatives and ensuring operational alignment with customer expectations.With a strong focus on lean principles and data-driven decision-making, Ed helps Athena maintain transparency and efficiency across its delivery processes.",
     },
   ];

@@ -78,7 +78,7 @@ export default function EyelitPage() {
             {/* Right Image */}
             <div className="expertise-image">
               <img
-                src="https://athenatec.com/wp-content/uploads/2025/02/1722014978283.png"
+                src="/assets/images/1722014978283.webp"
                 alt="Expertise"
               />
             </div>

@@ -11,25 +11,25 @@ export default function AboutPage() {
       year: "2011",
       title: "Established Foundations in Fremont California",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/09/businessman-suit-putting-last-piece-pyramid-using-wooden-blocks-500x500.jpg",
+        "/assets/images/businessman-suit-putting-last-piece-pyramid-using-wooden-blocks-500x500.webp",
     },
     {
       year: "2015",
       title: "Expanding Capabilities",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/09/standard-quality-control-collage-concept-500x500.jpg",
+        "/assets/images/standard-quality-control-collage-concept-500x500.webp",
     },
     {
       year: "2017",
       title: "Achieved ISO 9001 Certification",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/09/iso-9001-concept-quality-control-management-iso-9001-500x500.jpg",
+        "/assets/images/iso-9001-concept-quality-control-management-iso-9001-500x500.webp",
     },
     {
       year: "2020",
       title: "Global Growth and Expanded Expertise",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/09/global-business-adventures-expanding-horizons-with-international-connections-diverse-professional-500x500.jpg",
+        "/assets/images/global-business-adventures-expanding-horizons-with-international-connections-diverse-professional-500x500.webp",
     },
   ];
 
@@ -37,31 +37,31 @@ export default function AboutPage() {
     {
       title: "Semiconductor",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/07/Chip-Hand-Cropped.png",
+        "/assets/images/Chip-Hand-Cropped.webp",
       desc: "Athena offers comprehensive PLM, MES, CMMS, and analytics services for the semiconductor industry, partnering with clients to deliver top solutions.",
     },
     {
       title: "Electronics",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/08/neon-motherboard-background-scaled-e1724922449899.jpg",
+        "/assets/images/neon-motherboard-background-scaled-e1724922449899.webp",
       desc: "Athena's MES Solutions for the Electronics Industry streamline high-volume production, ensuring product quality and high yield through efficient PCB, PCBA, Mechanical Assembly, box-build, and testing processes.",
     },
     {
       title: "MED Devices",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/10/close-up-medical-orthodontist-equipment-modern-bright-office-scaled-e1724922792409.jpg",
+        "/assets/images/close-up-medical-orthodontist-equipment-modern-bright-office-scaled-e1724922792409.webp",
       desc: "Athena's proven expertise in medical device manufacturing and rapid implementations helps customers innovate, cut costs, and achieve high-quality products",
     },
     {
       title: "LED / Battery Manufacturing",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/08/futuristic-time-machine-scaled-e1724923036586.jpg",
+        "/assets/images/futuristic-time-machine-scaled-e1724923036586.webp",
       desc: "Athena excels in addressing complex manufacturing challenges with rapid implementation, delivering a robust, integrated, and scalable data-centric enterprise.",
     },
     {
       title: "Solar",
       image:
-        "https://athenatec.com/wp-content/uploads/2024/08/beautiful-alternative-energy-plant-with-solar-panels-scaled-e1724923416271.jpg",
+        "/assets/images/beautiful-alternative-energy-plant-with-solar-panels-scaled-e1724923416271.webp",
       desc: "Solar manufacturing's complexities, such as Applied Materials and SPC, demand advanced analytics and continuous experimentation. Athena's expertise and passion position us to effectively tackle these challenges.",
     },
   ];
@@ -182,7 +182,7 @@ We will continue to work together with Athena to carry out continuous process im
 
             <div className="about-image">
               <Image
-                src="https://athenatec.com/wp-content/uploads/2024/10/industry-4.0.png"
+                src="/assets/images/industry-4.0.webp"
                 alt="Team"
                 fill
                 className="img"

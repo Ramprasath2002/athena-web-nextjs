@@ -8,7 +8,7 @@ import WheelGestures from "embla-carousel-wheel-gestures";
 import Image from "next/image";
 import { ReactNode } from "react";
 import Autoplay from "embla-carousel-autoplay";
-
+import Link from "next/link";
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -22,23 +22,23 @@ export default function Services() {
   useEffect(() => {
     activeRef.current = active;
   }, [active]);
- 
-const autoScroll = useRef(
-  AutoScroll({
-    speed: 0.6, // lower = slower
-    stopOnInteraction: false,
-    stopOnMouseEnter: true,
-  })
-);
 
-const [emblaRef, emblaApi] = useEmblaCarousel(
-  {
-    loop: true,
-    dragFree: true,
-    containScroll: false,
-  },
-  [autoScroll.current]
-);
+  const autoScroll = useRef(
+    AutoScroll({
+      speed: 0.6, // lower = slower
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      dragFree: true,
+      containScroll: false,
+    },
+    [autoScroll.current],
+  );
 
   const handleManagedTabChange = (index: number) => {
     if (index === active || isTransitioning) return;
@@ -68,7 +68,6 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
- 
 
   const faqs = [
     {
@@ -125,8 +124,7 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
 
     {
       name: "Viavi",
-      image:
-        "/assets/Clients/VLAVI.png",
+      image: "/assets/Clients/VLAVI.png",
       text: "Through Athena’s exhaustive efforts and deep domain expertise, we were able to implement a ‘Viavi Aligned Solution’ of Siemens Opcenter 8.x that met our complex MES System requirements. This was done via streamlined manufacturing processes, user friendly UI/ UX, seamless integration with our factory equipment / metrology and a single source for factory insights. Athena utilized Industry 4.0 foundations and architected a cookie-cutter approach that is ready for all our global factories.",
     },
     {
@@ -381,33 +379,35 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
               client satisfaction underscores why we are a trusted partner in
               technology and manufacturing solutions.
             </p>
-            <button className="why-us-btn">See More</button>
+            <Link href="/about" className="why-us-btn">
+              See More
+            </Link>
           </div>
         </div>
       </section>
-      
-        <section className="testimonial-section">
-      <h2 className="testimonial-title">Meet Our Happy Customers</h2>
 
-      <div className="embla" ref={emblaRef}>
-        <div className="embla__container">
-          {testimonials.map((item, i) => (
-            <div
-              key={i}
-              className="embla__slide"
-              onClick={() => router.push("/about")}
-            >
-              <div className="testimonial-card">
-                <img src={item.image} alt={item.name} className="avatar" />
-                <h3>{item.name}</h3>
-                <div className="role">{item.role}</div>
-                <p className="testimonial-text">{item.text}</p>
+      <section className="testimonial-section">
+        <h2 className="testimonial-title">Meet Our Happy Customers</h2>
+
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container">
+            {testimonials.map((item, i) => (
+              <div
+                key={i}
+                className="embla__slide"
+                onClick={() => router.push("/about")}
+              >
+                <div className="testimonial-card">
+                  <img src={item.image} alt={item.name} className="avatar" />
+                  <h3>{item.name}</h3>
+                  <div className="role">{item.role}</div>
+                  <p className="testimonial-text">{item.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className="cta-section">
         <div className="cta-container">
@@ -424,7 +424,9 @@ const [emblaRef, emblaApi] = useEmblaCarousel(
               out today. Our dedicated team is here to assist you!
             </p>
 
-            <button className="cta-button">Contact Us</button>
+            <Link href="contact" className="cta-button">
+              Contact Us
+            </Link>
 
             <span className="cta-subtext">
               We typically respond within 24 hours.

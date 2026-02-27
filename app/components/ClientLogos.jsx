@@ -28,7 +28,7 @@ export const logos = [
   "/assets/Clients/Penumbra.png",
   "/assets/Clients/Philips.png",
   "/assets/Clients/PSi-Quantum.png",
-  "https://athenatec.com/wp-content/uploads/2024/12/03.png",
+  "/assets/images/03.webp",
   "/assets/Clients/SK-Siltron.png",
   "/assets/Clients/Skywater.png",
   "/assets/Clients/Swissbit.png",

@@ -13,7 +13,7 @@ const caseStudies = [
     tag: "Case Study #1",
     description:
       "This project aims to provide solution to implement equipment & processes integration globally through robust backend systems. This phase is part of the CM MES implementation that is spread across various manufacturing locations.",
-    image: "https://athenatec.com/wp-content/uploads/2025/01/2506-1707.jpg",
+    image: "/assets/images/2506-1707.webp",
     link: "/downloads/case-study-1.pdf",
   },
   {
@@ -24,7 +24,7 @@ const caseStudies = [
     description:
       "Athena was involved in implementing enterprise integration with real-time synchronization of data between SAP and CM MES across five global manufacturing factories.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/sap-system-software-automation-concept-virtual-screen-data-center-scaled.jpg",
+      "/assets/images/sap-system-software-automation-concept-virtual-screen-data-center-scaled.webp",
     link: "/downloads/case-study-2.pdf",
   },
   {
@@ -35,7 +35,7 @@ const caseStudies = [
     description:
       "Currently, the client has implemented a home-grown MES solution for their main factory. Athena’s scope is to conduct full CM MES implementation and customization to enhance operational efficiency.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/professional-mechanical-engineer-team-working-personal-computer-metal-lathe-industrial-manufacturing-factory-engineer-operating-lathe-machinery-product-quality-inspection-scaled.jpg",
+      "/assets/images/professional-mechanical-engineer-team-working-personal-computer-metal-lathe-industrial-manufacturing-factory-engineer-operating-lathe-machinery-product-quality-inspection-scaled.webp",
     link: "/downloads/case-study-3.pdf",
   },
   {
@@ -46,7 +46,7 @@ const caseStudies = [
     description:
       "The client offers a unique product and technology portfolio for sensing, illumination and visualization, from prime-quality light emitters and optical components to micro-modules and light sensors.",
     image:
-      "https://athenatec.com/wp-content/uploads/2024/12/smart-microchip-background-motherboard-closeup-technology-remix-scaled-e1735648934586.jpg",
+      "/assets/images/smart-microchip-background-motherboard-closeup-technology-remix-scaled-e1735648934586.jpg",
     link: "/downloads/case-study-4.pdf",
   },
   {
@@ -56,7 +56,7 @@ const caseStudies = [
     tag: "Case Study #5",
     description:
       "Currently, the client has implemented a CM MES solution for one of its large factories. Athena’s role includes upgrading and customizing the solution to support advanced manufacturing processes.",
-    image: "https://athenatec.com/wp-content/uploads/2024/12/image-1.png",
+    image: "/assets/images/image-1.webp",
     link: "/downloads/case-study-5.pdf",
   },
 ];
@@ -64,17 +64,17 @@ const galleryItems = [
   {
     title:
       "MES Industry Summit 2025 MES & Industry 4.0 International Summit 2025",
-    image: "https://athenatec.com/wp-content/uploads/2025/06/shared-image.jpg",
+    image: "/assets/images/shared-image.webp",
     slug: "/gallery/realize-live-americas-2025",
   },
   {
     title: "Hannover Messe 2025",
-    image: "https://athenatec.com/wp-content/uploads/2025/04/content.webp",
+    image: "/assets/images/content.webp",
     slug: "/gallery/americas-partner-conference-2025",
   },
   {
     title: "Industry 4.0 International Summit 2023",
-    image: "https://athenatec.com/wp-content/uploads/2024/12/Media-18.jpg",
+    image: "/assets/images/Media-18.webp",
     slug: "/gallery/realize-live-americas-2024",
   },
 ];
@@ -135,7 +135,7 @@ export default function CriticalManufacturingPage() {
 
             <div className="award-card">
               <Image
-                src="https://athenatec.com/wp-content/uploads/2024/11/Cm-02.png"
+                src="/assets/images/Cm-02.webp"
                 alt="Knowledge Award 2023"
                 width={500}
                 height={350}
@@ -180,7 +180,7 @@ export default function CriticalManufacturingPage() {
 
           <div className="cmf-image">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2025/01/figure1.png"
+              src="/assets/images/figure1.webp"
               alt="CMF Overview Chart"
               width={600}
               height={450}
@@ -196,7 +196,7 @@ export default function CriticalManufacturingPage() {
           {/* TOP DIAGRAM */}
           <div className="templatization-diagram">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2025/01/16-02-1.png"
+              src="/assets/images/16-02-1.webp"
               alt="Templatization Solution"
               width={600}
               height={600}
@@ -211,7 +211,7 @@ export default function CriticalManufacturingPage() {
           {/* BENEFITS IMAGE */}
           <div className="benefits-diagram">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2024/12/16-1.png"
+              src="/assets/images/16-1.webp"
               alt="Templatization Benefits"
               width={700}
               height={700}
@@ -230,7 +230,7 @@ export default function CriticalManufacturingPage() {
           </p>
           <div className="modules-diagram">
             <Image
-              src="https://athenatec.com/wp-content/uploads/2024/12/CMS-Module1.jpg"
+              src="/assets/images/CMS-Module1.webp"
               alt="Templatization Benefits"
               width={1000}
               height={900}
@@ -404,7 +404,7 @@ export default function CriticalManufacturingPage() {
 
             <div className="capability-image">
               <Image
-                src="https://athenatec.com/wp-content/uploads/2024/12/man-hard-hat-is-holding-tablet-front-blue-white-background-scaled.jpg"
+                src="/assets/images/man-hard-hat-is-holding-tablet-front-blue-white-background-scaled.webp"
                 alt="CM MES Capability"
                 width={600}
                 height={500}

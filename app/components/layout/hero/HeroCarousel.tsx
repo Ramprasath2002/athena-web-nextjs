@@ -3,7 +3,8 @@
 import { useState, useEffect, SetStateAction } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import { link } from "fs";
+import Link from "next/link";
 const slides = [
   // {
   //   title: "Gain End-to-End Visibility in Medical Device Manufacturing",
@@ -15,6 +16,7 @@ const slides = [
     title: "Digitizing the Manufacturing Enterprise Since 2011",
     desc: "Leveraging deep expertise to enhance partnerships and drive long-term manufacturing success.",
     cta: "Connect Us",
+    link: "/contact",
     image: "/assets/images/DME.png",
   },
 
@@ -22,6 +24,7 @@ const slides = [
     title: "About Us",
     desc: "Athena is an Industry 4.0 Enterprise Manufacturing Solutions provider, assisting companies and driving their Industry 4.0 roadmap, centered on Digital Transformation.",
     cta: "About Us",
+    link: "/about",
     image: "/assets/images/aboutus.png",
   },
 
@@ -29,6 +32,7 @@ const slides = [
     title: "Expertise in MES, PLM, ERP & More",
     desc: "Specialized in MES, PLM, ERP, CMMS, and smart factory analytics.",
     cta: "MES, PLM & More",
+    link: "/solutions/mes",
     image: "/assets/images/mlsandpls.png",
   },
 
@@ -36,6 +40,7 @@ const slides = [
     title: "Siemens Alliance Partner",
     desc: "Experienced in implementing and upgrading Opcenter MES across versions, from Camstar 3.2 to Opcenter 2410, ensuring seamless transitions and optimized performance.",
     cta: "Siemens Alliance Partner",
+    link: "/partners/siemens-opcenter",
     image: "/assets/images/siemens.webp",
   },
 
@@ -43,6 +48,7 @@ const slides = [
     title: "Critical Manufacturing Premier Implementation Partner",
     desc: "Athena specializes in the implementation, upgrade, and customization of CM MES, along with seamless integrations with PLM, ERP, LIMS, and Camline.",
     cta: "CM",
+    link: "/partners/critical-manufacturing",
     image: "/assets/images/CMC.webp",
   },
 
@@ -51,6 +57,7 @@ const slides = [
       "Athena Announces Strategic Authorised Reseller Partnership with twinzo",
     desc: "Strengthening smart manufacturing visibility and operational intelligence through Twinzo’s digital twin platform.",
     cta: "twinzo",
+    link: "/partners/critical-manufacturing",
     image: "/assets/images/twinzobanners.webp",
   },
 
@@ -58,6 +65,7 @@ const slides = [
     title: "Eyelit Implementation Partner",
     desc: "As an official Eyelit Technologies partner, Athena delivers expertise in deploying Eyelit MES and Equipment Connect across semiconductor, solar, LED/laser diode, and medical device industries.",
     cta: "Eyelit",
+    link: "/partners/eyelit",
     image: "/assets/images/eyelitsbanner.webp",
   },
 
@@ -65,6 +73,7 @@ const slides = [
     title: "ECO Accelerators",
     desc: "Speed up engineering change workflows with intelligent automation. ECO Accelerators handle tracking, approvals, execution, and traceability while ensuring compliance.",
     cta: "Accelerators",
+    link: "/accelerators",
     image: "/assets/images/eco-accelerators.webp",
   },
 
@@ -152,10 +161,13 @@ export default function HeroCarousel() {
             {slides[index].desc}
           </p>
 
-          <button className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl cursor-pointer">
+          <Link
+            href={slides[index].link}
+            className="cta-btn relative overflow-hidden text-white font-semibold px-8 py-3 rounded-xl cursor-pointer inline-block"
+          >
             <span className="relative z-10">{slides[index].cta}</span>
             <span className="shine" />
-          </button>
+          </Link>
         </div>
       </div>
 
