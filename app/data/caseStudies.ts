@@ -13,6 +13,7 @@ type CaseSection = {
 };
 
 export type CaseStudy = {
+  desc: string | undefined;
   slug: string;
   title: string;
   fullTitle: string;
