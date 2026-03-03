@@ -44,7 +44,7 @@ export default async function BlogPage() {
       <HeroSection
         title="Blog"
         description="Leave us a little info, and we’ll be in touch."
-        image="/assets/images/blog.webp"
+        image="/assets/images/Blog-banner.webp"
         align="center"
         buttonText="Contact Us"
         buttonLink="/contact"
