@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Outfit } from "next/font/google";
-import Header from "@/app/components/layout/header";
-import Footer from "@/app/components/layout/footer";
+import Header from "@/app/components/home/header";
+import Footer from "@/app/components/home/footer";
 import "./globals.css";
 import AIChatbot from "@/app/components/chatbot/chatbot";
 import ScrollToTop from "@/app/components/ScrollToTop";
@@ -35,7 +35,10 @@ const geistMono = Geist_Mono({
 //   description:
 //     "Athena specializes in the implementation of MES (Manufacturing Execution Systems) and integration, seamlessly connecting with all other enterprise systems",
 // };
-
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 export const metadata: Metadata = {
   metadataBase: new URL("https://athenatec.com"),
 
@@ -98,6 +101,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+       
       <body className={`${inter.variable} ${outfit.variable}`}>
         <script
           type="application/ld+json"
@@ -108,7 +112,9 @@ export default function RootLayout({
               name: "Athenatec",
               url: "https://athenatec.com",
               logo: "https://athenatec.com/logo.png",
-              sameAs: ["https://www.linkedin.com/company/athena-technology-solutions/"],
+              sameAs: [
+                "https://www.linkedin.com/company/athena-technology-solutions/",
+              ],
             }),
           }}
         />

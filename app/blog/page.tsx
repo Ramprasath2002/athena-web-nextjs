@@ -4,7 +4,6 @@ import Image from "next/image";
 import "./blog.scss";
 import HeroSection from "@/app/components/HeroSection";
 
-
 type WPPost = {
   id: number;
   slug: string;
@@ -28,6 +27,7 @@ type WPPost = {
     }[];
   };
 };
+
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -35,76 +35,142 @@ function formatDate(date: string) {
     day: "numeric",
   });
 }
+
 export default async function BlogPage() {
   const posts = await getPosts();
- 
+
+  const featuredPost = posts[0];
+  const remainingPosts = posts.slice(1);
+
+  const getImage = (post: WPPost) =>
+    post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+      ?.medium_large?.source_url ||
+    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+    null;
+
+  const getExcerpt = (post: WPPost, length = 160) =>
+    post.excerpt?.rendered
+      ?.replace(/<[^>]+>/g, "")
+      ?.replace(/&#8230;/g, "...")
+      ?.slice(0, length) + "...";
 
   return (
     <>
       <HeroSection
         title="Blog"
-        description="Leave us a little info, and we’ll be in touch."
+        description="Leave us a little info, and we'll be in touch."
         image="/assets/images/Blog-banner.webp"
         align="center"
         buttonText="Contact Us"
         buttonLink="/contact"
       />
-      <div className="blog-container">
-        <h1 className="blog-title">Latest Blogs</h1>
 
+      <div className="blog-wrapper">
+        {/* Section Header */}
+        <div className="blog-header">
+          <div className="blog-header__eyebrow">
+            <span className="eyebrow-line" />
+            <span className="eyebrow-text">Our Journal</span>
+            <span className="eyebrow-line" />
+          </div>
+          <h1 className="blog-header__title">Latest Insights</h1>
+          <p className="blog-header__subtitle">
+            Perspectives, ideas, and stories worth reading
+          </p>
+        </div>
+
+        {/* Featured Post */}
+        {featuredPost && (
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="featured-post"
+          >
+            <div className="featured-post__image-wrap">
+              {getImage(featuredPost) && (
+                <Image
+                  src={getImage(featuredPost)!}
+                  alt={featuredPost.title.rendered.replace(/<[^>]+>/g, "")}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  className="featured-post__image"
+                  priority
+                />
+              )}
+              <div className="featured-post__overlay" />
+            </div>
+
+            <div className="featured-post__content">
+              <span className="featured-badge">Featured</span>
+              <time className="post-date">{formatDate(featuredPost.date)}</time>
+              <h2
+                className="featured-post__title"
+                dangerouslySetInnerHTML={{ __html: featuredPost.title.rendered }}
+              />
+              <p className="featured-post__excerpt">
+                {getExcerpt(featuredPost, 200)}
+              </p>
+              <span className="cta-link">
+                Read Article
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </Link>
+        )}
+
+        {/* Grid */}
         <div className="blog-grid">
-          {posts.map((post) => {
-            const image =
-              post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                ?.medium_large?.source_url ||
-              post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-              null;
-
-            const excerpt = post.excerpt?.rendered
-              ?.replace(/<[^>]+>/g, "")
-              ?.replace(/&#8230;/g, "...")
-              ?.slice(0, 140);
-
-            const formattedDate = new Date(post.date).toLocaleDateString(
-              "en-US",
-              {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              },
-            );
+          {remainingPosts.map((post, i) => {
+            const image = getImage(post);
+            const excerpt = getExcerpt(post, 120);
 
             return (
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
                 className="blog-card"
+                style={{ "--delay": `${i * 0.07}s` } as React.CSSProperties}
               >
-                <div className="image-wrapper">
+                <div className="blog-card__image-wrap">
                   {image && (
                     <Image
                       src={image}
                       alt={post.title.rendered.replace(/<[^>]+>/g, "")}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="blog-image"
-                      priority
+                      className="blog-card__image"
                     />
                   )}
+                  <div className="blog-card__shimmer" />
                 </div>
 
-                <div className="blog-content">
-                  <span className="blog-date">{formattedDate}</span>
-
-                  <h2
-                    dangerouslySetInnerHTML={{
-                      __html: post.title.rendered,
-                    }}
+                <div className="blog-card__body">
+                  <time className="post-date">{formatDate(post.date)}</time>
+                  <h3
+                    className="blog-card__title"
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                   />
+                  <p className="blog-card__excerpt">{excerpt}</p>
 
-                  <p>{excerpt}...</p>
-
-                  <span className="read-more">Read More →</span>
+                  <span className="cta-link cta-link--sm">
+                    Read More
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M3 8h10M9 4l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
                 </div>
               </Link>
             );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DownloadForm from "@/app/components/DownloadForm";
+import DownloadForm from "@/app/components/casestudies-form/DownloadForm";
 
 type ParagraphItem =
   | string

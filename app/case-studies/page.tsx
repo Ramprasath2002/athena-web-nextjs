@@ -19,24 +19,32 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
 type CaseStudy = {
   slug: string;
   title: string;
   image: string;
   desc: string;
+  tag: string;
+ 
 };
+
 const caseStudies: CaseStudy[] = [
   {
     slug: "medical-device-mes-modernization",
     title: "Enabling Continuous Innovation in Medical Device",
     image: "/assets/images/form-img.webp",
     desc: "A U.S.-based global leader in CGM has been pioneering real-time health insights for over 25 years.",
+    tag: "Medical Device",
+ 
   },
   {
     slug: "nevro-paperless-mes",
     title: "From Paper to Paperless – Modernizing MES",
     image: "/assets/images/From-Paper.webp",
     desc: "Nevro, a globally recognized medical device company, is transforming operations with digital MES.",
+    tag: "MES Modernization",
+ 
   },
 ];
 
@@ -45,27 +53,36 @@ export default function CaseStudies() {
     <>
       <HeroSection
         title="Case Studies"
-        description="Leave us a little info, and we’ll be in touch."
+        description="Leave us a little info, and we'll be in touch."
         image="/assets/images/business-women-signature-document-scaled.webp"
         align="center"
         buttonText="Contact Us"
         buttonLink="/contact"
       />
+
       <section className="case-study-section">
+        {/* Decorative background grid */}
+        <div className="bg-grid" aria-hidden="true" />
+
         <div className="container">
           <div className="section-header">
-            <h2>Case Studies</h2>
+            <h2>
+              Case Studies
+              <br />
+            </h2>
             <p>Real transformation stories from our clients</p>
           </div>
 
           <div className="case-grid">
-            {caseStudies.map((item) => (
+            {caseStudies.map((item, index) => (
               <Link
                 href={`/case-studies/${item.slug}`}
                 target="_blank"
                 key={item.slug}
                 className="case-card"
+                style={{ "--index": index } as React.CSSProperties}
               >
+                {/* Image block */}
                 <div className="case-image">
                   <Image
                     src={item.image}
@@ -73,27 +90,43 @@ export default function CaseStudies() {
                     fill
                     className="img"
                   />
+                  <div className="image-overlay" />
+                  <span className="case-tag">{item.tag}</span>
                 </div>
 
+                {/* Content block */}
                 <div className="case-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
+                  <div className="case-content-inner">
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
 
-                  <span className="case-btn">
-                    <span>Know More</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24">
-                      <path
-                        d="M5 12h14M13 6l6 6-6 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
+                  <div className="case-footer">
+                    <span className="case-btn">
+                      <span>Read Case Study</span>
+                      <svg
+                        className="arrow-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
                         fill="none"
-                      />
-                    </svg>
-                  </span>
+                      >
+                        <path
+                          d="M5 12h14M13 6l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
           </div>
+
+  
         </div>
       </section>
     </>
