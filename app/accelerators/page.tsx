@@ -1,9 +1,9 @@
-
 import HeroSection from "../components/HeroSection";
 import "./accelerator.scss";
 import Image from "next/image";
 import CTASection from "../components/CTASection";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Athena ECO Accelerators | MES Engineering Change Automation",
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     canonical: "https://athenatec.com/accelerators",
   },
 };
-
 
 const accelerators = [
   {
@@ -142,38 +141,29 @@ export default function ecoaccelerator() {
             ))}
           </div>
           <div className="cta-row">
-            <button className="primary-btn">
+            <Link href="/athena-accelerator-get-a-demo" className="primary-btn">
               Get a Demo
               <span className="arrow">→</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
-       <section className="accelerator-highlights">
-      <div className="container">
-        <h2 className="section-title">
-          What Sets These Accelerators Apart
-        </h2>
+      <section className="accelerator-highlights">
+        <div className="container">
+          <h2 className="section-title">What Sets These Accelerators Apart</h2>
 
-        <ul className="highlight-list">
-          <li>
-            Designed for MES platforms (e.g., Siemens Opcenter, Critical Manufacturing)
-          </li>
-          <li>
-            Generate downloadable reports at each key step
-          </li>
-          <li>
-            Improve accuracy and reduce ECO cycle time
-          </li>
-          <li>
-            Enable faster, safer implementation of engineering changes
-          </li>
-          <li>
-            Full traceability and audit-readiness across the lifecycle
-          </li>
-        </ul>
-      </div>
-    </section>
+          <ul className="highlight-list">
+            <li>
+              Designed for MES platforms (e.g., Siemens Opcenter, Critical
+              Manufacturing)
+            </li>
+            <li>Generate downloadable reports at each key step</li>
+            <li>Improve accuracy and reduce ECO cycle time</li>
+            <li>Enable faster, safer implementation of engineering changes</li>
+            <li>Full traceability and audit-readiness across the lifecycle</li>
+          </ul>
+        </div>
+      </section>
       <CTASection
         title={
           <>

@@ -11,71 +11,179 @@ export default async function PostPage({ params }) {
   if (!post) notFound();
 
   const allPosts = await getAllPosts();
-
-  const currentIndex = allPosts.findIndex(p => p.slug === slug);
-
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
   const nextPost = allPosts[currentIndex - 1];
+  const prevPost = allPosts[currentIndex + 1];
 
-  const relatedPosts = allPosts
-    .filter(p => p.slug !== slug)
-    .slice(0, 2);
+  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
+
+  // Extract the featured image from the post
+  const heroImage =
+    post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+      ?.full?.source_url ||
+    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+    null;
+
+  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const readTime = Math.ceil(
+    post.content.rendered.replace(/<[^>]+>/g, "").split(" ").length / 200
+  );
 
   return (
     <div className="post-wrapper">
-      <article className="post-container">
-        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-        <div
-          className="post-content"
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        />
-      </article>
+      {/* ── Hero ─────────────────────────────────────── */}
+      <header className="post-hero">
+        {heroImage && (
+          <div className="post-hero__bg">
+            <Image
+              src={heroImage}
+              alt={post.title.rendered.replace(/<[^>]+>/g, "")}
+              fill
+              sizes="100vw"
+              className="post-hero__img"
+              priority
+            />
+            <div className="post-hero__overlay" />
+          </div>
+        )}
 
-      {/* Related Posts */}
-      <section className="related-section">
-        <h2>Related Posts</h2>
+        <div className="post-hero__content">
+          <Link href="/blog" className="post-hero__back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13 8H3M7 12l-4-4 4-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back to Blog
+          </Link>
 
-        <div className="related-grid">
-          {relatedPosts.map((item) => {
-            const image =
-              item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+          <div className="post-hero__meta">
+            <time className="post-hero__date">{formattedDate}</time>
+            <span className="post-hero__dot">·</span>
+            <span className="post-hero__read">{readTime} min read</span>
+          </div>
 
-            return (
-              <Link
-                key={item.id}
-                href={`/blog/${item.slug}`}
-                className="related-card"
-              >
-                {image && (
-                  <Image
-                    src={image}
-                    alt={item.title.rendered}
-                    width={500}
-                    height={300}
-                  />
-                )}
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: item.title.rendered,
-                  }}
+          <h1
+            className="post-hero__title"
+            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+          />
+        </div>
+      </header>
+
+      {/* ── Article ──────────────────────────────────── */}
+      <div className="post-layout">
+        <article className="post-article">
+          <div
+            className="post-content"
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          />
+
+          {/* Prev / Next Nav */}
+          <nav className="post-nav">
+            {prevPost && (
+              <Link href={`/blog/${prevPost.slug}`} className="post-nav__item post-nav__item--prev">
+                <span className="post-nav__label">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Previous
+                </span>
+                <span
+                  className="post-nav__title"
+                  dangerouslySetInnerHTML={{ __html: prevPost.title.rendered }}
                 />
               </Link>
-            );
-          })}
-        </div>
-      </section>
+            )}
+            {nextPost && (
+              <Link href={`/blog/${nextPost.slug}`} className="post-nav__item post-nav__item--next">
+                <span className="post-nav__label">
+                  Next
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                <span
+                  className="post-nav__title"
+                  dangerouslySetInnerHTML={{ __html: nextPost.title.rendered }}
+                />
+              </Link>
+            )}
+          </nav>
+        </article>
+      </div>
 
-      {/* Next Post */}
-      {nextPost && (
-        <div className="next-post">
-          <span>Next Post →</span>
-          <Link href={`/blog/${nextPost.slug}`}>
-            <h3
-              dangerouslySetInnerHTML={{
-                __html: nextPost.title.rendered,
-              }}
-            />
-          </Link>
-        </div>
+      {/* ── Related Posts ────────────────────────────── */}
+      {relatedPosts.length > 0 && (
+        <section className="related-section">
+          <div className="related-header">
+            <span className="related-eyebrow">
+              <span className="eyebrow-line" />
+              Continue Reading
+              <span className="eyebrow-line" />
+            </span>
+          </div>
+
+          <div className="related-grid">
+            {relatedPosts.map((item, i) => {
+              const img =
+                item._embedded?.["wp:featuredmedia"]?.[0]?.media_details
+                  ?.sizes?.medium_large?.source_url ||
+                item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
+              const itemDate = new Date(item.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              });
+
+              return (
+                <Link
+                  key={item.id}
+                  href={`/blog/${item.slug}`}
+                  className="related-card"
+                  style={{ "--i": i }}
+                >
+                  <div className="related-card__img-wrap">
+                    {img ? (
+                      <Image
+                        src={img}
+                        alt={item.title.rendered.replace(/<[^>]+>/g, "")}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="related-card__img"
+                      />
+                    ) : (
+                      <div className="related-card__no-img" />
+                    )}
+                    <div className="related-card__shine" />
+                  </div>
+                  <div className="related-card__body">
+                    <time className="related-card__date">{itemDate}</time>
+                    <h3
+                      className="related-card__title"
+                      dangerouslySetInnerHTML={{ __html: item.title.rendered }}
+                    />
+                    <span className="related-card__cta">
+                      Read Article
+                      <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
       )}
     </div>
   );

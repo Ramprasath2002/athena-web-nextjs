@@ -58,29 +58,7 @@ $shadow: 0 24px 60px rgba(15, 47, 79, 0.1);
   text-align: center;
   margin-bottom: 64px;
 
-  .case-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: $primary;
-    background: $primary-light;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-
-    &__dot {
-      width: 7px;
-      height: 7px;
-      background: $primary;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-  }
-
+ 
   h2 {
     font-size: clamp(28px, 4vw, 44px);
     font-weight: 800;

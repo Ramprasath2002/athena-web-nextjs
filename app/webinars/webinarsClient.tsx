@@ -1,4 +1,3 @@
- 
 "use client";
 
 import { useState } from "react";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import "./web.scss";
 import HeroSection from "@/app/components/HeroSection";
 import Image from "next/image";
+
 type WebinarType = "live" | "ondemand";
 
 interface Webinar {
@@ -20,14 +20,14 @@ interface Webinar {
 
 const webinarData: Webinar[] = [
   {
-    title: "Gain End-to-End Visibility in Medical Device Manufacturin",
-   slug: "medical-device-visibility",
+    title: "Gain End-to-End Visibility in Medical Device Manufacturing",
+    slug: "medical-device-visibility",
     image: "/assets/images/Gain-End-to-End-Visibility-in-Medical-Device.webp",
     type: "ondemand",
     date: "12 March 2026",
     time: "4:00 PM IST",
     description:
-      " Watch the Webinar On-Demand",
+      "Explore how real-time data visibility transforms quality control and compliance across the entire production lifecycle.",
   },
   {
     title: "Accelerate MedTech Manufacturing with a Modern MES Accelerator",
@@ -37,7 +37,7 @@ const webinarData: Webinar[] = [
     date: "25 March 2026",
     time: "3:00 PM IST",
     description:
-      "Learn how digital transformation streamlines production systems.",
+      "Learn how digital transformation streamlines production systems and accelerates time-to-market for medical devices.",
   },
 ];
 
@@ -53,69 +53,124 @@ export default function Webinars() {
     <>
       <HeroSection
         title="Webinars"
-        description="Leave us a little info, and we’ll be in touch."
+        description="Leave us a little info, and we'll be in touch."
         image="/assets/images/webinars.webp"
         align="center"
         buttonText="Contact Us"
         buttonLink="/contact"
       />
-      <div className="webinars-page">
-        {/* HERO */}
 
+      <div className="webinars-page">
         {/* FILTER */}
         <section className="webinars-filter">
-          {["all", "live", "ondemand"].map((tab) => (
-            <button
-              key={tab}
-              className={filter === tab ? "active" : "cursor-pointer"}
-              onClick={() => setFilter(tab as any)}
-            >
-              {tab === "all"
-                ? "All"
-                : tab === "live"
-                  ? "Upcoming"
-                  : "On-Demand"}
-            </button>
-          ))}
+          <div className="filter-inner">
+            <p className="filter-label">Browse by:</p>
+            <div className="filter-tabs">
+              {["all", "live", "ondemand"].map((tab) => (
+                <button
+                  key={tab}
+                  className={`filter-btn ${filter === tab ? "active" : ""}`}
+                  onClick={() => setFilter(tab as "all" | WebinarType)}
+                >
+                  {tab === "all" ? "All Sessions" : tab === "live" ? "Upcoming" : "On‑Demand"}
+                  {tab === "live" && <span className="live-dot" />}
+                </button>
+              ))}
+            </div>
+          </div>
         </section>
+
+        {/* RESULTS COUNT */}
+        <div className="webinars-count">
+          <span>{filtered.length} session{filtered.length !== 1 ? "s" : ""} found</span>
+        </div>
 
         {/* GRID */}
         <section className="webinars-grid">
-          {filtered.map((webinar) => (
-            <div key={webinar.slug} className="webinar-card">
+          {filtered.map((webinar, i) => (
+            <article
+              key={webinar.slug}
+              className="webinar-card"
+              style={{ animationDelay: `${i * 80}ms` }}
+            >
               <div className="card-image">
-                <Image src={webinar.image} width={400} height={300} alt={webinar.title} />
-                <span className={`badge ${webinar.type}`}>
-                  {webinar.type === "live" ? "LIVE" : "ON-DEMAND"}
+                <Image
+                  src={webinar.image}
+                  width={600}
+                  height={380}
+                  alt={webinar.title}
+                />
+                <div className="card-image-overlay" />
+                <span className={`badge badge--${webinar.type}`}>
+                  {webinar.type === "live" ? (
+                    <><span className="badge-dot" />Live</>
+                  ) : (
+                    "On‑Demand"
+                  )}
                 </span>
               </div>
 
-              <div className="card-content">
-                <h3>{webinar.title}</h3>
-                <p>{webinar.description}</p>
-
+              <div className="card-body">
                 <div className="card-meta">
                   <span className="meta-item">
-                    <Image src="/assets/icons/calendar.svg"  width={22} height={22} alt="calendar" />
+                    <Image
+                      src="/assets/icons/calendar.svg"
+                      width={14}
+                      height={14}
+                      alt="date"
+                    />
                     {webinar.date}
                   </span>
-
+                  <span className="meta-divider" />
                   <span className="meta-item">
-                    <Image src="/assets/icons/clock.svg" width={22} height={22} alt="clock" />
+                    <Image
+                      src="/assets/icons/clock.svg"
+                      width={14}
+                      height={14}
+                      alt="time"
+                    />
                     {webinar.time}
                   </span>
                 </div>
 
-                <Link
-                  href={`/webinars/${webinar.slug}`}
-                  className="card-btn cursor-pointer"
-                >
-                  {webinar.type === "live" ? "Register Now →" : "Watch Now →"}
-                </Link>
+                <h3 className="card-title">{webinar.title}</h3>
+                <p className="card-description">{webinar.description}</p>
+
+                <div className="card-footer">
+                  <Link
+                    href={`/webinars/${webinar.slug}`}
+                    className="card-btn"
+                  >
+                    <span>
+                      {webinar.type === "live" ? "Register Now" : "Watch Now"}
+                    </span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 8h10M9 4l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </section>
+
+        {filtered.length === 0 && (
+          <div className="webinars-empty">
+            <p>No sessions found for this filter.</p>
+          </div>
+        )}
       </div>
     </>
   );

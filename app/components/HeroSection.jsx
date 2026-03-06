@@ -14,7 +14,7 @@ export default function HeroSection({
   const router = useRouter();
 
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center justify-start overflow-hidden text-white">
+    <section className="relative w-full min-h-[70vh] flex items-center justify-start overflow-hidden text-white suppressHydrationWarning">
       <Image src={image} alt={title} fill priority className="object-cover" />
 
       <div

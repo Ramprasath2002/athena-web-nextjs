@@ -1,25 +1,27 @@
 
 .soc-description {
   background: #f2f2f2;
-  padding: 80px 20px;
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 20px);
   display: flex;
   justify-content: center;
 
   &__card {
-    color: #ffff;
+    color: #ffffff;
     background: #1c4584;
-    border-radius: 20px;
-    padding: 40px;
+    border-radius: clamp(12px, 2vw, 20px);
+    padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 40px);
     max-width: 1100px;
+    width: 100%;
     text-align: center;
     line-height: 1.8;
-    font-size: 16px;
+    font-size: clamp(14px, 1.6vw, 16px);
   }
 }
 
+// ── SOC SERVICES ──────────────────────────────────────────────────────────
 .soc-services {
   background: #f5f6f8;
-  padding: 100px 20px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 20px);
 
   &__container {
     max-width: 1200px;
@@ -28,19 +30,22 @@
 
   &__title {
     text-align: center;
-    font-size: 38px;
+    font-size: clamp(22px, 4vw, 38px);
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-bottom: clamp(32px, 5vw, 60px);
     color: #1c4584;
+    line-height: 1.2;
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: clamp(16px, 2.5vw, 30px);
+
+    @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 600px) { grid-template-columns: 1fr; }
   }
 }
-
 
 .soc-card {
   background: #e9edf3;
@@ -51,27 +56,31 @@
   flex-direction: column;
 
   &__img {
-    height: 170px;
+    height: clamp(120px, 15vw, 170px);
     background: #cfcfcf;
   }
 
   &__content {
-    padding: 25px;
+    padding: clamp(16px, 2.5vw, 25px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 
     h3 {
-      font-size: 18px;
+      font-size: clamp(15px, 1.8vw, 18px);
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: clamp(10px, 1.5vw, 15px);
       color: #1a1a1a;
       transition: 0.3s ease;
     }
 
     p {
-      font-size: 14px;
+      font-size: clamp(13px, 1.4vw, 14px);
       line-height: 1.6;
       color: #444;
-      margin-bottom: 20px;
+      margin-bottom: clamp(14px, 2vw, 20px);
       transition: 0.3s ease;
+      flex: 1;
     }
 
     a {
@@ -80,6 +89,7 @@
       color: #1c4584;
       text-decoration: none;
       transition: 0.3s ease;
+      align-self: flex-start;
     }
   }
 
@@ -88,18 +98,21 @@
     transform: translateY(-6px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 
-    .soc-card__content {
-      h3,
-      p,
-      a {
-        color: #fff;
-      }
+    .soc-card__content h3,
+    .soc-card__content p,
+    .soc-card__content a {
+      color: #fff;
     }
+  }
+
+  @media (hover: none) {
+    &:hover { transform: none; }
   }
 }
 
+// ── SOC EXPERTISE ─────────────────────────────────────────────────────────
 .soc-expertise {
-  padding: 100px 20px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 20px);
   background: #ffffff;
 
   &__container {
@@ -109,34 +122,36 @@
 
   &__content {
     max-width: 900px;
-    margin-bottom: 60px;
+    margin-bottom: clamp(32px, 5vw, 60px);
 
     h2 {
-      font-size: 34px;
+      font-size: clamp(22px, 3.5vw, 34px);
       font-weight: 700;
       color: #1c4584;
-      margin-bottom: 20px;
+      margin-bottom: clamp(12px, 2vw, 20px);
+      line-height: 1.25;
     }
 
     p {
-      font-size: 16px;
+      font-size: clamp(14px, 1.6vw, 16px);
       line-height: 1.8;
       color: #444;
-      margin-bottom: 20px;
+      margin-bottom: clamp(12px, 2vw, 20px);
     }
   }
 
   &__list {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: clamp(12px, 2vw, 20px);
 
     li {
       position: relative;
       padding-left: 28px;
       margin-bottom: 12px;
-      font-size: 15px;
+      font-size: clamp(13px, 1.5vw, 15px);
       color: #1c4584;
+      line-height: 1.6;
 
       &::before {
         content: "✔";
@@ -150,7 +165,7 @@
   }
 
   &__timeline {
-    margin-top: 40px;
+    margin-top: clamp(24px, 4vw, 40px);
     text-align: center;
 
     img {
@@ -160,9 +175,9 @@
   }
 }
 
-
+// ── SOC TEAM ──────────────────────────────────────────────────────────────
 .soc-team {
-  padding: 100px 20px;
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 20px);
   background: #f5f6f8;
 
   &__container {
@@ -172,14 +187,15 @@
   }
 
   &__title {
-    font-size: 34px;
+    font-size: clamp(22px, 3.5vw, 34px);
     font-weight: 700;
     color: #1c4584;
-    margin-bottom: 50px;
+    margin-bottom: clamp(28px, 4vw, 50px);
+    line-height: 1.2;
   }
 
   &__image {
-    border-radius: 16px;
+    border-radius: clamp(10px, 1.5vw, 16px);
     overflow: hidden;
 
     img {
@@ -190,9 +206,9 @@
   }
 }
 
-
+// ── SOC FACTORY ───────────────────────────────────────────────────────────
 .soc-factory {
-  padding: 50px 20px;
+  padding: clamp(36px, 5vw, 50px) clamp(16px, 4vw, 20px);
   background: #ffffff;
 
   &__container {
@@ -202,54 +218,33 @@
 
   &__title {
     text-align: center;
-    font-size: 34px;
+    font-size: clamp(22px, 3.5vw, 34px);
     font-weight: 700;
     color: #1c4584;
-    margin-bottom: 60px;
-  }
-
-
-
-  &__card {
-    background: #e9edf3;
-    padding: 40px;
-    border-radius: 10px;
-    position: relative;
-    transition: 0.3s ease;
-
-    p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: #333;
-    }
-
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    }
+    margin-bottom: clamp(32px, 5vw, 60px);
+    line-height: 1.2;
   }
 
   &__stars {
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
     color: #1c4584;
-    margin-bottom: 20px;
+    margin-bottom: clamp(12px, 2vw, 20px);
   }
 
-  .soc-factory__card {
+  &__card {
     background: #e9edf3;
-    padding: 40px;
+    padding: clamp(20px, 3.5vw, 40px);
     border-radius: 10px;
     position: relative;
     transition: 0.3s ease;
     overflow: hidden;
 
     p {
-      font-size: 17px;
+      font-size: clamp(14px, 1.7vw, 17px);
       line-height: 1.8;
       color: #333;
     }
 
-    /* Bottom Line */
     &::after {
       content: "";
       position: absolute;
@@ -265,27 +260,27 @@
       transform: translateY(-6px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 
-      &::after {
-        width: 100%;
-      }
+      &::after { width: 100%; }
+    }
+
+    @media (hover: none) {
+      &:hover { transform: none; }
     }
   }
 }
 
+// ── SIEMENS ANALYTICS ─────────────────────────────────────────────────────
 .siemens-analytics {
-  //   background: linear-gradient(to bottom, #eef3f8, #ffffff);
   padding: 0;
-  // text-align: center;
 
   .container {
     max-width: 1320px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 3vw, 24px);
   }
 
-
   .analytics-diagram {
-    margin-bottom: 70px;
+    margin-bottom: clamp(36px, 6vw, 70px);
 
     img {
       width: 100%;
@@ -294,208 +289,96 @@
     }
   }
 
-
   .analytics-content {
- 
-
     .analytics-title {
-      font-size: 52px;
+      font-size: clamp(26px, 4.5vw, 52px);
       font-weight: 800;
       color: #1f3b73;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
+      margin-bottom: clamp(24px, 3.5vw, 40px);
+      letter-spacing: 0.5px;
+      line-height: 1.15;
     }
 
     p {
-      font-size: 18px;
+      font-size: clamp(14px, 1.7vw, 18px);
       line-height: 1.9;
       color: #444;
-      margin-bottom: 24px;
-    }
-  }
-
-
-  @media (min-width: 1600px) {
-    padding: 120px 0;
-
-    .analytics-title {
-      font-size: 60px;
-    }
-
-    p {
-      font-size: 19px;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    padding: 80px 0;
-
-    .analytics-title {
-      font-size: 44px;
-    }
-
-    p {
-      font-size: 17px;
-    }
-  }
-
-  /* ============================= */
-  /* Tablet */
-  /* ============================= */
-  @media (max-width: 992px) {
-    padding: 70px 0;
-
-    .analytics-diagram {
-      margin-bottom: 50px;
-    }
-
-    .analytics-title {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.8;
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 0;
-
-    .container {
-      padding: 0 18px;
-    }
-
-    .analytics-title {
-      font-size: 28px;
-      margin-bottom: 24px;
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .analytics-diagram {
-      margin-bottom: 35px;
+      margin-bottom: clamp(16px, 2vw, 24px);
     }
   }
 }
+
+// ── CLIENTS SECTION ───────────────────────────────────────────────────────
 .clients-section {
-  padding: 50px 0;
+  padding: clamp(40px, 6vw, 50px) 0;
 
   .container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 3vw, 24px);
   }
+
   .clients-header {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: clamp(36px, 6vw, 70px);
 
     .clients-title {
-      font-size: 44px;
+      font-size: clamp(24px, 4vw, 44px);
       font-weight: 800;
       color: #1f3b73;
       margin-bottom: 15px;
+      line-height: 1.2;
     }
   }
-
 
   .logos-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-
+    gap: clamp(28px, 4vw, 60px) clamp(16px, 3vw, 40px);
     align-items: center;
     justify-items: center;
+
+    @media (max-width: 1200px) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 992px)  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 576px)  { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
   }
 
   .logo-item {
     img {
-      max-height: 90px;
+      max-height: clamp(40px, 7vw, 90px);
       width: auto;
       height: auto;
       object-fit: contain;
       transition: transform 0.3s ease;
     }
 
-    &:hover img {
-      transform: scale(1.05);
-    }
-  }
-
-
-  /* Large Desktop */
-  @media (min-width: 1600px) {
-    .logos-grid {
-      gap: 70px 50px;
-    }
-  }
-
-  /* Laptop */
-  @media (max-width: 1200px) {
-    padding: 80px 0;
-
-    .logos-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 50px 30px;
-    }
-  }
-
-  /* Tablet */
-  @media (max-width: 992px) {
-    padding: 70px 0;
-
-    .logos-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 45px 25px;
-    }
-
-    .logo-item img {
-      max-height: 55px;
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 576px) {
-    padding: 60px 0;
-
-    .container {
-      padding: 0 18px;
-    }
-
-    .logos-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 35px 20px;
-    }
-
-    .logo-item img {
-      max-height: 45px;
-    }
+    &:hover img { transform: scale(1.05); }
   }
 }
+
+// ── SIEMENS TESTIMONIAL ───────────────────────────────────────────────────
 .siemens-testimonial-section {
-  padding: clamp(50px, 8vw, 100px) 20px;
+  padding: clamp(40px, 7vw, 100px) clamp(16px, 4vw, 20px);
   background: #f4f6f8;
 
   .testimonial-title {
     color: #1f3b73;
     text-align: center;
     font-weight: 800;
-    margin-bottom: 40px;
-    font-size: clamp(24px, 4vw, 44px);
+    margin-bottom: clamp(24px, 4vw, 40px);
+    font-size: clamp(22px, 4vw, 44px);
+    line-height: 1.2;
   }
 
   .testimonial-grid {
     display: flex;
     flex-direction: column;
-    gap: clamp(30px, 5vw, 60px);
+    gap: clamp(20px, 4vw, 60px);
   }
 
   .testimonial-card {
     background: #ffffff;
-    border-radius: 24px;
+    border-radius: clamp(14px, 2vw, 24px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -504,8 +387,10 @@
       0 4px 10px rgba(0, 0, 0, 0.04),
       0 10px 25px rgba(0, 0, 0, 0.06);
 
-    &:hover {
-      transform: translateY(-6px);
+    &:hover { transform: translateY(-6px); }
+
+    @media (hover: none) {
+      &:hover { transform: none; }
     }
   }
 
@@ -513,28 +398,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: clamp(20px, 4vw, 40px);
+    gap: clamp(12px, 2vw, 20px);
+    padding: clamp(16px, 3.5vw, 40px);
+    flex-wrap: wrap;
 
     h4 {
-      font-size: clamp(16px, 2.5vw, 22px);
+      font-size: clamp(15px, 2.2vw, 22px);
       font-weight: 600;
     }
   }
 
   .testimonial-logo {
-    height: clamp(50px, 6vw, 80px);
+    height: clamp(40px, 5.5vw, 80px);
     width: auto;
     object-fit: contain;
+    flex-shrink: 0;
   }
 
   .card-body {
-    padding: clamp(20px, 5vw, 50px);
-    text-align: left;
+    padding: clamp(16px, 4vw, 50px);
     padding-top: 0;
+    text-align: left;
 
     p {
-      font-size: clamp(14px, 2.2vw, 18px);
+      font-size: clamp(13px, 1.8vw, 18px);
       line-height: 1.8;
       color: #222;
       white-space: pre-line;
@@ -544,54 +431,59 @@
   .card-footer {
     background: #1e3a8a;
     color: #fff;
-    padding: clamp(18px, 4vw, 30px);
+    padding: clamp(14px, 3vw, 30px) clamp(16px, 3.5vw, 30px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 6px;
+    gap: clamp(4px, 0.8vw, 6px);
 
     strong {
-      font-size: 16px;
+      font-size: clamp(13px, 1.6vw, 16px);
       font-weight: 600;
     }
 
     span {
-      font-size: 14px;
+      font-size: clamp(12px, 1.4vw, 14px);
       opacity: 0.9;
     }
   }
 }
 
-
+// ── GALLERY SECTION ───────────────────────────────────────────────────────
 .gallery-section {
-  padding: 100px 0;
+  padding: clamp(48px, 8vw, 100px) 0;
   background: #f5f7fa;
 
   .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 3vw, 24px);
   }
 
   .section-title {
     text-align: center;
     color: #1f3b73;
-    margin-bottom: 70px;
-    font-size: 48px;
+    margin-bottom: clamp(36px, 6vw, 70px);
+    font-size: clamp(26px, 4.5vw, 48px);
     font-weight: 800;
+    line-height: 1.2;
   }
 
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: clamp(12px, 2vw, 30px);
+
+    @media (max-width: 1200px) { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 992px)  { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 480px)  { grid-template-columns: 1fr; }
   }
 
   .gallery-card {
     position: relative;
-    border-radius: 16px;
+    border-radius: clamp(10px, 1.5vw, 16px);
     overflow: hidden;
-    height: 300px;
+    height: clamp(200px, 25vw, 300px);
     cursor: pointer;
     text-decoration: none;
 
@@ -603,159 +495,69 @@
 
     img {
       object-fit: cover;
+      width: 100%;
+      height: 100%;
       transition: transform 0.5s ease;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.2)
-      );
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
       display: flex;
       align-items: flex-end;
-      padding: 20px;
+      padding: clamp(12px, 2vw, 20px);
       transition: background 0.4s ease;
 
       h3 {
         color: #fff;
-        font-size: 20px;
+        font-size: clamp(14px, 1.8vw, 20px);
         font-weight: 600;
         line-height: 1.4;
       }
     }
 
-    &:hover img {
-      transform: scale(1.08);
-    }
+    &:hover img { transform: scale(1.08); }
+    &:hover .overlay { background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.3)); }
 
-    &:hover .overlay {
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0.3)
-      );
+    @media (hover: none) {
+      &:hover img { transform: none; }
     }
   }
+}
 
-  @media (max-width: 1200px) {
-    .gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
+// ── SOC HERO (global override) ────────────────────────────────────────────
+.soc-hero {
   @media (max-width: 992px) {
-    .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 70px 0;
-
-    .section-title {
-      font-size: 30px;
-      margin-bottom: 40px;
-    }
-
-    .gallery-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .gallery-card {
-      height: 260px;
-    }
-  }
-}
-
-
- 
- 
-
-@media (max-width: 768px) {
-  .soc-team__title,
-  .soc-factory__title {
-    font-size: 26px;
-  }
-}
-
- 
-@media (max-width: 768px) {
-  .soc-expertise {
-    padding: 70px 20px;
-
-    &__content h2 {
-      font-size: 26px;
-    }
-
-    &__content p {
-      font-size: 14px;
-    }
-  }
-}
-
- 
-@media (max-width: 992px) {
-  .soc-services__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .soc-services__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
- 
-@media (max-width: 992px) {
-  .soc-hero {
     height: 500px;
-
-    &__content h1 {
-      font-size: 36px;
-    }
-
-    &__content p {
-      font-size: 18px;
-    }
+    &__content h1 { font-size: clamp(28px, 4vw, 36px); }
+    &__content p  { font-size: clamp(16px, 2vw, 18px); }
   }
-}
 
-@media (max-width: 768px) {
-  .soc-hero {
+  @media (max-width: 768px) {
     height: 450px;
-
-    &__content h1 {
-      font-size: 28px;
-    }
-
-    &__content p {
-      font-size: 16px;
-    }
-
-    &__btn {
-      width: 100%;
-    }
+    &__content h1 { font-size: clamp(22px, 5vw, 28px); }
+    &__content p  { font-size: 16px; }
+    &__btn { width: 100%; }
   }
 
-  .soc-description__card {
-    padding: 30px 20px;
+  @media (max-width: 480px) {
+    height: 400px;
+    &__content h1 { font-size: clamp(18px, 5vw, 22px); }
+    &__content p  { font-size: 14px; }
   }
 }
 
+// ── GLOBAL MOBILE FLOOR ───────────────────────────────────────────────────
 @media (max-width: 480px) {
-  .soc-hero {
-    height: 400px;
-
-    &__content h1 {
-      font-size: 22px;
-    }
-
-    &__content p {
-      font-size: 14px;
-    }
+  .soc-description,
+  .soc-services,
+  .soc-expertise,
+  .soc-team,
+  .soc-factory {
+    padding-left: 16px;
+    padding-right: 16px;
   }
+
+  .soc-description__card { padding: 20px 16px; }
 }

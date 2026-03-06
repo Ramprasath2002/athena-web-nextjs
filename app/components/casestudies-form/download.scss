@@ -1,0 +1,868 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600&display=swap");
+
+// ── Design Tokens ─────────────────────────────────────────────────────────────
+$brand: #0f2d6b;
+$brand-mid: #1c4584;
+$accent: #0ea5e9;
+$accent-light: #38bdf8;
+$success: #059669;
+$error-color: #dc2626;
+
+$text-dark: #0a1628;
+$text-mid: #3d5a80;
+$text-soft: #8099b8;
+$text-muted: #b0c4d8;
+
+$border: #dde8f4;
+$border-hover: #b8d0e8;
+$bg-input: #f5f9fd;
+$bg-card: #ffffff;
+
+$radius-sm: 10px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$radius-xl: 28px;
+
+// ── Card ──────────────────────────────────────────────────────────────────────
+
+.df-card {
+  font-family: "Outfit", sans-serif;
+  width: 100%;
+  max-width: 560px;
+  background: $bg-card;
+  border-radius: $radius-xl;
+  box-shadow:
+    0 2px 4px rgba($brand, 0.04),
+    0 8px 24px rgba($brand, 0.08),
+    0 32px 64px rgba($brand, 0.12);
+  border: 1px solid rgba($brand, 0.08);
+  overflow: visible;
+  position: relative;
+
+  // Subtle inner glow at top
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+      180deg,
+      rgba($accent, 0.04) 0%,
+      transparent 100%
+    );
+    border-radius: $radius-xl $radius-xl 0 0;
+    pointer-events: none;
+  }
+
+  &--success {
+    padding: 52px 44px 44px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(
+        circle,
+        rgba($accent, 0.07) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+      border-radius: 50%;
+    }
+  }
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+
+.df-header {
+  padding: 30px 36px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.df-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: $text-dark;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+// ── Divider ───────────────────────────────────────────────────────────────────
+
+.df-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    $border 20%,
+    $border 80%,
+    transparent
+  );
+  margin: 20px 36px;
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────────
+
+.df-form {
+  padding: 0 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+ 
+// ── Field wrapper ─────────────────────────────────────────────────────────────
+
+.df-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+// ── Floating input ────────────────────────────────────────────────────────────
+
+.df-input-wrap {
+  position: relative;
+  border: 1.5px solid $border;
+  border-radius: $radius-md;
+  margin-bottom: 14px;
+  background: $bg-input;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  &:hover:not(:focus-within) {
+    border-color: $border-hover;
+    background: darken($bg-input, 1%);
+  }
+
+  &:focus-within {
+    border-color: $accent;
+    background: #fff;
+    box-shadow: 0 0 0 3.5px rgba($accent, 0.13);
+
+    .df-input-icon {
+      color: $accent;
+    }
+
+    .df-label {
+      top: 9px;
+      font-size: 10.5px;
+      color: $accent;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+ 
+  }
+
+  &:has(.df-input:not(:placeholder-shown)) {
+    .df-label {
+      top: 9px;
+      font-size: 10.5px;
+      color: $text-soft;
+      font-weight: 500;
+    }
+  }
+
+  &--error {
+    border-color: $error-color !important;
+    background: #fef8f8;
+    box-shadow: none !important;
+
+    &:focus-within {
+      box-shadow: 0 0 0 3.5px rgba($error-color, 0.1) !important;
+    }
+  }
+}
+
+.df-input-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $text-muted;
+  pointer-events: none;
+  transition: color 0.2s;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.df-input {
+  width: 100%;
+  padding: 22px 14px 8px 36px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Outfit", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: $text-dark;
+  box-sizing: border-box;
+  letter-spacing: 0.01em;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px $bg-input inset;
+    -webkit-text-fill-color: $text-dark;
+  }
+}
+
+.df-label {
+  position: absolute;
+  left: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: $text-soft;
+  pointer-events: none;
+  transition:
+    top 0.16s ease,
+    font-size 0.16s ease,
+    color 0.16s ease,
+    font-weight 0.16s ease;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 50px);
+}
+
+.df-label-optional {
+  font-weight: 300;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.df-focus-bar {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, $brand, $accent);
+  border-radius: 0 0 $radius-md $radius-md;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ── Error ─────────────────────────────────────────────────────────────────────
+
+.df-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: $error-color;
+  margin: -10px 0 10px;
+  padding-left: 2px;
+  animation: df-shake 0.3s ease;
+}
+
+@keyframes df-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+// ── Dropdown ──────────────────────────────────────────────────────────────────
+
+.df-dropdown-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  height: 50px;
+  border: 1.5px solid $border;
+  border-radius: $radius-md;
+  background: $bg-input;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  text-align: left;
+  margin-bottom: 14px;
+
+  &:hover:not(&--open):not(&--error) {
+    border-color: $border-hover;
+    background: darken($bg-input, 1%);
+  }
+
+  &--open {
+    border-color: $accent;
+    background: #fff;
+    box-shadow: 0 0 0 3.5px rgba($accent, 0.13);
+  }
+
+  &--error {
+    border-color: $error-color;
+    background: #fef8f8;
+  }
+}
+
+.df-dropdown-icon {
+  color: $text-muted;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.2s;
+
+  .df-dropdown-btn--open & {
+    color: $accent;
+  }
+}
+
+.df-dropdown-placeholder {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: $text-soft;
+  font-family: "Outfit", sans-serif;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.df-dropdown-value {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: $text-dark;
+  font-family: "Outfit", sans-serif;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.df-dropdown-chevron {
+  color: $text-muted;
+  transition:
+    transform 0.22s ease,
+    color 0.2s;
+  flex-shrink: 0;
+
+  &--open {
+    transform: rotate(180deg);
+    color: $accent;
+  }
+}
+
+.df-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 10px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid $border;
+  border-radius: $radius-md;
+  box-shadow:
+    0 4px 8px rgba($brand, 0.04),
+    0 16px 40px rgba($brand, 0.12);
+  z-index: 100;
+  overflow: hidden;
+  animation: df-menu-in 0.15s ease;
+}
+
+@keyframes df-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.df-dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 16px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: $text-dark;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  font-family: "Outfit", sans-serif;
+
+  &:hover:not(&--active) {
+    background: rgba($accent, 0.05);
+  }
+
+  &--active {
+    background: linear-gradient(90deg, rgba($brand, 0.06), rgba($accent, 0.06));
+    color: $brand;
+    font-weight: 600;
+
+    svg {
+      color: $accent;
+    }
+  }
+
+  & + & {
+    border-top: 1px solid rgba($border, 0.7);
+  }
+}
+
+// ── Submit error ──────────────────────────────────────────────────────────────
+
+.df-submit-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 3px solid $error-color;
+  border-radius: $radius-sm;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  color: $error-color;
+  line-height: 1.5;
+  margin-bottom: 12px;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+}
+
+// ── Consent block ─────────────────────────────────────────────────────────────
+
+.df-consent {
+  border-radius: $radius-md;
+  margin-bottom: 14px;
+  transition: border-color 0.2s ease;
+
+  &--error {
+    border-color: rgba($error-color, 0.4);
+    background: #fef8f8;
+  }
+}
+
+.df-consent-text {
+  font-size: 12px;
+  color: $text-soft;
+  line-height: 1.6;
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+.df-consent-link {
+  color: $accent;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba($accent, 0.3);
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    color: $brand;
+    border-bottom-color: rgba($brand, 0.4);
+  }
+}
+
+.df-consent-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+}
+
+.df-consent-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+
+  &:checked + .df-consent-box {
+    background: linear-gradient(135deg, $brand, $accent);
+    border-color: $accent;
+
+    svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &:focus-visible + .df-consent-box {
+    box-shadow: 0 0 0 3px rgba($accent, 0.25);
+  }
+}
+
+.df-consent-box {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 1.5px solid $border-hover;
+  border-radius: 5px;
+  background: $bg-input;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+
+  svg {
+    opacity: 0;
+    transform: scale(0.5);
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .df-consent-label:hover & {
+    border-color: $accent;
+  }
+}
+
+.df-consent-agree {
+  font-size: 13px;
+  font-weight: 600;
+  color: $text-dark;
+  font-family: "Outfit", sans-serif;
+}
+
+.df-consent-required {
+  color: $error-color;
+  margin-left: 1px;
+  font-weight: 700;
+}
+
+.df-consent-err {
+  margin: 8px 0 0;
+}
+
+// ── Submit button ─────────────────────────────────────────────────────────────
+
+.df-submit {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #1c4584;
+  color: #fff;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 20px rgba($accent, 0.35),
+      0 2px 8px rgba($brand, 0.2);
+    background-color: #17ace4;
+
+    &::before {
+      left: 160%;
+    }
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba($accent, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+.df-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: df-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes df-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ── Success state ─────────────────────────────────────────────────────────────
+
+.df-success-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2px solid rgba($accent, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  animation: df-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: rgba($accent, 0.06);
+  }
+}
+
+@keyframes df-pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.df-success-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $brand 0%, $accent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba($accent, 0.35);
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba($success, 0.08);
+  border: 1px solid rgba($success, 0.2);
+  color: darken($success, 5%);
+  border-radius: 50px;
+  padding: 4px 13px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: $text-dark;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-body {
+  font-size: 14px;
+  color: $text-mid;
+  line-height: 1.6;
+  margin: 0 0 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-email {
+  font-size: 15px;
+  font-weight: 700;
+  color: $brand;
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 1;
+  word-break: break-word;
+}
+
+.df-success-sub {
+  font-size: 13px;
+  color: $text-soft;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-divider {
+  width: 40px;
+  height: 2.5px;
+  background: linear-gradient(90deg, $brand, $accent);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-steps {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: $border;
+    z-index: -1;
+  }
+}
+
+.df-success-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  font-size: 11.5px;
+  color: $text-mid;
+  font-weight: 500;
+  text-align: center;
+}
+
+.df-step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $brand, $accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.df-success-hint {
+  font-size: 12.5px;
+  color: $text-muted;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+
+@media (max-width: 540px) {
+  .df-card {
+    border-radius: $radius-lg;
+    max-width: 100%;
+  }
+
+  .df-header {
+    padding: 24px 22px 0;
+  }
+
+  .df-divider {
+    margin: 18px 22px;
+  }
+
+  .df-form {
+    padding: 0 22px 26px;
+  }
+
+  .df-row {
+    grid-template-columns: 1fr;
+  }
+
+  .df-title {
+    font-size: 19px;
+  }
+
+  .df-card--success {
+    padding: 40px 24px 32px;
+  }
+
+  .df-success-steps {
+    gap: 2px;
+
+    &::before {
+      display: none;
+    }
+  }
+}

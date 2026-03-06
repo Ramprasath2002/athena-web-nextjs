@@ -1,0 +1,271 @@
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+
+// ── NAV DATA ──────────────────────────────────────────────────────────────
+
+const mesSolutions = [
+  { name: "Siemens Opcenter MES", href: "/siemens-opcenter-mes" },
+  { name: "Critical Manufacturing", href: "/critical-manufacturing" },
+  // { name: "Eyelit", href: "/eyelit" },
+  // { name: "Twinzo", href: "/twinzo" },
+];
+
+const otherSolutions = [
+  { name: "PLM Solutions", href: "/solutions/plm-solutions" },
+  { name: "Enterprise ERP", href: "/solutions/enterprise-erp" },
+  { name: "Cyber Security Services", href: "/solutions/cyber-security-service" },
+];
+
+const partners = [
+  { name: "Siemens", href: "/siemens-opcenter-mes" },
+  { name: "Critical Manufacturing", href: "/critical-manufacturing" },
+  { name: "Eyelit Technologies", href: "/eyelit" },
+  { name: "Twinzo", href: "/twinzo" },
+];
+
+const resources = [
+  { name: "About Us", href: "/about" },
+  { name: "Athena Accelerators", href: "/accelerators" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+// X (Twitter) custom SVG — lucide doesn't include the new X logo
+const XIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.2 2.25h6.963l4.259 5.635 4.822-5.635Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const socials = [
+  {
+    label: "Facebook",
+    href: "#",
+    icon: <Facebook size={16} strokeWidth={1.8} />,
+    style: "hover:bg-[#1877F2] hover:border-[#1877F2] hover:shadow-[0_0_18px_rgba(24,119,242,0.5)]",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: <Instagram size={16} strokeWidth={1.8} />,
+    // Instagram uses a gradient — we fake it with a pseudo-element trick via inline style
+    style: "hover:border-transparent hover:shadow-[0_0_18px_rgba(225,48,108,0.5)] instagram-hover",
+  },
+  {
+    label: "X",
+    href: "#",
+    icon: <XIcon />,
+    style: "hover:bg-[#0f0f0f] hover:border-[#0f0f0f] hover:shadow-[0_0_18px_rgba(0,0,0,0.5)]",
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    icon: <Linkedin size={16} strokeWidth={1.8} />,
+    style: "hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:shadow-[0_0_18px_rgba(10,102,194,0.5)]",
+  },
+  {
+    label: "YouTube",
+    href: "#",
+    icon: <Youtube size={16} strokeWidth={1.8} />,
+    style: "hover:bg-[#FF0000] hover:border-[#FF0000] hover:shadow-[0_0_18px_rgba(255,0,0,0.5)]",
+  },
+];
+
+// ── FOOTER ────────────────────────────────────────────────────────────────
+export default function Footer() {
+  return (
+    <footer className="bg-[#1c4584] text-white">
+
+      {/* Instagram gradient applied via a global <style> tag to avoid Tailwind purge issues */}
+      <style>{`
+        .instagram-hover:hover {
+          background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+      `}</style>
+
+      <div className="mx-auto max-w-7xl px-6 py-16">
+
+        {/* ── TOP GRID ── */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
+
+          {/* BRAND — spans 2 cols on lg */}
+          <div className="space-y-6 lg:col-span-2">
+            <img
+              src="/assets/logo/footer-logo.png"
+              alt="Athena"
+              className="h-12 w-auto"
+            />
+            <p className="max-w-sm text-sm leading-relaxed text-[#c7d4f1]">
+              Athena Technology Solutions delivers enterprise-grade digital
+              solutions that scale, secure, and simplify complex manufacturing
+              ecosystems.
+            </p>
+
+            {/* Address */}
+            <div className="space-y-1 text-sm">
+              <p className="font-semibold text-white mb-3">United States</p>
+              <p className="font-medium text-white">Headquarters:</p>
+              <Link
+                href="https://maps.app.goo.gl/HF6t3r3L8aRoPsYy7"
+                target="_blank"
+                className="leading-relaxed text-[#c7d4f1] hover:underline"
+              >
+                859 Corporate Way <br />
+                Fremont, California <br /> 94539
+              </Link>
+            </div>
+
+            {/* ── SOCIAL ICONS ── */}
+            <div className="flex flex-wrap gap-2.5">
+              {socials.map((s) => (
+                <Link
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className={[
+                    "group relative flex h-9 w-9 items-center justify-center",
+                    "rounded-xl border border-white/15 bg-white/5",
+                    "text-[#c7d4f1]",
+                    "transition-all duration-300 ease-out",
+                    "hover:-translate-y-1 hover:scale-110 hover:text-white",
+                    s.style,
+                  ].join(" ")}
+                >
+                  {/* Icon */}
+                  {s.icon}
+
+                  {/* Tooltip */}
+                  <span
+                    className={[
+                      "pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2",
+                      "whitespace-nowrap rounded-md bg-[#071428] px-2.5 py-1",
+                      "text-[11px] font-medium text-white shadow-lg",
+                      "opacity-0 transition-opacity duration-200 group-hover:opacity-100",
+                    ].join(" ")}
+                  >
+                    {s.label}
+                    {/* Caret */}
+                    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#071428]" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* MES SOLUTIONS */}
+          <div className="space-y-4 text-sm">
+            <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
+              MES Solutions
+            </h4>
+            {mesSolutions.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            <div className="space-y-4 pt-3">
+              <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
+                Services
+              </h4>
+              {otherSolutions.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* PARTNERS */}
+          <div className="space-y-4 text-sm">
+            <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
+              Partners
+            </h4>
+            {partners.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* COMPANY */}
+          <div className="space-y-4 text-sm">
+            <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
+              Company
+            </h4>
+            {resources.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* CONTACT */}
+          <div className="space-y-6 text-sm">
+            <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
+              Get In Touch
+            </h4>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-white">Work Inquiries</p>
+              <Link
+                href="mailto:info@athenatec.com"
+                className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+              >
+                info@athenatec.com
+              </Link>
+            </div>
+
+            <div className="space-y-1">
+              <p className="font-semibold text-white">Phone</p>
+              <Link
+                href="tel:510-687-0900"
+                className="block text-[#c7d4f1] transition hover:text-[#17ace4]"
+              >
+                510-687-0900
+              </Link>
+            </div>
+
+            <Link
+              href="/contact"
+              className="inline-block rounded-md bg-[#17ace4] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#138fc4]"
+            >
+              Get a Demo →
+            </Link>
+          </div>
+        </div>
+
+        {/* ── BOTTOM BAR ── */}
+        <div className="mt-14 flex flex-col gap-4 border-t border-[#5172b0]/40 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[#c7d4f1]">
+            © 2026 Athena Technologies. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="#" className="text-[#c7d4f1] hover:text-[#17ace4]">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="text-[#c7d4f1] hover:text-[#17ace4]">
+              Terms of Use
+            </Link>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+}

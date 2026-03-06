@@ -1,7 +1,7 @@
-import Hero from '@/app/components/layout/hero/hero';
-import WhoWeAre from './components/layout/who-we-are/WhoWeAre';
-import Services from './components/layout/services/services';
-import Leadership from './components/layout/services/Leadership';
+import Hero from '@/app/components/home/hero/hero';
+import WhoWeAre from './components/home/who-we-are/WhoWeAre';
+import Services from './components/home/services/services';
+import Leadership from './components/home/services/Leadership';
 
 export default function Home() {
   return (

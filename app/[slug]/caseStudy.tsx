@@ -1,4 +1,3 @@
-
 "use client"
 import { useState } from "react";
 
@@ -27,6 +26,9 @@ type FormErrors = Partial<Record<keyof FormData, string>>;
 const INDUSTRIES = ["Semiconductor", "Electronics", "Medical Devices", "Discrete Manufacturing", "Solar",];
 const COUNTRIES = ["USA", "India", "China", "United Kingdom", "Canada", "California", "Singapore", "Other"];
 
+// ── CHANGE THIS to your WordPress site URL ──────────────
+const WP_API_URL = "https://your-wordpress-site.com/wp-json/athena/v1/case-study-form";
+
 export default function CaseStudy({ study }: Props) {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -40,6 +42,7 @@ export default function CaseStudy({ study }: Props) {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (): FormErrors => {
     const errs: FormErrors = {};
@@ -90,22 +93,55 @@ export default function CaseStudy({ study }: Props) {
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
+
+    // Clear submit-level error when user edits anything
+    if (submitError) setSubmitError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const validationErrors = validate();
 
+    const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
     setLoading(true);
-    // Simulate API call
-    await new Promise((res) => setTimeout(res, 1500));
-    setLoading(false);
-    setSubmitted(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch(WP_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          companyName: formData.companyName,
+          industry: formData.industry,
+          country: formData.country,
+          caseStudyTitle: study.fullTitle,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Unable to submit. Please check your connection and try again.";
+      setSubmitError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -117,10 +153,6 @@ export default function CaseStudy({ study }: Props) {
       <div className="case-container">
         {/* Intro */}
         <div className="case-intro">
-          <span className="case-tag">
-            <span className="case-tag__dot" />
-            Case Study
-          </span>
           <h2>{study.fullTitle}</h2>
           <p>{study.description}</p>
         </div>
@@ -289,6 +321,13 @@ export default function CaseStudy({ study }: Props) {
                       </label>
                       {errors.agree && <p className="error-msg">{errors.agree}</p>}
                     </div>
+
+                    {/* API-level error message */}
+                    {submitError && (
+                      <p className="error-msg" style={{ fontSize: "13px", padding: "10px 12px", background: "#fff5f5", borderRadius: "8px" }}>
+                        {submitError}
+                      </p>
+                    )}
 
                     <button
                       type="submit"
