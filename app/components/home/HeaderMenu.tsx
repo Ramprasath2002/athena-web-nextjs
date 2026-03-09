@@ -15,10 +15,14 @@ const partnerLinks = [
   { label: "Siemens Opcenter", href: "/siemens-opcenter-mes" },
   { label: "Critical Manufacturing", href: "/critical-manufacturing" },
   { label: "Eyelit", href: "/eyelit" },
-  { label: "Twinzo", href: "/blog/authorised-reseller-partnership-with-twinzo" },
+  {
+    label: "Twinzo",
+    href: "/blog/authorised-reseller-partnership-with-twinzo",
+  },
 ];
 
 const mesSolutionLinks = [
+  { label: "MES Solution", href: "/solutions/mes" },
   { label: "Siemens Opcenter MES", href: "/siemens-opcenter-mes" },
   { label: "Critical Manufacturing", href: "/critical-manufacturing" },
   // { label: "Eyelit MES", href: "/eyelit" },
@@ -26,9 +30,12 @@ const mesSolutionLinks = [
 ];
 
 const otherSolutionLinks = [
-  { label: "PLM Solutions", href: "/solutions/plm-solutions" },
-  { label: "Enterprise ERP", href: "/solutions/enterprise-erp" },
-  { label: "Cyber Security", href: "/solutions/cyber-security-service" },
+  // ❌ Removed: PLM Solutions
+  // ❌ Removed: Enterprise ERP
+  { label: "Oracle On-Prem +", href: "/solutions/oracle-on-prem" }, // ✅ Added
+  { label: "Oracle Cloud",     href: "/solutions/oracle-cloud" },   // ✅ Added
+  { label: "PLM",              href: "/solutions/plm" },            // ✅ Retained
+  { label: "Cyber Security",   href: "/solutions/cyber-security-service" },
 ];
 
 const resourceLinks = [
@@ -38,21 +45,18 @@ const resourceLinks = [
   { label: "Webinars", href: "/webinars" },
 ];
 
-// ── SHARED DROPDOWN ITEM STYLE ─────────────────────────────────────────
-const itemCls =
+ const itemCls =
   "flex items-center gap-2 w-full px-3.5 py-2.5 rounded-lg text-[13.5px] font-medium text-gray-700 \
    hover:text-[#1c4584] hover:bg-[#1c4584]/6 transition-colors duration-150 group";
 
-// ── COMPONENT ─────────────────────────────────────────────────────────────
-export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
+ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
   const isMobile = variant === "mobile";
 
   const [open, setOpen] = useState<string | null>(null);
   const [openMES, setOpenMES] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /* ── Desktop hover logic ── */
-  const openMenu = (menu: string) => {
+   const openMenu = (menu: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpen(menu);
   };
@@ -66,16 +70,13 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
   };
 
-  /* ── Mobile toggle logic ── */
-  const toggle = (menu: string) =>
+   const toggle = (menu: string) =>
     setOpen((prev) => (prev === menu ? null : menu));
 
-  // ═══════════ MOBILE ═══════════
-  if (isMobile) {
+   if (isMobile) {
     return (
       <div className="flex flex-col w-full">
-
-         <MobileAccordion
+        <MobileAccordion
           label="Partners"
           isOpen={open === "partners"}
           onToggle={() => toggle("partners")}
@@ -87,19 +88,24 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           ))}
         </MobileAccordion>
 
-         <MobileAccordion
+        <MobileAccordion
           label="Solutions & Services"
           isOpen={open === "solutions"}
           onToggle={() => toggle("solutions")}
         >
-           <MobileAccordion
+          <MobileAccordion
             label="MES Solutions"
             isOpen={openMES}
             onToggle={() => setOpenMES((v) => !v)}
             nested
           >
             {mesSolutionLinks.map((l) => (
-              <MobileSubLink key={l.href} href={l.href} onClick={onNavigate} deep>
+              <MobileSubLink
+                key={l.href}
+                href={l.href}
+                onClick={onNavigate}
+                deep
+              >
                 {l.label}
               </MobileSubLink>
             ))}
@@ -112,7 +118,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           ))}
         </MobileAccordion>
 
-         <MobileAccordion
+        <MobileAccordion
           label="Resources"
           isOpen={open === "resources"}
           onToggle={() => toggle("resources")}
@@ -127,9 +133,9 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
     );
   }
 
-   return (
+  return (
     <>
-       <DesktopDropdownWrapper
+      <DesktopDropdownWrapper
         label="Partners"
         isOpen={open === "partners"}
         onEnter={() => openMenu("partners")}
@@ -145,7 +151,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
         </DropdownPanel>
       </DesktopDropdownWrapper>
 
-       <DesktopDropdownWrapper
+      <DesktopDropdownWrapper
         label="Solutions & Services"
         isOpen={open === "solutions"}
         onEnter={() => openMenu("solutions")}
@@ -156,7 +162,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
           onMouseEnter={cancelClose}
           onMouseLeave={scheduleClose}
         >
-           <div
+          <div
             className="relative"
             onMouseEnter={() => setOpenMES(true)}
             onMouseLeave={() => setOpenMES(false)}
@@ -177,7 +183,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
               />
             </Link>
 
-             {openMES && (
+            {openMES && (
               <div
                 className="absolute left-full top-0 z-10 w-56 rounded-xl bg-white
                             shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100
@@ -193,7 +199,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
             )}
           </div>
 
-           <div className="my-1.5 h-px bg-gray-100 mx-2" />
+          <div className="my-1.5 h-px bg-gray-100 mx-2" />
 
           {otherSolutionLinks.map((l) => (
             <Link key={l.href} href={l.href} className={itemCls}>
@@ -204,7 +210,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
         </DropdownPanel>
       </DesktopDropdownWrapper>
 
-       <DesktopDropdownWrapper
+      <DesktopDropdownWrapper
         label="Resources"
         isOpen={open === "resources"}
         onEnter={() => openMenu("resources")}
@@ -220,7 +226,7 @@ export default function HeaderMenu({ variant = "desktop", onNavigate }: Props) {
         </DropdownPanel>
       </DesktopDropdownWrapper>
 
-       <style>{`
+      <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(6px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -247,11 +253,7 @@ function DesktopDropdownWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className="relative"
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-    >
+    <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <button
         className={[
           "flex items-center gap-1.5 px-3 py-2 rounded-lg text-[14.5px] font-medium",
@@ -324,7 +326,9 @@ function MobileAccordion({
         onClick={onToggle}
         className={[
           "flex w-full items-center justify-between py-3.5 font-medium transition-colors duration-150",
-          nested ? "pl-3 text-[13.5px] text-gray-600 py-2.5" : "text-[15px] text-gray-700",
+          nested
+            ? "pl-3 text-[13.5px] text-gray-600 py-2.5"
+            : "text-[15px] text-gray-700",
           isOpen ? "text-[#1c4584]" : "hover:text-[#1c4584]",
         ].join(" ")}
       >

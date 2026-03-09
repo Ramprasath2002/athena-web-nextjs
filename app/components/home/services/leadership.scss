@@ -12,8 +12,7 @@
   padding: 0 20px;
 }
 
-/* Header */
-.header {
+ .header {
   max-width: 720px;
   margin-bottom: 64px;
 }
@@ -30,22 +29,19 @@
   line-height: 1.6;
 }
 
-/* GRID */
-.leadership-grid {
+ .leadership-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 360px));
   gap: 40px;
   justify-content: center !important;
 }
 
-/* Static Card */
-.flip-card {
+ .flip-card {
   width: 100%;
   max-width: 360px;
 }
 
-/* Remove 3D + flip */
-.flip-inner {
+ .flip-inner {
   position: relative;
   width: 100%;
   height: 460px;
@@ -53,16 +49,14 @@
   transition: none;
 }
 
-/* Only show front */
-.flip-front {
+ .flip-front {
   position: absolute;
   inset: 0;
   border-radius: 16px;
   overflow: hidden;
 }
 
-/* Completely disable back side */
-.flip-back {
+ .flip-back {
   display: none;
 }
 
@@ -73,8 +67,7 @@
   object-fit: cover;
 }
 
-/* Overlay */
-.overlay {
+ .overlay {
   position: absolute;
   inset: auto 0 0 0;
   padding: 24px;
@@ -103,15 +96,13 @@
   line-height: 1.6;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+ @media (max-width: 1024px) {
   .leadership-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
-@media (max-width: 640px) {
+ @media (max-width: 640px) {
   .leadership-grid {
     grid-template-columns: 1fr;
   }
@@ -121,8 +112,7 @@
   }
 }
 
-/* ===== ADVISORY BOARD ===== */
-
+ 
 .advisory-list {
   display: flex;
   flex-direction: column;
@@ -130,8 +120,7 @@
   margin-top: 48px;
 }
 
-/* Card */
-.advisory-card {
+ .advisory-card {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 32px;
@@ -147,16 +136,14 @@
   align-items: center;
 }
 
-/* Image */
-.advisory-image img {
+ .advisory-image img {
   width: 100%;
   height: 280px;
   object-fit: cover;
   border-radius: 20px;
 }
 
-/* Content */
-.advisory-content h3 {
+ .advisory-content h3 {
   font-size: 28px;
   font-weight: 600;
   color: #ffffff;
@@ -177,8 +164,7 @@
   max-width: 900px;
 }
 
-/* ===== RESPONSIVE ===== */
-
+ 
 @media (max-width: 900px) {
   .advisory-card {
     grid-template-columns: 1fr;

@@ -10,8 +10,11 @@ const mesSolutions = [
 ];
 
 const otherSolutions = [
-  { name: "PLM Solutions", href: "/solutions/plm-solutions" },
-  { name: "Enterprise ERP", href: "/solutions/enterprise-erp" },
+  // ❌ Removed: PLM Solutions
+  // ❌ Removed: Enterprise ERP
+  { name: "Oracle On-Prem",        href: "/solutions/oracle-on-prem" },       // ✅ Added
+  { name: "Oracle Cloud",          href: "/solutions/oracle-cloud" },          // ✅ Added
+  { name: "PLM",                   href: "/solutions/plm" },                   // ✅ Retained
   { name: "Cyber Security Services", href: "/solutions/cyber-security-service" },
 ];
 
@@ -46,7 +49,6 @@ const socials = [
     label: "Instagram",
     href: "https://www.instagram.com/athenatecofficial?igsh=MTN6eXFwYmdhNjdvNw==",
     icon: <Instagram size={16} strokeWidth={1.8} />,
-    // Instagram uses a gradient — we fake it with a pseudo-element trick via inline style
     style: "hover:border-transparent hover:shadow-[0_0_18px_rgba(225,48,108,0.5)] instagram-hover",
   },
   {
@@ -96,7 +98,7 @@ export default function Footer() {
               ecosystems.
             </p>
 
-             <div className="space-y-1 text-sm">
+            <div className="space-y-1 text-sm">
               <p className="font-semibold text-white mb-3">United States</p>
               <p className="font-medium text-white">Headquarters:</p>
               <Link
@@ -109,7 +111,7 @@ export default function Footer() {
               </Link>
             </div>
 
-             <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5">
               {socials.map((s) => (
                 <Link
                   key={s.label}
@@ -124,9 +126,9 @@ export default function Footer() {
                     s.style,
                   ].join(" ")}
                 >
-                   {s.icon}
+                  {s.icon}
 
-                   <span
+                  <span
                     className={[
                       "pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2",
                       "whitespace-nowrap rounded-md bg-[#071428] px-2.5 py-1",
@@ -135,14 +137,14 @@ export default function Footer() {
                     ].join(" ")}
                   >
                     {s.label}
-                     <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#071428]" />
+                    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#071428]" />
                   </span>
                 </Link>
               ))}
             </div>
           </div>
 
-           <div className="space-y-4 text-sm">
+          <div className="space-y-4 text-sm">
             <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
               MES Solutions
             </h4>
@@ -172,7 +174,7 @@ export default function Footer() {
             </div>
           </div>
 
-           <div className="space-y-4 text-sm">
+          <div className="space-y-4 text-sm">
             <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
               Partners
             </h4>
@@ -187,7 +189,7 @@ export default function Footer() {
             ))}
           </div>
 
-           <div className="space-y-4 text-sm">
+          <div className="space-y-4 text-sm">
             <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
               Company
             </h4>
@@ -202,7 +204,7 @@ export default function Footer() {
             ))}
           </div>
 
-           <div className="space-y-6 text-sm">
+          <div className="space-y-6 text-sm">
             <h4 className="border-b border-[#5172b0]/40 pb-2 text-base font-semibold text-white">
               Get In Touch
             </h4>
@@ -236,7 +238,7 @@ export default function Footer() {
           </div>
         </div>
 
-         <div className="mt-14 flex flex-col gap-4 border-t border-[#5172b0]/40 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-[#5172b0]/40 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[#c7d4f1]">
             © 2026 Athena Technologies. All rights reserved.
           </p>

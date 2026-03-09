@@ -1,0 +1,143 @@
+// oracle-on-prem.scss
+
+.onprem-description {
+  background: #f2f2f2;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+
+  &__card {
+    color: #fff;
+    background: #1c4584;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+}
+
+// ── Stats Bar ────────────────────────────────────────────────
+.onprem-stats {
+  padding: 60px 20px;
+  background: #fff;
+
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__number {
+    font-size: 38px;
+    font-weight: 800;
+    color: #1c4584;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 60px;
+    background: #dde4f0;
+    flex-shrink: 0;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+// ── Support Section ──────────────────────────────────────────
+.onprem-support {
+  padding: 80px 20px;
+  background: #f2f2f2;
+
+  &__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1c4584;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 780px;
+    margin: 0 auto 50px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: #1c4584;
+    border-radius: 20px;
+    padding: 36px 32px;
+    text-align: left;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(28, 69, 132, 0.25);
+    }
+
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #17ace4;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #c7d4f1;
+      margin: 0;
+    }
+  }
+
+  &__card-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+  }
+}

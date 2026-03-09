@@ -1,0 +1,212 @@
+import HeroSection from "@/app/components/HeroSection";
+import PracticeSection from "@/app/components/PracticeSection";
+import CTASection from "@/app/components/CTASection";
+import type { Metadata } from "next";
+import "./prem.scss";
+
+export const metadata: Metadata = {
+  title: "Oracle On-Premise Solutions | Athenatec",
+  description:
+    "Athenatec delivers Oracle E-Business Suite implementation, support, and managed services for enterprise clients since 2012.",
+  alternates: {
+    canonical: "https://athenatec.com/solutions/oracle-on-prem",
+  },
+  openGraph: {
+    title: "Oracle On-Premise Solutions | Athenatec",
+    description:
+      "End-to-end Oracle E-Business Suite and Agile PLM implementation, rollout, and 24/7 support services since 2012.",
+    url: "https://athenatec.com/solutions/oracle-on-prem",
+    type: "website",
+    images: [
+      {
+        url: "https://athenatec.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Oracle On-Premise Solutions",
+      },
+    ],
+  },
+};
+
+const implementationData = [
+  {
+    title: "Implementation & Roll-out",
+    icon: "/assets/icons/process.png",
+    items: [
+      "Strategic Planning & Roadmap",
+      "Pre-Implementation Assessments",
+      "Gap Analysis",
+      "System Design & Integration",
+      "Business Process Alignment",
+      "Third-Party App Integration",
+    ],
+  },
+  {
+    title: "Data & Technical Execution",
+    icon: "/assets/icons/Implementation.png",
+    items: [
+      "Data Migration Strategies",
+      "Precise Data Mapping",
+      "Secure Data Conversion",
+      "Infrastructure Upgrades",
+      "Application Customization",
+      "Reporting Tools Development",
+    ],
+  },
+  {
+    title: "Support & Maintenance",
+    icon: "/assets/icons/Application-Support.png",
+    items: [
+      "L1, L2, L3 Functional Support",
+      "24/7 Production Support",
+      "System Health Checks",
+      "Patch Management",
+      "Performance Tuning",
+      "Change Management",
+    ],
+  },
+];
+
+export default function OracleOnPrem() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Oracle On-Premise Solutions",
+            provider: {
+              "@type": "Organization",
+              name: "Athenatec",
+              url: "https://athenatec.com",
+            },
+            description:
+              "Oracle E-Business Suite and Agile PLM implementation, support, and managed services since 2012.",
+            serviceType: "Oracle On-Premise Implementation",
+            areaServed: "Worldwide",
+          }),
+        }}
+      />
+
+      {/* ── Hero ── */}
+      <HeroSection
+        title="Oracle On-Premise"
+        description="Delivering Oracle E-Business Suite excellence since 2012 — end-to-end implementation, support, and managed services."
+        image="/assets/images/PLM.jpg"
+        align="center"
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
+
+      {/* ── Overview Card ── */}
+      <section className="onprem-description">
+        <div className="onprem-description__card">
+          <p>
+            Delivering Oracle E-Business Suite excellence since 2012, Athenatec
+            provides comprehensive implementation and support for multinational
+            clients. Our proven expertise across a wide range of Oracle
+            applications ensures our customers extract maximum value from their
+            digital infrastructure. Athenatec offers end-to-end implementation
+            for on-premise applications, including Oracle E-Business Suite and
+            Agile PLM — from managing complex new installations to tailoring
+            existing applications through custom development to meet specific
+            business needs of customers.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Since 2012 Stats ── */}
+      <section className="onprem-stats">
+        <div className="onprem-stats__container">
+          <div className="onprem-stats__item">
+            <span className="onprem-stats__number">2012</span>
+            <span className="onprem-stats__label">Founded</span>
+          </div>
+          <div className="onprem-stats__divider" />
+          <div className="onprem-stats__item">
+            <span className="onprem-stats__number">10+</span>
+            <span className="onprem-stats__label">Years of Oracle Expertise</span>
+          </div>
+          <div className="onprem-stats__divider" />
+          <div className="onprem-stats__item">
+            <span className="onprem-stats__number">24/7</span>
+            <span className="onprem-stats__label">Support Coverage</span>
+          </div>
+          <div className="onprem-stats__divider" />
+          <div className="onprem-stats__item">
+            <span className="onprem-stats__number">Global</span>
+            <span className="onprem-stats__label">Multinational Clients</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Practice Cards ── */}
+      <PracticeSection
+        title="Our Oracle On-Premise Services"
+        cards={implementationData}
+      />
+
+      {/* ── Support Detail ── */}
+      <section className="onprem-support">
+        <div className="onprem-support__container">
+          <h2 className="onprem-support__title">
+            Oracle Support &amp; Maintenance
+          </h2>
+          <p className="onprem-support__subtitle">
+            We provide proactive, 24/7 support models designed to ensure system
+            stability, minimize downtime, and keep your Oracle environment
+            running at peak performance.
+          </p>
+
+          <div className="onprem-support__grid">
+            {[
+              {
+                icon: "🎯",
+                title: "Production Support",
+                desc: "Level 1, Level 2, and Level 3 functional and technical support for day-to-day operations.",
+              },
+              {
+                icon: "🩺",
+                title: "System Health Checks",
+                desc: "Periodic audits, performance tuning, and preventative maintenance to identify and resolve bottlenecks.",
+              },
+              {
+                icon: "🔧",
+                title: "Patch Management",
+                desc: "Evaluation, testing, and application of Oracle security patches and functional updates.",
+              },
+              {
+                icon: "🔄",
+                title: "Change Management",
+                desc: "Managed services for minor enhancements, report developments, and system configuration updates.",
+              },
+            ].map((item) => (
+              <div className="onprem-support__card" key={item.title}>
+                <div className="onprem-support__card-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <CTASection
+        title={
+          <>
+            Let's Build
+            <br /> Something Exceptional
+          </>
+        }
+        description="Our Oracle Certified Consultants are ready to guide your journey from implementation to long-term success."
+        buttonText="Contact Us"
+        buttonLink="/contact"
+        note="We typically respond within 24 hours."
+        backgroundImage="/assets/images/new-req.webp"
+      />
+    </>
+  );
+}

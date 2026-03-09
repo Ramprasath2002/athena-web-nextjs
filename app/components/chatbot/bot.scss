@@ -31,8 +31,7 @@
   object-fit: contain;
 }
 
-/* Floating Animation */
-@keyframes float {
+ @keyframes float {
   0% {
     transform: translateY(0px);
   }
@@ -44,8 +43,7 @@
   }
 }
 
-/* Pulse Ring Animation */
-.pulse-ring {
+ .pulse-ring {
   position: absolute;
   width: 90px;
   height: 90px;
@@ -84,8 +82,7 @@
   z-index: 9999;
 }
 
-/* HEADER */
-.chat-header {
+ .chat-header {
   background: #1c4584;
   color: #fff;
   padding: 16px;
@@ -124,8 +121,7 @@
   cursor: pointer;
 }
 
-/* BODY */
-.chat-body {
+ .chat-body {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
@@ -162,8 +158,7 @@
   color: #fff;
 }
 
-/* TYPING ANIMATION */
-.typing span {
+ .typing span {
   width: 6px;
   height: 6px;
   margin: 0 2px;
@@ -192,8 +187,7 @@
   }
 }
 
-/* INPUT */
-.chat-input {
+ .chat-input {
   display: flex;
   border-top: 1px solid #eee;
 }
@@ -227,8 +221,7 @@
   z-index: 9999;
 }
 
-/* HEADER */
-.chat-header {
+ .chat-header {
   background: #1c4584;
   color: #fff;
   padding: 16px;
@@ -267,8 +260,7 @@
   cursor: pointer;
 }
 
-/* BODY */
-.chat-body {
+ .chat-body {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
@@ -305,8 +297,7 @@
   color: #fff;
 }
 
-/* TYPING ANIMATION */
-.typing span {
+ .typing span {
   width: 6px;
   height: 6px;
   margin: 0 2px;
@@ -335,8 +326,7 @@
   }
 }
 
-/* INPUT */
-.chat-input {
+ .chat-input {
   display: flex;
   border-top: 1px solid #eee;
 }

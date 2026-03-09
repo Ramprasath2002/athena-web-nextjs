@@ -1,8 +1,7 @@
 .about-page {
   font-family: "outfitRegular", sans-serif;
  
-  /* SECTION */
-  .achievements {
+   .achievements {
     background: #f4f6f8;
     padding: 80px 0;
   }
@@ -20,8 +19,7 @@
     margin-bottom: 60px;
   }
 
-  /* ABOUT GRID */
-  .about-grid {
+   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -53,8 +51,7 @@
     object-fit: cover;
   }
 
-  /* JOURNEY */
-  .journey-title {
+   .journey-title {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
@@ -99,8 +96,7 @@
     color: #666;
   }
 
-  /* VISION SECTION */
-  .vision-section {
+   .vision-section {
     background: #f4f6f8;
     padding: 40px 0;
   }
@@ -132,8 +128,7 @@
     margin-bottom: 16px;
   }
 
-  /* SERVICES SECTION */
-  .services-section {
+   .services-section {
     background: #f4f6f8;
     padding: 80px 0;
   }
@@ -156,15 +151,13 @@
     margin-bottom: 50px;
   }
 
-  /* GRID */
-  .services-grid {
+   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
   }
 
-  /* Card */
-  .service-card {
+   .service-card {
     background: white;
     border-radius: 14px;
     overflow: hidden;
@@ -248,8 +241,7 @@
     transform: translateX(6px);
   }
 
-  /* OUR CUSTOMERS */
-  .customers-section {
+   .customers-section {
     padding: 80px 0;
     background: #ffffff;
   }
@@ -287,8 +279,7 @@
     transform: scale(1.05);
   }
 
-  /* TESTIMONIAL SECTION */
-  .about-testimonial-section {
+   .about-testimonial-section {
     padding: 80px 0;
     background: #f4f6f8;
 
@@ -374,9 +365,7 @@
 
  
   }
-/* =========================
-   LARGE TABLET (≤1200px)
-========================= */
+ 
 @media (max-width: 1200px) {
 
   .about-page .container {
@@ -405,10 +394,7 @@
   }
 }
 
-
-/* =========================
-   TABLET (≤1024px)
-========================= */
+ 
 @media (max-width: 1024px) {
 
   .about-page .hero {
@@ -449,9 +435,7 @@
 }
 
 
-/* =========================
-   MOBILE (≤768px)
-========================= */
+ 
 @media (max-width: 768px) {
 
   .about-page .hero {
@@ -514,9 +498,7 @@
 }
 
 
-/* =========================
-   SMALL MOBILE (≤480px)
-========================= */
+ 
 @media (max-width: 480px) {
 
   .about-page .hero {

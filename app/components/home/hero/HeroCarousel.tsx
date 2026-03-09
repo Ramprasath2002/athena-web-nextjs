@@ -112,7 +112,7 @@ export default function HeroCarousel() {
             alt="Hero background"
             fill
             priority={i === 0}
-            loading="lazy"
+           
             className={`object-cover transition-opacity duration-700 ease-in-out ${
               i === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
@@ -126,7 +126,7 @@ export default function HeroCarousel() {
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="w-full max-w-[90%] sm:max-w-[75%] md:max-w-[620px] lg:max-w-[700px] backdrop-blur-xl 
+        <div className="w-full max-w-[90%] sm:max-w-[75%] md:max-w-[620px] lg:max-w-[700px] mx-auto sm:mx-0 backdrop-blur-xl 
                         bg-white/10 border border-white/20 shadow-2xl
                         p-5 sm:p-7 md:p-8 rounded-2xl text-white">
 
