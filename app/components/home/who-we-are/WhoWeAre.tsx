@@ -222,8 +222,7 @@ function ImageBlock() {
   );
 }
 
-/* ---------------- COUNTER ---------------- */
-
+ 
 function Counter({ end, label }: { end: number; label: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);

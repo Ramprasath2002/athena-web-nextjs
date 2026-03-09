@@ -44,8 +44,7 @@ export default function CareersPage() {
         buttonLink="/contact"
       />
 
-{/* FILTER */}
-<section className="careers-filter">
+ <section className="careers-filter">
   <div className="container filter-wrapper">
 
     <div className="select-group">

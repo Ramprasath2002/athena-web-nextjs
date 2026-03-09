@@ -407,8 +407,7 @@ export default function GetADemoPage() {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  // ── Submit → WordPress REST API ───────────────────────────────────────
-  const handleSubmit = async (e: React.FormEvent) => {
+   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 

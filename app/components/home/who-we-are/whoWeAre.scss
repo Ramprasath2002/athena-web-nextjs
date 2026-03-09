@@ -12,8 +12,7 @@
     align-items: center;
   }
 
-  /* EYEBROW */
-  .section-eyebrow {
+   .section-eyebrow {
     display: inline-block;
     color: #1c4584;
     font-size: 20px;
@@ -23,8 +22,7 @@
     margin-bottom: 1rem;
   }
 
-  /* TITLE */
-  .who-title {
+   .who-title {
     font-size: 2.75rem;
     font-weight: 600;
     line-height: 1.2;
@@ -32,8 +30,7 @@
     color: #111;
   }
 
-  /* DESCRIPTION */
-  .who-description {
+   .who-description {
     font-size: 1rem;
     line-height: 1.7;
     color: #444;
@@ -41,8 +38,7 @@
     max-width: 580px;
   }
 
-  /* BUTTON */
-  .who-button {
+   .who-button {
     margin-top: 1.5rem;
     padding: 0.75rem 1.8rem;
     border-radius: 999px;
@@ -59,17 +55,14 @@
     }
   }
 
-  /* IMAGE */
-  .who-image img {
+   .who-image img {
     width: 100%;
     height: auto;
     border-radius: 16px;
     object-fit: cover;
   }
 
-  /* =======================
-     TABLET / LAPTOP
-     ======================= */
+ 
   @media (max-width: 1024px) {
     .container {
       grid-template-columns: 1fr;
@@ -85,9 +78,7 @@
     }
   }
 
-  /* =======================
-     TABLET / LARGE MOBILE
-     ======================= */
+ 
   @media (max-width: 768px) {
     padding: 4rem 0;
 
@@ -108,9 +99,7 @@
     }
   }
 
-  /* =======================
-     MOBILE
-     ======================= */
+ 
   @media (max-width: 480px) {
     padding: 3rem 0;
 
@@ -133,8 +122,7 @@
     }
   }
 }
-
-/* PARTNERS SECTION */
+ 
 .partners {
   background: #f4fbff;
   padding: 2rem 0;
@@ -206,8 +194,7 @@
     color: #fff;
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
+   @media (max-width: 900px) {
     .partners-grid {
       grid-template-columns: 1fr;
     }
@@ -218,8 +205,7 @@
   }
 }
 
-/* WHAT WE DO SECTION */
-.what-we-do {
+ .what-we-do {
   background: #f4fbff;
   padding: 3rem 0;
 
@@ -233,7 +219,7 @@
     align-items: center;
   }
 
-  /* IMAGE */
+ 
   .what-media {
     display: flex;
     justify-content: center;
@@ -262,7 +248,7 @@
     font-size: 20px;
     font-weight: 600;
   }
-  /* CONTENT */
+ 
   .what-content {
     max-width: 520px;
   }
@@ -287,7 +273,7 @@
     margin: 2.5rem 0;
   }
 
-  /* STATS */
+ 
   .stats {
     display: flex;
     gap: 3rem;
@@ -308,7 +294,7 @@
     color: #555;
   }
 
-  /* RESPONSIVE */
+ 
   @media (max-width: 900px) {
     .what-container {
       grid-template-columns: 1fr;

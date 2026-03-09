@@ -6,8 +6,7 @@
   color: #1f2937;
 }
 
-/* ── GRC GRID ───────────────────────────────────────────────── */
-.grc-section {
+ .grc-section {
   padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 0px);
   background: #f1f5f9;
 }
@@ -64,8 +63,7 @@
   }
 }
 
-/* ── GRC DETAIL ─────────────────────────────────────────────── */
-.grc-detail {
+ .grc-detail {
   padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 0px);
   background: white;
 }
@@ -124,8 +122,7 @@
   padding: clamp(14px, 2vw, 20px);
 }
 
-/* ── CYBER OVERVIEW ─────────────────────────────────────────── */
-.cyber-overview {
+ .cyber-overview {
   padding: clamp(40px, 6vw, 70px) clamp(16px, 4vw, 20px);
   background: linear-gradient(to bottom, #f8fafc, #eef2f7);
 
@@ -134,8 +131,7 @@
     margin: 0 auto;
   }
 
-  /* Top block */
-  .cyber-overview__top {
+   .cyber-overview__top {
     text-align: center;
     margin-bottom: clamp(48px, 8vw, 100px);
 
@@ -166,8 +162,7 @@
     }
   }
 
-  /* Generic image wrapper */
-  .image-wrapper {
+   .image-wrapper {
     img {
       width: 100%;
       border-radius: clamp(12px, 2vw, 24px);
@@ -180,8 +175,7 @@
     }
   }
 
-  /* Overview text */
-  .overview-content {
+   .overview-content {
     h2 {
       font-size: clamp(24px, 4vw, 42px);
       font-weight: 700;
@@ -197,8 +191,7 @@
     }
   }
 
-  /* WHY ATHENA */
-  .section-title {
+   .section-title {
     text-align: center;
     font-size: clamp(26px, 4.5vw, 44px);
     font-weight: 700;
@@ -261,8 +254,7 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     }
 
-    /* Disable lift on touch devices to prevent sticky hover */
-    @media (hover: none) {
+     @media (hover: none) {
       &:hover { transform: none; }
     }
   }
@@ -304,8 +296,7 @@
   }
 }
 
-/* ── PRODUCT LANDSCAPE ──────────────────────────────────────── */
-.product-landscape {
+ .product-landscape {
   padding: clamp(40px, 6vw, 70px) clamp(16px, 4vw, 20px);
   background: #ffffff;
 
@@ -369,16 +360,14 @@
   }
 }
 
-/* ── SHARED ANIMATIONS ──────────────────────────────────────── */
-@keyframes fadeUp {
+ @keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ── GLOBAL CONTAINER SAFETY ────────────────────────────────── */
-@media (max-width: 480px) {
+ @media (max-width: 480px) {
   .grc-section,
   .grc-detail,
   .cyber-overview,

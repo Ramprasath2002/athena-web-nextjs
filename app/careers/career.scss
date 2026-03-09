@@ -6,8 +6,7 @@
     padding: 0 20px;
   }
 
-  /* HERO */
-  .careers-hero {
+   .careers-hero {
     padding: 100px 20px;
     text-align: center;
     background: linear-gradient(90deg, #1c4584, #17ace4);
@@ -28,8 +27,7 @@
     }
   }
 
-  /* FILTER */
-.careers-filter {
+ .careers-filter {
   padding: 40px 0;
 
   .filter-wrapper {
@@ -64,9 +62,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       appearance: none;
-
-      /* Custom dropdown arrow */
-      background-image: url("data:image/svg+xml,%3Csvg fill='%231c4584' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+       background-image: url("data:image/svg+xml,%3Csvg fill='%231c4584' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 16px center;
 
@@ -84,8 +80,7 @@
   }
 }
 
-  /* JOBS */
-  .careers-jobs {
+   .careers-jobs {
     padding-bottom: 100px;
 
     .jobs-grid {
@@ -139,8 +134,7 @@
     }
   }
 
-  /* CULTURE */
-  .careers-culture {
+   .careers-culture {
     padding: 70px 20px;
     background: #f8f9fb;
     text-align: center;
@@ -161,8 +155,7 @@
 
  
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
     .careers-filter .filter-wrapper {
       flex-direction: column;
     }
